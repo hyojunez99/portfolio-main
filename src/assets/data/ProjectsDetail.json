@@ -1,0 +1,277 @@
+[
+  {
+    "id": "1",
+    "proname": "주차장 관리 웹 사이트",
+    "summary": "입주민·사업자·관리자 역할 기반의 실시간 주차장 관리 웹 앱으로, 방문 차량 등록·주차 현황·할인권 발급·정산 기능을 제공하는 React 기반 프로젝트",
+    "deploy": "https://hyojunez99.github.io/portfolio/",
+    "github": "https://github.com/hyojunez99/portfolio.git",
+    "pdf": "",
+    "duration": "2025.01.02 ~ 2025.01.13 (12일)",
+    "teamSize": "",
+    "projectType": "팀 프로젝트",
+    "mainFeatures": [
+      "입주민과 상가 사용자 역할 기반 화면 분기",
+      "주차 할인권 발급 및 정산 흐름",
+      "단기·장기 방문 차량 관리",
+      "대시보드 실시간 날씨 정보 제공"
+    ],
+    "responsibilities": [
+      "Git 브랜치 관리 및 소스 코드 병합(Merge) 담당",
+      "메인 화면 및 공통 UI 구현"
+    ],
+    "techStack": {
+      "Language": "JavaScript (ES6+)",
+      "Framework": "React.js",
+      "Styling": "SCSS",
+      "DataHandling": "Supabase(백엔드 서비스)",
+      "Tools": ["Figma", "Photoshop", "Illustrator", "Git/GitHub", "GSAP"]
+    },
+    "troubleShooting": [
+      {
+        "problem": "새로고침 시 사용자 정보 사라짐",
+        "solution": "useEffect에서 profile.id 준비 시 헤더 정보를 다시 요청하도록 수정",
+        "result": "Context에 로그인 세션/프로필 상태를 새로고침 후 복원하는 로직이 없어서 문제 완전 해결되지 않음"
+      },
+      {
+        "problem": "필요한 API 요청을 사전에 공유하지 못한 협업 이슈",
+        "solution": "DB 담당자가 만들어둔 API를 기준으로 화면이 동작하도록 구현"
+      }
+    ],
+    "insights": "개발을 진행하며 기본적인 기능 구현은 가능했지만, 필요한 API를 사전에 충분히 공유하지 못해 개발 과정에서 한계를 느꼈습니다. 앞으로는 화면 흐름을 기준으로 필요한 API를 먼저 정리하고, 관련 내용을 미리 소통하는 것이 중요하다는 점을 배움."
+  },
+  {
+    "id": "2",
+    "proname": "주차장 관리 웹 사이트",
+    "summary": "입주민·사업자·관리자 역할 기반의 실시간 주차장 관리 웹 앱으로, 방문 차량 등록·주차 현황·할인권 발급·정산 기능을 제공하는 React 기반 프로젝트",
+    "deploy": " https://hyojunez99.github.io/stay-finish/",
+    "github": "https://github.com/hyojunez99/stay-finish.git",
+    "pdf": "../pdf/STAY.pdf",
+    "duration": "2025.01.02 ~ 2025.01.13 (12일)",
+    "teamSize": "6인 팀 프로젝트",
+    "projectType": "팀 프로젝트",
+    "mainFeatures": [
+      "입주민과 상가 사용자 역할 기반 화면 분기",
+      "주차 할인권 발급 및 정산 흐름",
+      "단기·장기 방문 차량 관리",
+      "대시보드 실시간 날씨 정보 제공"
+    ],
+    "responsibilities": [
+      "Git 브랜치 관리 및 소스 코드 병합(Merge) 담당",
+      "메인 화면 및 공통 UI 구현"
+    ],
+    "techStack": {
+      "Language": "JavaScript (ES6+)",
+      "Framework": "React.js",
+      "Styling": "SCSS",
+      "DataHandling": "Supabase(백엔드 서비스)",
+      "Tools": ["Figma", "Photoshop", "Illustrator", "Git/GitHub", "GSAP"]
+    },
+    "troubleShooting": [
+      {
+        "problem": "새로고침 시 사용자 정보 사라짐",
+        "solution": "useEffect에서 profile.id 준비 시 헤더 정보를 다시 요청하도록 수정",
+        "result": "Context에 로그인 세션/프로필 상태를 새로고침 후 복원하는 로직이 없어서 문제 완전 해결되지 않음"
+      },
+      {
+        "problem": "필요한 API 요청을 사전에 공유하지 못한 협업 이슈",
+        "solution": "DB 담당자가 만들어둔 API를 기준으로 화면이 동작하도록 구현"
+      }
+    ],
+    "insights": "개발을 진행하며 기본적인 기능 구현은 가능했지만, 필요한 API를 사전에 충분히 공유하지 못해 개발 과정에서 한계를 느꼈습니다. 앞으로는 화면 흐름을 기준으로 필요한 API를 먼저 정리하고, 관련 내용을 미리 소통하는 것이 중요하다는 점을 배움."
+  },
+  {
+    "id": "3",
+    "proname": "쇼핑몰 프론트엔드 웹 앱",
+    "summary": "러닝 액티브웨어 쇼핑몰 SPA로, React 기반으로 Mock JSON 데이터를 활용해 상품/뉴스/카테고리 UI 및 스크롤 애니메이션을 구현한 커머스 프론트엔드 웹 앱",
+    "deploy": "https://hyojunez99.github.io/stance-finish/",
+    "github": "https://github.com/hyojunez99/stance-finish.git",
+    "pdf": "../pdf/PACEY.pdf",
+    "duration": "2025.12.19 ~ 2025.12.29 (9일)",
+    "teamSize": "5인 팀 프로젝트",
+    "projectType": "팀 프로젝트",
+    "mainFeatures": [
+      "시맥틱 태그를 활용한 메인 페이지 섹션 설계",
+      "JSON 데이터를 비동기로 호출하여 상품 리스트 랜더링 구현",
+      "상품 탐색 흐름 구현"
+    ],
+    "responsibilities": [
+      "JSON데이터·이미지 구조 관리",
+      "메인페이지 제작",
+      "장바구니 페이지 UI 기획 및 와이어프레임 제작"
+    ],
+    "techStack": {
+      "Language": "JavaScript (ES6+)",
+      "Framework": "React.js",
+      "Styling": "SCSS",
+      "DataHandling": "Mock JSON 데이터",
+      "DesignTool": ["Figma", "Git/GitHub", "GSAP (애니메이션)"]
+    },
+    "troubleShooting": [
+      {
+        "problem": "데이터 흐름에 대한 합의가 없어 컴포넌트 구조와 데이터 사용 방식이 서로 다르게 구현됨",
+        "solution": "디자인 시안을 다시 검토하며 섹션별 데이터 단위 방식을 정리하고, 공통으로 사용할 JSON 데이터 구조를 정의해 공유"
+      },
+      {
+        "problem": "여러개의 JSON데이터를 쓰다보니 화면에 구현이 잘 안됨",
+        "solution": "각 섹션이 필요한 데이터만 따로 관리하도록 구조를 정리해 수정"
+      }
+    ],
+    "insights": "팀 프로젝트를 진행하며 구현하는 것 자체보다 데이터 구조를 어떻게 설계하고 공유하느냐가 개발에 큰 영향을 준다는 점을 느낌. 여러 JSON 데이터를 다루며 필요한 데이터만 관리하는 구조의 중요성을 깨달았고, 앞으로는 기능 구현 전에 데이터 설계와 역할 분담을 먼저 명확히 하는 개발 방식이 필요하다는 것을 배움."
+  },
+  {
+    "id": "4",
+    "proname": "ScrollWave",
+    "summary": "커넥트웨이브(ConnectWave) 공식 웹사이트를 클론 구현한 프로젝트로, GSAP 애니메이션을 활용해 스크롤 흐름에 따른 콘텐츠 전환과 시각적 몰입도를 표현했습니다.",
+    "deploy": "https://hyojunez99.github.io/wave/",
+    "github": "https://github.com/hyojunez99/wave.git",
+    "pdf": "",
+    "duration": "2025.12.08 ~ 2025.12.11 (3일)",
+    "teamSize": "개인 프로젝트",
+    "projectType": "개인 프로젝트",
+    "mainFeatures": ["GSAP 기반 애니메이션", "무한 캐러셀 구현"],
+    "responsibilities": [],
+    "techStack": ["React", "CSS3", "GSAP"],
+    "troubleShooting": [],
+    "insights": [
+      "GSAP을 활용한 스크롤 기반 애니메이션 구현. GSAP와 ScrollTrigger를 사용해 스크롤 위치에 따라 요소가 등장하고 전환되도록 구현하며, 애니메이션 타이밍과 화면 흐름의 관계를 이해할 수 있었습니다.",
+      "애니메이션 중심 UI 흐름 설계 경험. 단순한 효과 추가가 아닌, 콘텐츠 전달 순서에 맞춰 애니메이션을 배치하며 사용자 시선 흐름을 고려한 화면 구성을 경험했습니다."
+    ]
+  },
+  {
+    "id": "5",
+    "proname": "My Widget",
+    "summary": "OpenAPI를 활용해 날씨 정보를 불러오고, JSON 데이터와 로컬 저장소를 함께 사용해 개인화된 위젯 화면을 구성한 대시보드 웹 애플리케이션입니다.",
+    "deploy": " https://hyojunez99.github.io/dashboard-finish/",
+    "github": "https://github.com/hyojunez99/dashboard-finish.git",
+    "pdf": "",
+    "duration": "2025.12.01 ~ 2025.12.04 (3일)",
+    "teamSize": "개인 프로젝트",
+    "projectType": "개인 프로젝트",
+    "mainFeatures": [
+      "로그인 및 사용자 상태 관리",
+      "날씨 정보 제공",
+      "실시간 시계 구현",
+      "할 일(Todo) 관리",
+      "타이머 기능",
+      "랜덤 명언 표시"
+    ],
+    "responsibilities": [],
+    "techStack": ["React", "Mock JSON", "JSON", "CSS3"],
+    "troubleShooting": [],
+    "insights": [
+      "OpenAPI를 활용한 데이터 연동 경험: 외부 OpenAPI를 호출해 데이터를 받아오고, 응답 값을 가공해 화면에 표시하는 기본적인 API 활용 흐름을 익힐 수 있었습니다.",
+      "OpenAPI 응답 데이터 구조 이해: OpenAPI에서 내려오는 데이터 구조를 확인하고, 필요한 값만 선택해 화면에 사용할 수 있도록 하는 경험을 할 수 있었습니다."
+    ]
+  },
+  {
+    "id": "6",
+    "proname": "FlexK",
+    "summary": "카카오 공식 컨퍼런스 사이트 if(kakao)를 HTML, CSS, JavaScript로 클론 구현한 프로젝트로, PC·모바일 환경에 맞춰 반응형 레이아웃과 UI 흐름을 재현했습니다.",
+    "deploy": " https://hyojunez99.github.io/ifkakao-clone/",
+    "github": "https://github.com/hyojunez99/ifkakao-clone.git",
+    "pdf": "",
+    "duration": "2025.11.12 ~ 2025.11.14 (2일)",
+    "teamSize": "개인 프로젝트",
+    "projectType": "개인 프로젝트",
+    "mainFeatures": [
+      "CSS 미디어 쿼리를 활용한 반응형 레이아웃 구현",
+      "해상도별 Breakpoints 설정을 통한 디바이스 최적화"
+    ],
+    "responsibilities": [],
+    "techStack": ["HTML5", "CSS3", "JavaScript(ES6+)"],
+    "troubleShooting": [],
+    "insights": [
+      "반응형 레이아웃 설계 경험: 화면 크기에 따라 레이아웃과 콘텐츠 배치가 달라지도록 구성하며, 디바이스별로 다른 사용자 경험을 고려한 화면 설계를 경험할 수 있었습니다.",
+      "모바일 우선 UI 구성 이해: 모바일 환경에서의 메뉴 구조와 콘텐츠 흐름을 먼저 고려해 설계하며, 작은 화면에서 정보 전달이 중요하다는 점을 체감할 수 있었습니다.",
+      "해상도별 UI 테스트 경험: PC, 모바일 해상도에서 직접 테스트하며 레이아웃이 깨지는 지점을 확인하고 수정하는 경험을 할 수 있었습니다."
+    ]
+  },
+  {
+    "id": "7",
+    "proname": "GridSpace",
+    "summary": "운동 공간 예약 서비스를 가정한 Airbnb 스타일 메인 페이지를 CSS Grid를 활용해 레이아웃 중심으로 구현한 디자인 클론 프로젝트입니다.",
+    "deploy": "https://hyojunez99.github.io/airbnb_clone/",
+    "github": "https://github.com/hyojunez99/airbnb_clone.git",
+    "pdf": "",
+    "duration": "2025.10.23 ~ 2025.10.24 (1일)",
+    "teamSize": "개인 프로젝트",
+    "projectType": "개인 프로젝트",
+    "mainFeatures": [
+      "Grid 기반 메인 레이아웃 구성",
+      "카드형 콘텐츠 배열",
+      "그리드 반응형 레이아웃"
+    ],
+    "responsibilities": [],
+    "techStack": ["HTML5", "CSS3", "Display: Grid"],
+    "troubleShooting": [],
+    "insights": [
+      "CSS Grid를 활용한 레이아웃 설계 경험: 페이지 전체 구조와 카드 배치를 CSS Grid로 구성하며, 복잡한 화면도 행과 열 단위로 체계적으로 정리하는 방법을 익힐 수 있었습니다.",
+      "반응형 Grid 구조 이해: 화면 크기에 따라 Grid 컬럼 수와 배치를 변경하며, 디바이스별로 레이아웃이 자연스럽게 재배치되는 반응형 구조를 경험했습니다.",
+      "카드 기반 UI에 적합한 Grid 활용: 반복되는 카드 UI를 Grid로 정렬해 콘텐츠 간 간격과 정렬을 일관되게 유지하는 방법을 배울 수 있었습니다."
+    ]
+  },
+  {
+    "id": "8",
+    "proname": "HealthPick",
+    "summary": "JSON 데이터 기반으로 퀴즈 문제를 관리하고, 카테고리 선택부터 결과 화면까지 페이지 흐름을 구성한 퀴즈 웹 애플리케이션입니다.",
+    "deploy": "https://hyojunez99.github.io/quiz/",
+    "github": "https://github.com/hyojunez99/quiz.git",
+    "pdf": "",
+    "duration": "2025.11.24 ~ 2025.11.27 (3일)",
+    "teamSize": "개인 프로젝트",
+    "projectType": "개인 프로젝트",
+    "mainFeatures": [
+      "JSON 데이터 기반 퀴즈 구성",
+      "카테고리 선택 기능",
+      "퀴즈 진행 및 점수 계산",
+      "결과 화면 및 재시작 기능",
+      "카테고리별 UI 컬러 적용"
+    ],
+    "responsibilities": [],
+    "techStack": ["React", "JSON", "CSS3"],
+    "troubleShooting": [
+      {
+        "problem": "카테고리 선택과 상관없이 전체 퀴즈 데이터가 그대로 렌더링되는 문제가 발생했습니다.",
+        "solution": "JSON 데이터에서 선택한 카테고리와 일치하는 문제만 filter로 추출해 별도의 상태로 관리하고, 화면에 전달하도록 데이터 흐름을 수정함"
+      },
+      {
+        "problem": "퀴즈 진행 단계별 화면 전환 기준이 명확하지 않아 카테고리 선택 화면과 결과 화면이 동시에 노출되는 UI 흐름 문제가 발생했습니다.",
+        "solution": "카테고리 선택 여부와 퀴즈 완료 여부를 기준으로 화면 조건을 다시 정리해, 각 단계에서 보여줄 화면이 명확하게 나뉘도록 구조를 수정함"
+      }
+    ],
+    "insights": [
+      "JSON 데이터를 그대로 사용하는 것보다 화면 흐름에 맞게 데이터를 가공하고 상태로 관리하는 것이 중요하다는 것을 느꼈습니다.",
+      "기능이 늘어날수록 화면 전환 기준을 명확히 정리하지 않으면 UI 흐름이 쉽게 복잡해진다는 점을 배우게 되었습니다."
+    ]
+  },
+  {
+    "id": "9",
+    "proname": "ClearDrive",
+    "summary": "글로벌 자동차 브랜드 Volvo 공식 웹사이트 메인 페이지를 HTML과 CSS로 클론 구현한 프로젝트로, 사용자 가독성을 최우선으로 고려한 타이포그래피와 카드형 레이아웃 중심의 화면 구성을 재현했습니다.",
+    "deploy": "https://hyojunez99.github.io/volvo_clone/",
+    "github": "https://github.com/hyojunez99/volvo_clone.git",
+    "pdf": "",
+    "duration": "2025.10.24 ~ 2025.10.26 (2일)",
+    "teamSize": "개인 프로젝트",
+    "projectType": "개인 프로젝트",
+    "mainFeatures": [
+      "기업형 메인 페이지 레이아웃 구성",
+      "카드 기반 콘텐츠 구조 설계",
+      "브랜드 메시지 중심의 섹션 구성",
+      "반응형 레이아웃",
+      "푸터 정보 구조화"
+    ],
+    "responsibilities": [],
+    "techStack": ["HTML5", "SCSS"],
+    "troubleShooting": [
+      {
+        "problem": "텍스트와 카드가 많은 페이지에서 정보가 한눈에 들어오지 않아 가독성이 떨어지는 문제가 발생했습니다.",
+        "solution": "텍스트를 다시 정리해 제목·본문·보조 정보의 크기와 간격을 조정하고, 카드 간 여백과 정렬을 통일해 시각적으로 읽기 쉬운 레이아웃으로 개선함"
+      }
+    ],
+    "insights": [
+      "텍스트 양이 많고 카드가 반복되는 화면일수록, 단순히 디자인을 따라 만드는 것이 아니라 가독성과 정보 우선순위를 기준으로 구조를 잡는 것이 중요하다는 점을 배웠습니다.",
+      "화면을 만들 때 사용자가 내용을 쉽게 읽고 이해할 수 있는 흐름을 먼저 고민해야 한다는 기준을 갖게 되었습니다."
+    ]
+  }
+]

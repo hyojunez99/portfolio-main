@@ -1,0 +1,20 @@
+@use "../../assets/scss/mixin" as *;
+@use "../../assets/scss/variables" as *;
+@use "../../assets/scss/font" as *;
+
+#skills {
+  padding-top: 1.5rem;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  @include desktop{
+      padding: 3rem ;
+  }
+  .skills-zip {
+    width: 100%;
+    @include flex-layout(column, center, center, 1.5rem);
+    h3 {
+      @include font-h3;
+    }
+  }
+}

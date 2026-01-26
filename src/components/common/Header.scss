@@ -1,0 +1,35 @@
+@use "../../assets/scss/mixin" as *;
+@use "../../assets/scss/variables" as *;
+@use "../../assets/scss/font" as *;
+
+header {
+  position: fixed;
+  z-index: 10;
+  padding: 1rem;
+  width: 100%;
+  .header-desktop {
+    display: none;
+    @include desktop {
+      display: block;
+    }
+    ul {
+      @include font-BL();
+      @include flex-layout();
+      li {
+        @include flex-layout();
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        transition: 0.3s;
+        cursor: pointer;
+        color: var(--color-font-sub);
+        &:hover {
+          color: var(--color-white);
+        }
+        &.active {
+          color: var(--color-white);
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

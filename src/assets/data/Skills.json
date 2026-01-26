@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "image": "languages-icon.png",
+    "category": "Languages",
+    "sub1": "HTML5",
+    "sub2": "CSS3",
+    "sub3": "JavaScript (ES6+)"
+  },
+  {
+    "id": "2",
+    "image": "styling-icon.png",
+    "category": "Styling & Animation",
+    "sub1": "SCSS",
+    "sub2": "GSAP"
+  },
+  {
+    "id": "3",
+    "image": "framework-icon.png",
+    "category": "Framework",
+    "sub1": "React"
+  },
+  {
+    "id": "4",
+    "image": "design-icon.png",
+    "category": "Design Tools",
+    "sub1": "Figma",
+    "sub2": "Photoshop",
+    "sub3": "Illustrator"
+  },
+  {
+    "id": "5",
+    "image": "dev-icon.png",
+    "category": "Dev & Collaboration",
+    "sub1": "Git",
+    "sub2": "GitHub",
+    "sub3": "Notion",
+    "sub4": "Slack"
+  },
+  {
+    "id": "6",
+    "image": "ai-icon.png",
+    "category": "AI Efficiency",
+    "sub1": "ChatGPT",
+    "sub2": "Nano Banana"
+  }
+]

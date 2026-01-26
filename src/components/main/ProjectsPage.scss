@@ -1,0 +1,88 @@
+@use "../../assets/scss/mixin" as *;
+@use "../../assets/scss/variables" as *;
+@use "../../assets/scss/font" as *;
+
+#projects {
+  height: auto;
+  min-height: 100vh;
+  margin: 0 auto;
+  @include desktop {
+    padding: 3rem;
+  }
+  .pro-title {
+    text-align: center;
+    padding: 1.5rem;
+    @include flex-layout(column);
+    h3 {
+      @include font-h3;
+    }
+  }
+
+  .pro-pcmenu {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: none;
+    @include desktop {
+      @include flex-layout(row, flex-start, center);
+      ul {
+        @include flex-layout(row);
+
+        li {
+          padding: 1rem 2rem;
+          color: var(--color-font-sub);
+          transition: 0.3s;
+          &:hover {
+            color: #fff;
+          }
+          &.active {
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+          }
+        }
+      }
+    }
+  }
+  .pro-mbmenu {
+    @include flex-layout(row, flex-end);
+    padding: 0 1.5rem;
+    width: 100%;
+    position: relative;
+    @include desktop {
+      display: none;
+    }
+    .label {
+      padding: 1rem 2rem;
+      @include flex-layout(row, space-between, center, 0.5rem);
+      cursor: pointer;
+    }
+    .dropdown {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: 0.3s;
+      background: #000;
+      border-radius: 16px;
+      padding: 0 2rem;
+      position: absolute;
+      top: 55px;
+      right: 24px;
+      z-index: 10;
+      li {
+        border-radius: 0.5rem;
+        text-align: center;
+        padding: 0.5rem 0;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+    .dropdown.open {
+      width: 150px;
+      max-height: 300px;
+      opacity: 1;
+      padding: 1rem;
+    }
+  }
+}

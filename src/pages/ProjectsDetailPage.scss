@@ -1,0 +1,85 @@
+@use "../assets/scss/mixin" as *;
+@use "../assets/scss/variables" as *;
+@use "../assets/scss/font" as *;
+
+#projectsdetail {
+  max-height: 100vh;
+  height: auto;
+  overflow-y: hidden;
+  padding: 24px;
+  @include desktop {
+  }
+  .title {
+    @include font-m;
+    width: 100%;
+  }
+  @include flex-layout(column, flex-start, flex-start, 24px);
+  .top {
+    @include flex-layout(column, center, flex-start, 24px);
+    padding: 1.5rem 0;
+    width: 100%;
+  }
+  .links {
+    width: 100%;
+
+    > ul {
+      @include flex-layout(column, center, flex-start, 1.5rem);
+      @include desktop {
+        @include flex-layout(row, flex-start, center, 2.5rem);
+      }
+      > li {
+        > a {
+          @include font-BL;
+          transition: 0.3s;
+          &:hover {
+            color: var(--color-font-sub);
+          }
+        }
+      }
+    }
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  .day {
+    padding: 1.5rem 0;
+    @include flex-layout(column, center, flex-start, 1rem);
+  }
+  .team {
+    padding: 1.5rem 0;
+
+    @include flex-layout(column, center, flex-start, 1rem);
+  }
+  .main,
+  .role,
+  .stack {
+    width: 100%;
+
+    padding: 1.5rem 0;
+    @include flex-layout(column, center, flex-start, 1rem);
+    > ul {
+      @include flex-layout(column, center, flex-start, 1rem);
+      > li {
+        list-style: disc;
+        margin-left: 1.5rem;
+      }
+    }
+  }
+  .stack {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .troubleShooting {
+    width: 100%;
+
+    padding: 1.5rem 0;
+    @include flex-layout(column, center, flex-start, 1rem);
+    .issue {
+      @include flex-layout(column, center, flex-start, 1rem);
+    }
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  .insights {
+    padding: 1.5rem 0;
+    @include flex-layout(column, center, flex-start, 1rem);
+  }
+}

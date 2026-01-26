@@ -1,0 +1,225 @@
+@use "../../assets/scss/mixin" as *;
+@use "../../assets/scss/variables" as *;
+@use "../../assets/scss/font" as *;
+
+.project-card {
+  width: 100%;
+  padding: 1.5rem;
+  .pr-card {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+    .card-bg {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+      &.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      &:hover {
+        img {
+          animation: float 1.5s ease-in-out infinite;
+        }
+      }
+      .box-top {
+        // height: 300px;
+        position: relative;
+        padding: 4rem 1.5rem;
+        border-radius: 24px 24px 0 0;
+        background: var(--color-main);
+        @include tablet {
+          // height: clamp(300px, 30vw, 450px);
+        }
+        .card-img1 {
+          position: absolute;
+          bottom: 24px;
+          right: 24px;
+          width: clamp(70px, 15vw, 80px);
+          z-index: 2;
+          img {
+            width: 100%;
+          }
+          @include desktop {
+            width: clamp(80px, 6vw, 100px);
+          }
+        }
+        .card-img2 {
+          z-index: 1;
+          img {
+            width: 100%;
+          }
+        }
+        &.different-card {
+          width: 100%;
+          .card-img2 {
+            aspect-ratio: 314.5 / 181.781;
+            @include flex-layout();
+            height: 100%;
+            width: 100%;
+            img {
+              width: clamp(90px, 12vw, 160px);
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+  .txt-box {
+    flex: 1;
+    padding: 1.5rem;
+    border-radius: 0 0 24px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    @include flex-layout(column, space-between, flex-start, 1rem);
+    .txt-top {
+      @include flex-layout(row, space-between);
+      width: 100%;
+      .proname {
+        @include font-h4;
+      }
+      .detail {
+        font-size: 18px;
+        color: var(--color-font-sub);
+      }
+    }
+    .txt-mid {
+      @include flex-layout(column, center, flex-start, 0.5rem);
+      @include font-cap;
+    }
+    .prosub {
+      flex: 1;
+      p {
+        margin: 0;
+      }
+    }
+    .skills {
+      @include flex-layout(row, flex-start, flex-start, 0.5rem);
+      flex-wrap: wrap;
+      span {
+        @include font-small;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+      }
+    }
+  }
+}
+
+// modal
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  z-index: 99;
+
+  animation: backdropFadeIn 0.25s ease-out forwards;
+}
+
+.project-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 95%;
+  z-index: 100;
+  background: #1e1f22;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+
+  .modal-content {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .btn {
+      padding: 1rem;
+      @include flex-layout(row, flex-end);
+      width: 100%;
+      .close-btn {
+        transition: 0.3s;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.5);
+        &:hover {
+          background: rgba(255, 255, 255, 0.7);
+        }
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        color: var(--color-white);
+      }
+    }
+  }
+  &.open {
+    animation: modalFadeScale 0.3s ease-out forwards;
+  }
+  &.closing {
+    animation: modalFadeScaleOut 0.25s ease-in forwards;
+  }
+}
+
+// 애니메이션
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); // 위로 5px 이동
+  }
+  100% {
+    transform: translateY(0); // 원위치
+  }
+}
+
+@keyframes backdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalFadeScale {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes modalFadeScaleOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+}

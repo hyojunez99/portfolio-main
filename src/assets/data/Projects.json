@@ -1,0 +1,134 @@
+[
+  {
+    "id": "1",
+    "image": "card-img1.png",
+    "image2": "card-img1-1.png",
+    "type": "Portfolio",
+    "type2": "개인 프로젝트",
+    "proname": "웹 포트폴리오",
+    "prosub": "개인 포트폴리오 웹사이트",
+    "day": "2025.01.xx ~ 2025.01.xx",
+    "skills": ["React", "JavaScript(ES6+)", "SCSS", "Git/GitHub"]
+  },
+  {
+    "id": "2",
+    "image": "card-img2.png",
+    "image2": "card-img2-1.png",
+    "type": "Team",
+    "type2": "팀 프로젝트",
+    "proname": "주차장 관리 웹 사이트",
+    "prosub": "역할별 실시간 주차 관리 기능을 구현한 웹 시스템",
+    "day": "2025.01.02 ~ 2025.01.13",
+    "skills": ["React", "JavaScript(ES6+)", "SCSS", "Supabase", "Git/GitHub"]
+  },
+  {
+    "id": "3",
+    "image": "card-img3.png",
+    "image2": "card-img3-1.png",
+    "type": "Team",
+    "type2": "팀 프로젝트",
+    "proname": "쇼핑몰 프론트엔드 웹 앱",
+    "prosub": "상품 탐색과 UI 흐름에 집중한 쇼핑몰 SPA",
+    "day": "2025.12.19 ~ 2025.12.29",
+    "skills": ["React", "JavaScript(ES6+)", "SCSS", "Mock JSON", "Git/GitHub"]
+  },
+  {
+    "id": "4",
+    "image": "card-img4.png",
+    "image2": "card-img4-1.png",
+    "type": "Clone",
+    "type2": "개인 프로젝트",
+    "proname": "ScrollWave",
+    "prosub": "스크롤 인터랙션으로 콘텐츠 전환을 구현한 웹사이트 클론",
+    "day": "2025.12.08 ~ 2025.12.11",
+    "skills": ["React", "CSS3", "GSAP"]
+  },
+  {
+    "id": "5",
+    "image": "",
+    "image2": "card-img5.png",
+    "type": "Clone",
+    "type2": "개인 프로젝트",
+    "proname": "My Widget",
+    "prosub": "날씨 정보와 개인화 위젯을 제공하는 대시보드 웹 앱",
+    "day": "2025.12.01 ~ 2025.12.04",
+    "skills": ["React", "Axios", "Mock JSON", "CSS3"]
+  },
+  {
+    "id": "6",
+    "image": "card-img6.png",
+    "image2": "card-img6-1.png",
+    "type": "Clone",
+    "type2": "개인 프로젝트",
+    "proname": "FlexK",
+    "prosub": "PC·모바일 반응형 UI를 재현한 기업 웹사이트 클론",
+    "day": "2025.11.12 ~ 2025.11.14",
+    "skills": ["HTML5", "CSS3", "JavaScript(ES6+)"]
+  },
+  {
+    "id": "7",
+    "image": "card-img7.png",
+    "image2": "card-img7-1.png",
+    "type": "Clone",
+    "type2": "개인 프로젝트",
+    "proname": "GridSpace ",
+    "prosub": "CSS Grid 기반 레이아웃 중심의 예약 서비스 메인 페이지 클론",
+    "day": "2025.10.23 ~ 2025.10.24",
+    "skills": ["HTML5", "CSS3", "CSS Grid"]
+  },
+  {
+    "id": "8",
+    "image": "",
+    "image2": "card-img8.png",
+    "type": "Personal",
+    "type2": "개인 프로젝트",
+    "proname": "HealthPick",
+    "prosub": "선택 흐름을 설계한 JSON 기반 퀴즈 웹 앱",
+    "day": "2025.11.24 ~ 2025.11.27",
+    "skills": ["React", "JSON", "CSS3"]
+  },
+  {
+    "id": "9",
+    "image": "card-img9.png",
+    "image2": "card-img9-1.png",
+    "type": "Personal",
+    "type2": "개인 프로젝트",
+    "proname": "ClearDrive ",
+    "prosub": "정보 구조와 가독성을 고려한 기업형 웹사이트 클론",
+    "day": "2025.10.24 ~ 2025.10.26",
+    "skills": ["HTML5", "CSS3"]
+  },
+  {
+    "id": "10",
+    "image": "",
+    "image2": "card-img9-1.png",
+    "type": "Practical",
+    "type2": "",
+    "proname": "끊김 없이 무한으로 돌아가는 이미지 슬라이더",
+    "prosub": "",
+    "day": "",
+    "skills": ""
+  },
+  {
+    "id": "11",
+    "image": "",
+    "image2": "card-img9-1.png",
+    "type": "Practical ",
+    "type2": "",
+    "proname": "CSS 에니메이션을 활용한 프로그래스바 구현",
+    "prosub": "",
+    "day": "",
+    "skills": ""
+  },
+  {
+    "id": "12",
+    "image": "",
+    "image2": "card-img9-1.png",
+    "type": "Practical ",
+    "type2": "",
+    "proname": "CSS 3D  입체 서적 구현",
+    "prosub": "",
+    "day": "",
+    "skills": ""
+  }
+]

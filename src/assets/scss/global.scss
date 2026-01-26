@@ -1,0 +1,28 @@
+@use "./variables";
+@use "./font" as *;
+@use "./mixin" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
+}
+button,
+input {
+  font-family: inherit;
+}
+html {
+  font-size: 16px;
+}
+body {
+  @include font-body;
+  overflow-x: hidden;
+  color: #fff;
+}

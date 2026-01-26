@@ -1,0 +1,87 @@
+@use "../../assets/scss/mixin" as *;
+@use "../../assets/scss/variables" as *;
+@use "../../assets/scss/font" as *;
+
+#about {
+  margin: 0 auto;
+  .pc-bg {
+    @include desktop {
+      padding: 3rem;
+      @include flex-layout(row, space-between, center, 3rem);
+      .pc-line {
+        width: 1px;
+        height: 400px;
+        background: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+
+  @include flex-layout(column);
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 50%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .bg-color {
+      background: var(--color-main);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    @include desktop {
+      max-width: 500px;
+      position: relative;
+      z-index: 0;
+      opacity: 1;
+      margin: 0 auto;
+    }
+  }
+  .txt {
+    padding: 1.5rem;
+    @include desktop {
+      padding: 0;
+    }
+    .about-top {
+      @include flex-layout(column, center, flex-start, 0.5rem);
+      @include font-m;
+      padding-bottom: 1.5rem;
+    }
+    .about-mid {
+      @include flex-layout(column, center, flex-start, 1.5rem);
+      span {
+        color: var(--color-main-pink);
+        @include font-BL;
+        font-weight: 500;
+      }
+      padding-bottom: 3rem;
+    }
+  }
+  .bottom {
+    ul {
+      @include flex-layout(row, flex-start);
+      flex-wrap: wrap;
+      li {
+        padding: 0.5rem 1.5rem;
+        border-radius: 24px;
+        border: 1px solid #fff;
+        background: var(--color-main);
+      }
+    }
+  }
+}

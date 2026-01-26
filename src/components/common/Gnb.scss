@@ -1,0 +1,92 @@
+@use "../../assets/scss/mixin" as *;
+@use "../../assets/scss/variables" as *;
+
+nav {
+  position: relative;
+  @include desktop {
+    display: none;
+  }
+  .mobile-toggle {
+    @include flex-layout(row, flex-end);
+    padding: 1rem;
+    button {
+      z-index: 100;
+      position: relative;
+      width: 24px;
+      height: 18px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      span {
+        background-color: var(--color-white);
+        position: absolute;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 2px;
+        transition: 0.3s;
+        &:nth-child(1) {
+          top: 0;
+        }
+        &:nth-child(2) {
+          top: 8px;
+        }
+        &:nth-child(3) {
+          bottom: 0;
+        }
+      }
+
+      //   X 모양
+      &.open {
+        span:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+        span:nth-child(2) {
+          opacity: 0;
+        }
+        span:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .menu-wrap {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 90vw;
+    height: 100vh;
+    background: var(--color-black);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ul {
+      @include flex-layout(column);
+      li {
+        @include flex-layout();
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        transition: 0.3s;
+        cursor: pointer;
+        color: var(--color-font-sub);
+        &:hover {
+          color: var(--color-white);
+          background-color: var(--color-bg);
+        }
+        &.active {
+          font-weight: 500;
+          color: var(--color-white);
+        }
+      }
+    }
+  }
+
+  /* 열렸을 때 */
+  .menu-wrap.open {
+    transform: translateX(0);
+  }
+}
