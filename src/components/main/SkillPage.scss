@@ -7,14 +7,20 @@
   width: 100%;
   height: auto;
   min-height: 100vh;
-  @include desktop{
-      padding: 3rem ;
+  @include desktop {
+    padding: 3rem;
   }
   .skills-zip {
     width: 100%;
     @include flex-layout(column, center, center, 1.5rem);
-    h3 {
-      @include font-h3;
+    .skills-txt {
+      @include flex-layout(column, center, center, 1.5rem);
+
+      padding: 0 2rem;
+      text-align: center;
+      h3 {
+        @include font-h3;
+      }
     }
   }
 }

@@ -4,13 +4,13 @@
 
 header {
   position: fixed;
-  z-index: 10;
+  z-index: 20;
   padding: 1rem;
   width: 100%;
   .header-desktop {
     display: none;
     @include desktop {
-      display: block;
+      @include flex-layout(row,flex-end)
     }
     ul {
       @include font-BL();
@@ -28,6 +28,7 @@ header {
         &.active {
           color: var(--color-white);
           font-weight: 600;
+          background: rgba(255, 255, 255, 0.2);
         }
       }
     }

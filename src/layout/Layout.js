@@ -5,7 +5,6 @@ import bgVideo from "../assets/video/bg-video.mp4";
 import "./Layout.scss";
 
 const Layout = () => {
-  
   return (
     <div className="wrapper">
       <div className="content">

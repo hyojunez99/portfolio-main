@@ -5,8 +5,11 @@
 .skills-card {
   padding: 1.5rem;
   width: 100%;
+  max-width: 1500px;
+
   margin: 0 auto;
   ul {
+    
     @include flex-layout(column, center, flex-start, 1rem);
     @include tablet {
       display: grid;

@@ -1,0 +1,143 @@
+@use "../../assets/scss/mixin" as *;
+@use "../../assets/scss/variables" as *;
+@use "../../assets/scss/font" as *;
+
+footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-footer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    to top,
+    rgba(8, 8, 14, 0.98),
+    rgba(8, 8, 14, 0.85),
+    rgba(8, 8, 14, 0.6)
+  );
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: opacity 0.2s linear;
+}
+
+#contact {
+  position: relative;
+  z-index: 1;
+
+  height: auto;
+  min-height: 100vh;
+  padding: 1.5rem;
+  @include flex-layout(column, center, center, 1.5rem);
+
+  .footer-txt {
+    @include font-m;
+  }
+
+  .footer-links {
+    @include flex-layout(row, center, center, 1rem);
+
+    button {
+      padding: 0.5rem 1rem;
+      color: var(--color-white);
+      @include font-body();
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+  }
+
+  .footer-cta {
+    width: 100%;
+    max-width: 550px;
+    @include flex-layout(column, center, center, 1.5rem);
+
+    .cta {
+      width: 100%;
+      @include flex-layout(column, center, center, 1rem);
+
+      .field {
+        position: relative;
+        width: 100%;
+      }
+
+      .field {
+        position: relative;
+        width: 100%;
+      }
+
+      /* input / textarea */
+      .field input,
+      .field textarea {
+        width: 100%;
+        padding: 1rem;
+        padding-top: 1.6rem;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--color-white);
+
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .field textarea {
+        height: 150px;
+        resize: none;
+      }
+
+      /* label */
+      .field label {
+        position: absolute;
+        left: 1rem;
+        top: 1.1rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1rem;
+        pointer-events: none;
+
+        transition:
+          top 0.25s ease,
+          font-size 0.25s ease,
+          opacity 0.25s ease;
+      }
+
+      /* focus / 값 있을 때 */
+      .field input:focus,
+      .field textarea:focus {
+        outline: none;
+        border-color: rgba(120, 170, 255, 0.9);
+        box-shadow: 0 0 0 2px rgba(120, 170, 255, 0.25);
+      }
+
+      .field input:focus + label,
+      .field input:not(:placeholder-shown) + label,
+      .field textarea:focus + label,
+      .field textarea:not(:placeholder-shown) + label {
+        top: 0.4rem;
+        font-size: 0.75rem;
+        opacity: 0.85;
+      }
+    }
+
+    .cta-btn {
+      cursor: pointer;
+      width: 100%;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.1);
+      transition: 0.3s;
+      &:hover {
+        border-color: rgba(120, 170, 255, 0.9);
+      }
+      color: var(--color-white);
+    }
+  }
+
+  .copyright {
+    @include font-cap;
+  }
+}

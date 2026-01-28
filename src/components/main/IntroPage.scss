@@ -3,6 +3,9 @@
 @use "../../assets/scss/font" as *;
 
 #intro {
+  position: relative;
+  z-index: 1;
+
   @include flex-layout(column, center);
   width: 100%;
   height: auto;
@@ -11,6 +14,7 @@
     height: 100%;
     @include flex-layout(column, center, center, 1.5rem);
     text-align: center;
+
     h1 {
       // @include font-h1;
       font-size: clamp(3rem, 6vw + 1rem, 7.5rem);

@@ -9,10 +9,12 @@
   @include desktop {
     padding: 3rem;
   }
+  max-width: 1500px;
+
   .pro-title {
     text-align: center;
     padding: 1.5rem;
-    @include flex-layout(column);
+    @include flex-layout(column, center, center, 1.5rem);
     h3 {
       @include font-h3;
     }

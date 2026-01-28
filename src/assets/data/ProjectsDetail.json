@@ -273,5 +273,74 @@
       "텍스트 양이 많고 카드가 반복되는 화면일수록, 단순히 디자인을 따라 만드는 것이 아니라 가독성과 정보 우선순위를 기준으로 구조를 잡는 것이 중요하다는 점을 배웠습니다.",
       "화면을 만들 때 사용자가 내용을 쉽게 읽고 이해할 수 있는 흐름을 먼저 고민해야 한다는 기준을 갖게 되었습니다."
     ]
+  },
+  {
+    "id": "10",
+    "proname": "Infinite Image",
+    "summary": "무한 이미지 캐러셀을 구현한 UI 인터랙션 프로젝트로, 이전/다음 버튼과 자동 재생·정지 기능을 포함한 슬라이드 동작을 직접 구현했습니다.",
+    "deploy": "https://hyojunez99.github.io/loop/",
+    "github": "https://github.com/hyojunez99/loop.git",
+    "pdf": "",
+    "duration": "2025.09.23 ~ 2025.09.25 (2일)",
+    "teamSize": "개인 프로젝트",
+    "projectType": "개인 프로젝트",
+    "mainFeatures": [
+      "이전/다음 버튼을 통한 이미지 슬라이드 이동",
+      "첫·마지막 이미지가 자연스럽게 연결되는 무한 캐러셀 구조",
+      "자동 재생 및 정지 기능 구현"
+    ],
+    "responsibilities": [],
+    "techStack": ["HTML5", "CSS3", "JavaScript(ES6+)"],
+    "troubleShooting": [],
+    "insights": [
+      "라이브러리 없이 JavaScript만으로도 복잡한 UI 인터랙션을 구현할 수 있다는 자신감을 얻음, DOM 구조와 상태 관리가 슬라이드 UI의 핵심이라는 점을 이해하게 됨"
+    ]
+  },
+  {
+    "id": "11",
+    "proname": "Skill Chart",
+    "summary": "CSS 애니메이션을 활용해 퍼센트 기반 스킬 차트를 구현한 UI 프로젝트로, 페이지 진입 시 단계적으로 채워지는 프로그레스 바 애니메이션을 구현했습니다.",
+    "deploy": "https://hyojunez99.github.io/chart/",
+    "github": "https://github.com/hyojunez99/chart.git",
+    "pdf": "",
+    "duration": "2025.09.16 ~ 2025.09.18 (2일)",
+    "teamSize": "개인 프로젝트",
+    "projectType": "개인 프로젝트",
+    "mainFeatures": [
+      "CSS keyframes를 활용한 프로그레스 바 애니메이션",
+      "nth-of-type을 이용한 순차적 애니메이션 딜레이 처리"
+    ],
+    "responsibilities": [],
+    "techStack": ["HTML5", "CSS3"],
+    "troubleShooting": [],
+    "insights": [
+      "CSS만으로 단계적인 인터랙션 표현이 가능하다는 것을 경험했으며, 애니메이션 타이밍 제어에 대한 이해도를 높일 수 있었다"
+    ]
+  },
+  {
+    "id": "12",
+    "proname": "3D Book Archive",
+    "summary": "책을 3D 오브젝트처럼 회전시키는 인터랙션을 중심으로, 직접 읽은 책의 한 줄 요약과 인상 깊었던 포인트를 기록한 개인 아카이브형 웹 프로젝트입니다.",
+    "deploy": "https://hyojunez99.github.io/bookstore/",
+    "github": "https://github.com/hyojunez99/bookstore.git",
+    "pdf": "",
+    "duration": "2025.09.29 ~ 2025.10.01 (2일)",
+    "teamSize": "개인 프로젝트",
+    "projectType": "개인 프로젝트",
+    "mainFeatures": [
+      "CSS 3D Transform을 활용한 책 회전 인터랙션",
+      "마우스/버튼 조작에 따른 3D 시점 변화"
+    ],
+    "responsibilities": [],
+    "techStack": ["HTML5", "CSS3", "JavaScript(ES6+)"],
+    "troubleShooting": [
+      {
+        "problem": "3D transform 적용 시 요소가 겹치거나 깨지는 문제가 발생했습니다.",
+        "solution": "transform-style과 z-index 구조 조정으로 해결"
+      }
+    ],
+    "insights": [
+      "3D UI 구현 시 단순한 transform 적용보다, DOM 구조와 레이어 분리가 우선적으로 고려되어야 함을 알게 되었다."
+    ]
   }
 ]

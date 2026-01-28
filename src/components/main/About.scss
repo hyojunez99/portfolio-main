@@ -3,8 +3,14 @@
 @use "../../assets/scss/font" as *;
 
 #about {
-  margin: 0 auto;
+  @include flex-layout(column);
+  position: relative;
+  width: 100%;
+
+  height: auto;
+  min-height: 100vh;
   .pc-bg {
+    max-width: 1500px;
     @include desktop {
       padding: 3rem;
       @include flex-layout(row, space-between, center, 3rem);
@@ -16,11 +22,6 @@
     }
   }
 
-  @include flex-layout(column);
-  position: relative;
-  width: 100%;
-  height: auto;
-  min-height: 100vh;
   .bg-img {
     width: 100%;
     height: 100%;

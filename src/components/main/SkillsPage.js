@@ -1,17 +1,49 @@
 import SkillsCard from "../ui/SkillsCard";
 import "./SkillPage.scss";
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const SkillsPage = () => {
+  const skillsRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.set("#skills", {
+        opacity: 0,
+        y: 60,
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#skills",
+          start: "top 70%",
+          once: true,
+        },
+      });
+
+      tl.to("#skills", {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+      });
+    });
+
+    ScrollTrigger.refresh();
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="skills">
+    <section id="skills" ref={skillsRef}>
       <div className="skills-zip">
-        <h3>Skills</h3>
-        <p>
-          웹 퍼블리셔로서 다룰 수 있는 기술 스택과 도구들을 정리한 페이지입니다.
-          <br />
-          기본 언어부터 프레임워크, 디자인 툴, 협업 도구까지 폭넓게
-          경험했습니다.
-        </p>
+        <div className="skills-txt">
+          <h3>Skills</h3>
+          <p>작업 과정에서 실제로 사용해 온 기술들을 중심으로 정리했습니다.</p>
+        </div>
         <SkillsCard />
       </div>
     </section>

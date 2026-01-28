@@ -19,8 +19,8 @@ const ProjectsCard = ({ projects }) => {
   }, [projects]);
 
   const handleClick = (id) => {
-    const numId = Number(id);
-    if ([10, 11, 12].includes(numId)) return; // 모달 열리지 않게
+    // const numId = Number(id);
+    // if ([10, 11, 12].includes(numId)) return; // 모달 열리지 않게
     setSelectedId(id);
   };
 
@@ -78,6 +78,7 @@ const ProjectsCard = ({ projects }) => {
               <div className="txt-top">
                 <p className="proname">{item.proname}</p>
                 <IoIosArrowForward className="detail" />
+                <p className="pc-detail">더보기</p>
               </div>
               <div className="txt-mid">
                 <p className="day">{item.day}</p>

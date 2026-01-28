@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useLayoutEffect, useRef } from "react";
 import ProjectsCard from "../ui/ProjectsCard";
 import ProjectsDate from "../../assets/data/Projects.json";
 import "./ProjectsPage.scss";
 import { FaCaretDown } from "react-icons/fa";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const categories = [
   "All",
@@ -14,28 +18,54 @@ const categories = [
 ];
 
 const ProjectsPage = () => {
+  const sectionRef = useRef(null);
   const [category, setCategory] = useState("All");
-  const [open, setOpen] = useState(false); // 모바일 드롭다운
+  const [open, setOpen] = useState(false);
 
-  // 카테고리 필터
   const filteredProjects =
     category === "All"
       ? ProjectsDate
       : ProjectsDate.filter((item) => item.type === category);
 
+  useLayoutEffect(() => {
+    if (!sectionRef.current) return;
+    const ctx = gsap.context(() => {
+      gsap.from(".pro-title", {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.6,
+        ease: "power3.out",
+      });
+      gsap.from(".pro-pcmenu, .pro-mbmenu", {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 65%",
+        },
+        opacity: 0,
+        y: 20,
+        duration: 0.4,
+        ease: "power2.out",
+      });
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
   const handleSelect = (item) => {
     setCategory(item);
     setOpen(false);
   };
 
   return (
-    <section id="projects">
+    <section id="projects" ref={sectionRef}>
       <div className="project-zip">
         <div className="pro-title">
           <h3>Projects</h3>
-          <p>다양한 프로젝트를 통해 쌓아온 경험과 결과물들입니다</p>
+          <p>구현 과정과 결과 모두에 책임을 두고 작업한 기록입니다.</p>
         </div>
-        {/* PC 카테고리 */}
+        {/* PC */}
         <div className="pro-pcmenu">
           <ul>
             {categories.map((item) => (
@@ -49,7 +79,7 @@ const ProjectsPage = () => {
             ))}
           </ul>
         </div>
-        {/* 모바일 카테고리 */}
+        {/* Mobile */}
         <div className="pro-mbmenu">
           <p className="label" onClick={() => setOpen(!open)}>
             {category}
@@ -57,7 +87,6 @@ const ProjectsPage = () => {
               <FaCaretDown />
             </span>
           </p>
-
           <ul className={`dropdown ${open ? "open" : ""}`}>
             {categories.map((item) => (
               <li
@@ -70,8 +99,6 @@ const ProjectsPage = () => {
             ))}
           </ul>
         </div>
-
-        {/* 카드 */}
         <ProjectsCard projects={filteredProjects} />
       </div>
     </section>
