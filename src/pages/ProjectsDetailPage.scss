@@ -7,12 +7,6 @@
   height: auto;
   overflow-y: auto;
   padding: 24px;
-  @include desktop {
-  }
-  .title {
-    @include font-m;
-    width: 100%;
-  }
   @include flex-layout(column, flex-start, flex-start, 24px);
   .top {
     @include flex-layout(column, center, flex-start, 24px);
@@ -21,7 +15,6 @@
   }
   .links {
     width: 100%;
-
     > ul {
       @include flex-layout(column, center, flex-start, 1.5rem);
       @include desktop {
@@ -40,46 +33,54 @@
     padding-bottom: 1.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   }
-  .day {
-    padding: 1.5rem 0;
-    @include flex-layout(row, center, flex-start, 1rem);
-  }
-  .team {
-    padding: 1.5rem 0;
-
-    @include flex-layout(row, center, flex-start, 1rem);
-  }
-  .main,
-  .role,
-  .stack {
-    width: 100%;
-
-    padding: 1.5rem 0;
-    @include flex-layout(column, center, flex-start, 1rem);
-    > ul {
+  .table {
+    .title {
+      @include font-m;
+    }
+    @include flex-layout(column, center, flex-start, 1.5rem);
+    .team {
+      width: 100%;
+    }
+    .main,
+    .role,
+    .troubleShooting,
+    .insights {
       @include flex-layout(column, center, flex-start, 1rem);
-      > li {
-        list-style: disc;
-        margin-left: 1.5rem;
+      > ul {
+        @include flex-layout(column, center, flex-start, 0.5rem);
+        padding-left: 1.5rem;
+        > li {
+          list-style-type: disc;
+        }
       }
     }
-  }
-  .stack {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  }
-
-  .troubleShooting {
-    width: 100%;
-
-    padding: 1.5rem 0;
-    @include flex-layout(column, center, flex-start, 1rem);
-    .issue {
+    .stack {
       @include flex-layout(column, center, flex-start, 1rem);
+      .stack-group {
+        @include flex-layout(column, center, flex-start, 0.5rem);
+        .stack-tags {
+          @include flex-layout(row, flex-start, center, 1rem);
+          flex-wrap: wrap;
+          .stack-tag {
+            @include font-small;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+          }
+        }
+      }
     }
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  }
-  .insights {
-    padding: 1.5rem 0;
-    @include flex-layout(column, center, flex-start, 1rem);
+    .troubleShooting {
+      .issue {
+        @include flex-layout(column, center, flex-start, 0.5rem);
+        .problem {
+          color: #fca5a5;
+        }
+        .solve {
+          color: #86efac;
+        }
+      }
+    }
   }
 }

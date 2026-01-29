@@ -88,18 +88,26 @@ const ProjectsDetailPage = ({ id }) => {
             <p className="title">기술 스택</p>
             {typeof project.techStack === "object" &&
             !Array.isArray(project.techStack) ? (
-              <ul>
-                {Object.entries(project.techStack).map(([key, value]) => (
-                  <li key={key}>
-                    <strong>{key}:</strong>{" "}
-                    {Array.isArray(value) ? value.join(", ") : value}
-                  </li>
-                ))}
-              </ul>
+              Object.entries(project.techStack).map(([category, items]) => (
+                <div className="stack-group" key={category}>
+                  <h4 className="stack-category">{category}</h4>
+                  <ul className="stack-tags">
+                    {(Array.isArray(items) ? items : [items]).map(
+                      (tech, idx) => (
+                        <li className="stack-tag" key={idx}>
+                          {tech}
+                        </li>
+                      ),
+                    )}
+                  </ul>
+                </div>
+              ))
             ) : (
-              <ul>
+              <ul className="stack-tags">
                 {project.techStack.map((tech, idx) => (
-                  <li key={idx}>{tech}</li>
+                  <li className="stack-tag" key={idx}>
+                    {tech}
+                  </li>
                 ))}
               </ul>
             )}
@@ -112,10 +120,11 @@ const ProjectsDetailPage = ({ id }) => {
             {project.troubleShooting.map((ts, idx) => (
               <div key={idx} className="issue">
                 <p>
-                  <strong>문제 : </strong> {ts.problem || ts.issue}
+                  <strong className="problem">문제 : </strong>{" "}
+                  {ts.problem || ts.issue}
                 </p>
                 <p>
-                  <strong>└ 해결 : </strong> {ts.solution}
+                  <strong className="solve">└ 해결 : </strong> {ts.solution}
                 </p>
                 {ts.result && (
                   <p>

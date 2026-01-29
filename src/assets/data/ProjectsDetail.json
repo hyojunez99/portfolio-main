@@ -17,10 +17,7 @@
     ],
     "responsibilities": "",
     "techStack": {
-      "Language": "JavaScript (ES6+)",
-      "Framework": "React.js",
-      "Styling": "SCSS",
-      "DataHandling": "Supabase(백엔드 서비스)",
+      "Frontend": ["JavaScript (ES6+)", "React.js", "SCSS"],
       "Tools": ["Figma", "Photoshop", "Illustrator", "Git/GitHub", "GSAP"]
     },
     "troubleShooting": [
@@ -56,10 +53,8 @@
       "메인 화면 및 공통 UI 구현"
     ],
     "techStack": {
-      "Language": "JavaScript (ES6+)",
-      "Framework": "React.js",
-      "Styling": "SCSS",
-      "DataHandling": "Supabase(백엔드 서비스)",
+      "Frontend": ["JavaScript (ES6+)", "React.js", "SCSS"],
+      "Backend / Data": ["Supabase"],
       "Tools": ["Figma", "Photoshop", "Illustrator", "Git/GitHub", "GSAP"]
     },
     "troubleShooting": [
@@ -96,11 +91,9 @@
       "장바구니 페이지 UI 기획 및 와이어프레임 제작"
     ],
     "techStack": {
-      "Language": "JavaScript (ES6+)",
-      "Framework": "React.js",
-      "Styling": "SCSS",
-      "DataHandling": "Mock JSON 데이터",
-      "DesignTool": ["Figma", "Git/GitHub", "GSAP (애니메이션)"]
+      "Frontend": ["JavaScript (ES6+)", "React.js", "SCSS"],
+      "Data": ["Mock JSON"],
+      "Tools": ["Figma", "Git/GitHub", "GSAP"]
     },
     "troubleShooting": [
       {
