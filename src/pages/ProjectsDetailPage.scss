@@ -7,11 +7,14 @@
   height: auto;
   overflow-y: auto;
   padding: 24px;
-  @include flex-layout(column, flex-start, flex-start, 24px);
+  @include flex-layout(column, flex-start, flex-start, 1rem);
   .top {
-    @include flex-layout(column, center, flex-start, 24px);
-    padding: 1.5rem 0;
+    @include flex-layout(column, center, flex-start, 1.5rem);
+    padding-bottom: 1.5rem;
     width: 100%;
+  }
+  .summary {
+    @include font-BL;
   }
   .links {
     width: 100%;
@@ -34,10 +37,15 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   }
   .table {
+    width: 100%;
+    .day,
+    .team {
+      @include flex-layout(column, flex-start, flex-start, 1rem);
+    }
     .title {
       @include font-m;
     }
-    @include flex-layout(column, center, flex-start, 1.5rem);
+    @include flex-layout(column, center, flex-start, 2rem);
     .team {
       width: 100%;
     }
@@ -55,31 +63,55 @@
       }
     }
     .stack {
+      width: 100%;
       @include flex-layout(column, center, flex-start, 1rem);
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
       .stack-group {
-        @include flex-layout(column, center, flex-start, 0.5rem);
+        @include flex-layout(column, center, flex-start, 1rem);
         .stack-tags {
           @include flex-layout(row, flex-start, center, 1rem);
           flex-wrap: wrap;
           .stack-tag {
-            @include font-small;
-            padding: 0.5rem;
+            padding: 0.5rem 1rem;
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 0.5rem;
+            cursor: pointer;
+            transition: 0.3s;
+            &:hover {
+              transform: translateY(-2px);
+              background: rgba(255, 255, 255, 0.18);
+            }
           }
         }
       }
     }
     .troubleShooting {
+      width: 100%;
       .issue {
+        width: 100%;
         @include flex-layout(column, center, flex-start, 0.5rem);
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        border-left: 3px solid rgba(255, 255, 255, 0.15);
         .problem {
           color: #fca5a5;
         }
         .solve {
           color: #86efac;
         }
+      }
+    }
+    .insights {
+      width: 100%;
+      .feel {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        border-left: 3px solid rgba(255, 255, 255, 0.15);
       }
     }
   }

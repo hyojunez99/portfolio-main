@@ -119,7 +119,9 @@
     "projectType": "개인 프로젝트",
     "mainFeatures": ["GSAP 기반 애니메이션", "무한 캐러셀 구현"],
     "responsibilities": [],
-    "techStack": ["React", "CSS3", "GSAP"],
+    "techStack": {
+      "Frontend": ["React", "CSS3", "GSAP"]
+    },
     "troubleShooting": [],
     "insights": [
       "GSAP을 활용한 스크롤 기반 애니메이션 구현. GSAP와 ScrollTrigger를 사용해 스크롤 위치에 따라 요소가 등장하고 전환되도록 구현하며, 애니메이션 타이밍과 화면 흐름의 관계를 이해할 수 있었습니다.",
@@ -145,11 +147,13 @@
       "랜덤 명언 표시"
     ],
     "responsibilities": [],
-    "techStack": ["React", "Mock JSON", "JSON", "CSS3"],
+    "techStack": {
+      "Frontend": ["React", "Mock JSON", "JSON", "CSS3"]
+    },
     "troubleShooting": [],
     "insights": [
-      "OpenAPI를 활용한 데이터 연동 경험: 외부 OpenAPI를 호출해 데이터를 받아오고, 응답 값을 가공해 화면에 표시하는 기본적인 API 활용 흐름을 익힐 수 있었습니다.",
-      "OpenAPI 응답 데이터 구조 이해: OpenAPI에서 내려오는 데이터 구조를 확인하고, 필요한 값만 선택해 화면에 사용할 수 있도록 하는 경험을 할 수 있었습니다."
+      "외부 OpenAPI를 호출해 데이터를 받아오고, 응답 값을 가공해 화면에 표시하는 기본적인 API 활용 흐름을 익힐 수 있었습니다.",
+      "OpenAPI에서 내려오는 데이터 구조를 확인하고, 필요한 값만 선택해 화면에 사용할 수 있도록 하는 경험을 할 수 있었습니다."
     ]
   },
   {
@@ -167,12 +171,14 @@
       "해상도별 Breakpoints 설정을 통한 디바이스 최적화"
     ],
     "responsibilities": [],
-    "techStack": ["HTML5", "CSS3", "JavaScript(ES6+)"],
+    "techStack": {
+      "Frontend": ["HTML5", "CSS3", "JavaScript(ES6+)"]
+    },
     "troubleShooting": [],
     "insights": [
-      "반응형 레이아웃 설계 경험: 화면 크기에 따라 레이아웃과 콘텐츠 배치가 달라지도록 구성하며, 디바이스별로 다른 사용자 경험을 고려한 화면 설계를 경험할 수 있었습니다.",
-      "모바일 우선 UI 구성 이해: 모바일 환경에서의 메뉴 구조와 콘텐츠 흐름을 먼저 고려해 설계하며, 작은 화면에서 정보 전달이 중요하다는 점을 체감할 수 있었습니다.",
-      "해상도별 UI 테스트 경험: PC, 모바일 해상도에서 직접 테스트하며 레이아웃이 깨지는 지점을 확인하고 수정하는 경험을 할 수 있었습니다."
+      "화면 크기에 따라 레이아웃과 콘텐츠 배치가 달라지도록 구성하며, 디바이스별로 다른 사용자 경험을 고려한 화면 설계를 경험할 수 있었습니다.",
+      "모바일 환경에서의 메뉴 구조와 콘텐츠 흐름을 먼저 고려해 설계하며, 작은 화면에서 정보 전달이 중요하다는 점을 체감할 수 있었습니다.",
+      "PC, 모바일 해상도에서 직접 테스트하며 레이아웃이 깨지는 지점을 확인하고 수정하는 경험을 할 수 있었습니다."
     ]
   },
   {
@@ -191,12 +197,14 @@
       "그리드 반응형 레이아웃"
     ],
     "responsibilities": [],
-    "techStack": ["HTML5", "CSS3", "Display: Grid"],
+    "techStack": {
+      "Frontend": ["HTML5", "CSS3", "Display: Grid"]
+    },
     "troubleShooting": [],
     "insights": [
-      "CSS Grid를 활용한 레이아웃 설계 경험: 페이지 전체 구조와 카드 배치를 CSS Grid로 구성하며, 복잡한 화면도 행과 열 단위로 체계적으로 정리하는 방법을 익힐 수 있었습니다.",
-      "반응형 Grid 구조 이해: 화면 크기에 따라 Grid 컬럼 수와 배치를 변경하며, 디바이스별로 레이아웃이 자연스럽게 재배치되는 반응형 구조를 경험했습니다.",
-      "카드 기반 UI에 적합한 Grid 활용: 반복되는 카드 UI를 Grid로 정렬해 콘텐츠 간 간격과 정렬을 일관되게 유지하는 방법을 배울 수 있었습니다."
+      "페이지 전체 구조와 카드 배치를 CSS Grid로 구성하며, 복잡한 화면도 행과 열 단위로 체계적으로 정리하는 방법을 익힐 수 있었습니다.",
+      "화면 크기에 따라 Grid 컬럼 수와 배치를 변경하며, 디바이스별로 레이아웃이 자연스럽게 재배치되는 반응형 구조를 경험했습니다.",
+      "반복되는 카드 UI를 Grid로 정렬해 콘텐츠 간 간격과 정렬을 일관되게 유지하는 방법을 배울 수 있었습니다."
     ]
   },
   {
@@ -217,7 +225,9 @@
       "카테고리별 UI 컬러 적용"
     ],
     "responsibilities": [],
-    "techStack": ["React", "JSON", "CSS3"],
+    "techStack": {
+      "Frontend": ["React", "JSON", "CSS3"]
+    },
     "troubleShooting": [
       {
         "problem": "카테고리 선택과 상관없이 전체 퀴즈 데이터가 그대로 렌더링되는 문제가 발생했습니다.",
@@ -251,7 +261,7 @@
       "푸터 정보 구조화"
     ],
     "responsibilities": [],
-    "techStack": ["HTML5", "SCSS"],
+    "techStack": { "Frontend": ["HTML5", "SCSS"] },
     "troubleShooting": [
       {
         "problem": "텍스트와 카드가 많은 페이지에서 정보가 한눈에 들어오지 않아 가독성이 떨어지는 문제가 발생했습니다.",
@@ -279,7 +289,7 @@
       "자동 재생 및 정지 기능 구현"
     ],
     "responsibilities": [],
-    "techStack": ["HTML5", "CSS3", "JavaScript(ES6+)"],
+    "techStack": { "Frontend": ["HTML5", "CSS3", "JavaScript(ES6+)"] },
     "troubleShooting": [],
     "insights": [
       "라이브러리 없이 JavaScript만으로도 복잡한 UI 인터랙션을 구현할 수 있다는 자신감을 얻음, DOM 구조와 상태 관리가 슬라이드 UI의 핵심이라는 점을 이해하게 됨"
@@ -300,7 +310,7 @@
       "nth-of-type을 이용한 순차적 애니메이션 딜레이 처리"
     ],
     "responsibilities": [],
-    "techStack": ["HTML5", "CSS3"],
+    "techStack": { "Frontend": ["HTML5", "CSS3"] },
     "troubleShooting": [],
     "insights": [
       "CSS만으로 단계적인 인터랙션 표현이 가능하다는 것을 경험했으며, 애니메이션 타이밍 제어에 대한 이해도를 높일 수 있었다"
@@ -321,7 +331,7 @@
       "마우스/버튼 조작에 따른 3D 시점 변화"
     ],
     "responsibilities": [],
-    "techStack": ["HTML5", "CSS3", "JavaScript(ES6+)"],
+    "techStack": { "Frontend": ["HTML5", "CSS3", "JavaScript(ES6+)"] },
     "troubleShooting": [
       {
         "problem": "3D transform 적용 시 요소가 겹치거나 깨지는 문제가 발생했습니다.",

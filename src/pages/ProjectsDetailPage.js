@@ -54,11 +54,13 @@ const ProjectsDetailPage = ({ id }) => {
 
       <div className="table">
         <div className="day">
-          <p className="title">진행 기간 : {project.duration}</p>
+          <p className="title">진행 기간 </p>
+          <p>{project.duration}</p>
         </div>
         {project.teamSize && (
           <div className="team">
-            <p className="title">참여 인원 : {project.teamSize}</p>
+            <p className="title">참여 인원 </p>
+            <p>{project.teamSize}</p>
           </div>
         )}
         {project.mainFeatures && (
@@ -140,9 +142,13 @@ const ProjectsDetailPage = ({ id }) => {
           <div className="insights">
             <p className="title">개발 후 느낀점</p>
             {Array.isArray(project.insights) ? (
-              project.insights.map((insight, idx) => <p key={idx}>{insight}</p>)
+              project.insights.map((insight, idx) => (
+                <p className="feel" key={idx}>
+                  {insight}
+                </p>
+              ))
             ) : (
-              <p>{project.insights}</p>
+              <p className="feel">{project.insights}</p>
             )}
           </div>
         )}
