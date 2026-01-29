@@ -8,54 +8,50 @@ const IntroPage = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // ⭐ 초기 상태 강제
       gsap.set(".line", {
         opacity: 0,
-        y: 150,
-        scale: 1.3,
-        filter: "blur(14px)",
+        y: 60,
+        filter: "blur(6px)",
       });
 
       gsap.set(".intro-date", {
         opacity: 0,
-        y: 40,
+        y: 20,
       });
 
-      const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
       tl.to(".line-1", {
         opacity: 1,
         y: 0,
-        scale: 1,
         filter: "blur(0px)",
-        duration: 0.9,
+        duration: 0.8,
       })
         .to(
           ".line-2",
           {
             opacity: 1,
             y: 0,
-            scale: 1,
             filter: "blur(0px)",
-            duration: 1.1,
+            duration: 0.9,
           },
-          "-=0.4"
+          "-=0.35",
         )
         .to(
           ".intro-date",
           {
             opacity: 1,
             y: 0,
-            duration: 0.6,
+            duration: 0.5,
           },
-          "-=0.3"
+          "-=0.25",
         );
 
       gsap.to(".down-icon", {
-        y: 10,
+        y: 8,
         repeat: -1,
         yoyo: true,
-        duration: 0.9,
+        duration: 1,
         ease: "power1.inOut",
       });
     }, introRef);
@@ -68,7 +64,7 @@ const IntroPage = () => {
       <div className="title">
         <h1 className="line line-1">I ALWAYS</h1>
         <h1 className="line line-2">DO MY BEST</h1>
-        <p className="intro-date">HyoJun’s portfolio 2026.01. XX</p>
+        <p className="intro-date">HyoJun’s portfolio 2026.01</p>
       </div>
 
       <div className="bottom">

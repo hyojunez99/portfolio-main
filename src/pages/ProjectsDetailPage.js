@@ -52,92 +52,92 @@ const ProjectsDetailPage = ({ id }) => {
         </ul>
       </div>
 
-      <div className="day">
-        <p className="title">진행 기간</p>
-        <p>{project.duration}</p>
-      </div>
-      {project.teamSize && (
-        <p className="team">
-          <p className="title">참여 인원</p>
-          <p>{project.teamSize}</p>
-        </p>
-      )}
-      {project.mainFeatures && (
-        <div className="main">
-          <p className="title">주요 기능</p>
-          <ul>
-            {project.mainFeatures.map((feature, idx) => (
-              <li key={idx}>{feature}</li>
-            ))}
-          </ul>
+      <div className="table">
+        <div className="day">
+          <p className="title">진행 기간 : {project.duration}</p>
         </div>
-      )}
-
-      {project.responsibilities && project.responsibilities.length > 0 && (
-        <div className="role">
-          <p className="title">담당 역할</p>
-          <ul>
-            {project.responsibilities.map((role, idx) => (
-              <li key={idx}>{role}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {project.techStack && (
-        <div className="stack">
-          <p className="title">기술 스택</p>
-          {typeof project.techStack === "object" &&
-          !Array.isArray(project.techStack) ? (
+        {project.teamSize && (
+          <div className="team">
+            <p className="title">참여 인원 : {project.teamSize}</p>
+          </div>
+        )}
+        {project.mainFeatures && (
+          <div className="main">
+            <p className="title">주요 기능</p>
             <ul>
-              {Object.entries(project.techStack).map(([key, value]) => (
-                <li key={key}>
-                  <strong>{key}:</strong>{" "}
-                  {Array.isArray(value) ? value.join(", ") : value}
-                </li>
+              {project.mainFeatures.map((feature, idx) => (
+                <li key={idx}>{feature}</li>
               ))}
             </ul>
-          ) : (
+          </div>
+        )}
+
+        {project.responsibilities && project.responsibilities.length > 0 && (
+          <div className="role">
+            <p className="title">담당 역할</p>
             <ul>
-              {project.techStack.map((tech, idx) => (
-                <li key={idx}>{tech}</li>
+              {project.responsibilities.map((role, idx) => (
+                <li key={idx}>{role}</li>
               ))}
             </ul>
-          )}
-        </div>
-      )}
+          </div>
+        )}
 
-      {project.troubleShooting && project.troubleShooting.length > 0 && (
-        <div className="troubleShooting">
-          <p className="title">개발 이슈</p>
-          {project.troubleShooting.map((ts, idx) => (
-            <div key={idx} className="issue">
-              <p>
-                <strong>문제 : </strong> {ts.problem || ts.issue}
-              </p>
-              <p>
-                <strong>└ 해결 : </strong> {ts.solution}
-              </p>
-              {ts.result && (
+        {project.techStack && (
+          <div className="stack">
+            <p className="title">기술 스택</p>
+            {typeof project.techStack === "object" &&
+            !Array.isArray(project.techStack) ? (
+              <ul>
+                {Object.entries(project.techStack).map(([key, value]) => (
+                  <li key={key}>
+                    <strong>{key}:</strong>{" "}
+                    {Array.isArray(value) ? value.join(", ") : value}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <ul>
+                {project.techStack.map((tech, idx) => (
+                  <li key={idx}>{tech}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
+
+        {project.troubleShooting && project.troubleShooting.length > 0 && (
+          <div className="troubleShooting">
+            <p className="title">개발 이슈</p>
+            {project.troubleShooting.map((ts, idx) => (
+              <div key={idx} className="issue">
                 <p>
-                  <strong> └ 결과 : </strong> {ts.result}
+                  <strong>문제 : </strong> {ts.problem || ts.issue}
                 </p>
-              )}
-            </div>
-          ))}
-        </div>
-      )}
+                <p>
+                  <strong>└ 해결 : </strong> {ts.solution}
+                </p>
+                {ts.result && (
+                  <p>
+                    <strong> └ 결과 : </strong> {ts.result}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
 
-      {project.insights && (
-        <div className="insights">
-          <p className="title">개발 후 느낀점</p>
-          {Array.isArray(project.insights) ? (
-            project.insights.map((insight, idx) => <p key={idx}>{insight}</p>)
-          ) : (
-            <p>{project.insights}</p>
-          )}
-        </div>
-      )}
+        {project.insights && (
+          <div className="insights">
+            <p className="title">개발 후 느낀점</p>
+            {Array.isArray(project.insights) ? (
+              project.insights.map((insight, idx) => <p key={idx}>{insight}</p>)
+            ) : (
+              <p>{project.insights}</p>
+            )}
+          </div>
+        )}
+      </div>
     </section>
   );
 };
