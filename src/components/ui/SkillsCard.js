@@ -43,29 +43,36 @@ const SkillsCard = () => {
 
   return (
     <div className="skills-card">
-      <ul>
-        {SkillsDate.map((item, idx) => {
-          return (
-            <li key={idx} className="skills-item">
-              <div className="skill-icon">
-                <img
-                  src={require(`../../assets/icons/${item.image}`)}
-                  alt={item.category}
-                />
-              </div>
+      <ul className="skills-item">
+        {SkillsDate.map((categoryItem) => (
+          <li key={categoryItem.id} className="card">
+            {/* 카테고리명 */}
+            <h3 className="category">{categoryItem.category}</h3>
 
-              <p className="skill-category">{item.category}</p>
-
-              <ul className="skill-tags">
-                {Object.keys(item)
-                  .filter((key) => key.startsWith("sub") && item[key])
-                  .map((subKey) => (
-                    <li key={subKey}>{item[subKey]}</li>
-                  ))}
-              </ul>
-            </li>
-          );
-        })}
+            {/* 서브 항목들: 이미지 + 텍스트 */}
+            <ul className="items">
+              {Object.keys(categoryItem)
+                .filter((key) => key.startsWith("sub") && !key.endsWith("-img"))
+                .map((subKey) => {
+                  const imgKey = `${subKey}-img`;
+                  const imgSrc = categoryItem[imgKey];
+                  const text = categoryItem[subKey];
+                  return (
+                    <li key={subKey} className="item">
+                      {imgSrc && (
+                        <img
+                          src={require(`../../assets/icons/${imgSrc}`)}
+                          alt={text}
+                          className="logo-icon"
+                        />
+                      )}
+                      <span className="logo-txt">{text}</span>
+                    </li>
+                  );
+                })}
+            </ul>
+          </li>
+        ))}
       </ul>
     </div>
   );

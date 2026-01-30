@@ -36,7 +36,7 @@
       &:hover {
         border-radius: 24px;
         border: 1px solid rgba(255, 255, 255, 0.5);
-        img {
+        .card-img {
           animation: float 1.5s ease-in-out infinite;
         }
       }
@@ -93,8 +93,8 @@
     .txt-top {
       @include flex-layout(row, space-between);
       width: 100%;
-      .proname {
-        @include font-h4;
+      .type2 {
+        @include font-cap;
       }
       .detail {
         @include tablet {
@@ -105,6 +105,8 @@
       }
       .pc-detail {
         display: none;
+        text-decoration-line: underline;
+        text-underline-offset: 4px;
         @include tablet {
           display: block;
         }
@@ -114,7 +116,18 @@
     }
     .txt-mid {
       @include flex-layout(column, center, flex-start, 0.5rem);
-      @include font-cap;
+      .proname {
+        @include font-h4;
+      }
+      .skills {
+        @include flex-layout(row, center, center, 0.5rem);
+        .skill-icon {
+          width: 20px;
+          height: 20px;
+          background-color: #444;
+          border-radius: 50%;
+        }
+      }
     }
     .prosub {
       flex: 1;

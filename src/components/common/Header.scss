@@ -7,10 +7,17 @@ header {
   z-index: 20;
   padding: 1rem;
   width: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(8, 8, 14, 0.98),
+    rgba(8, 8, 14, 0.85),
+    rgba(8, 8, 14, 0.6)
+  );
+  backdrop-filter: blur(8px);
   .header-desktop {
     display: none;
     @include desktop {
-      @include flex-layout(row,flex-end)
+      @include flex-layout(row, flex-end);
     }
     ul {
       @include font-BL();

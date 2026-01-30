@@ -1,47 +1,56 @@
 [
   {
     "id": "1",
-    "image": "languages-icon.png",
     "category": "Languages",
     "sub1": "HTML5",
+    "sub1-img": "html-icon.png",
     "sub2": "CSS3",
-    "sub3": "JavaScript (ES6+)"
+    "sub2-img": "css-icon.png",
+    "sub3": "ES6+",
+    "sub3-img": "js-icon.png"
   },
   {
     "id": "2",
-    "image": "styling-icon.png",
     "category": "Styling & Animation",
     "sub1": "SCSS",
-    "sub2": "GSAP"
+    "sub1-img": "scss-icon.png",
+    "sub2": "GSAP",
+    "sub2-img": "gsap-icon.png"
   },
   {
     "id": "3",
-    "image": "framework-icon.png",
     "category": "Framework",
-    "sub1": "React"
+    "sub1": "React",
+    "sub1-img": "react-icon.png"
   },
   {
     "id": "4",
-    "image": "design-icon.png",
     "category": "Design Tools",
     "sub1": "Figma",
+    "sub1-img": "figma-icon.png",
     "sub2": "Photoshop",
-    "sub3": "Illustrator"
+    "sub2-img": "ps-icon.png",
+    "sub3": "Illustrator",
+    "sub3-img": "Illustrator-icon.png"
   },
   {
     "id": "5",
-    "image": "dev-icon.png",
     "category": "Dev & Collaboration",
     "sub1": "Git",
+    "sub1-img": "git-icon.png",
     "sub2": "GitHub",
-    "sub3": "Notion",
-    "sub4": "Slack"
+    "sub2-img": "github-icon.png",
+    "sub3": "Supabase",
+    "sub3-img": "supabase-icon.png",
+    "sub4": "Notion",
+    "sub4-img": "notion-icon.png",
+    "sub5": "Slack",
+    "sub5-img": "slack-icon.png"
   },
   {
     "id": "6",
-    "image": "ai-icon.png",
     "category": "AI Efficiency",
     "sub1": "ChatGPT",
-    "sub2": "Nano Banana"
+    "sub1-img": "chatgpt-icon.png"
   }
 ]

@@ -31,17 +31,18 @@ const ProjectsDetailPage = ({ id }) => {
               </a>
             </li>
           )}
-          {project.github && (
+          {project.pdf && (
             <li>
               <a
-                href={project.github}
+                href={`${process.env.PUBLIC_URL}${project.pdf}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                💻 GitHub 저장소
+                📄 기획 / 결과 PDF
               </a>
             </li>
           )}
+
           {project.pdf && (
             <li>
               <a href={project.pdf} target="_blank" rel="noopener noreferrer">

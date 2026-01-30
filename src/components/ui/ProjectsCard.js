@@ -71,14 +71,11 @@ const ProjectsCard = ({ projects }) => {
     return () => (document.body.style.overflow = "");
   }, [selectedId]);
 
-  // 일반 프로젝트와 special 프로젝트 분리
-  const normalProjects = projects.filter((p) => ![10, 11, 12].includes(p.id));
-
   return (
     <div className="project-card">
       {/* 일반 카드 */}
       <ul className="pr-card">
-        {normalProjects.map((item) => (
+        {projects.map((item) => (
           <li
             key={item.id}
             className={`card-bg ${
@@ -94,6 +91,7 @@ const ProjectsCard = ({ projects }) => {
               {item.image && (
                 <div className="card-img1">
                   <img
+                    className="card-img"
                     src={require(`../../assets/images/${item.image}`)}
                     alt={item.proname}
                   />
@@ -102,6 +100,7 @@ const ProjectsCard = ({ projects }) => {
               {item.image2 && (
                 <div className="card-img2">
                   <img
+                    className="card-img"
                     src={require(`../../assets/images/${item.image2}`)}
                     alt={item.proname}
                   />
@@ -111,13 +110,23 @@ const ProjectsCard = ({ projects }) => {
 
             <div className="txt-box">
               <div className="txt-top">
-                <p className="proname">{item.proname}</p>
+                <p className="type2">{item.type2}</p>
+
                 <IoIosArrowForward className="detail" />
                 <p className="pc-detail">더보기</p>
               </div>
               <div className="txt-mid">
-                <p className="day">{item.day}</p>
-                <p className="type2">{item.type2}</p>
+                <p className="proname">{item.proname}</p>
+                <div className="skills">
+                  {item.skills.map((skill, index) => (
+                    <img
+                      key={index}
+                      className="skill-icon"
+                      src={require(`../../assets/icons/${skill.image}`)}
+                      alt=""
+                    />
+                  ))}
+                </div>
               </div>
               <div className="prosub">
                 <p>{item.prosub}</p>

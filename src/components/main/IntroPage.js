@@ -1,5 +1,5 @@
 import "./IntroPage.scss";
-import { IoChevronDownOutline } from "react-icons/io5";
+import { FaArrowDown } from "react-icons/fa6";
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 
@@ -66,10 +66,12 @@ const IntroPage = () => {
         <h1 className="line line-2">DO MY BEST</h1>
         <p className="intro-date">HyoJun’s portfolio 2026.01</p>
       </div>
-
       <div className="bottom">
-        <p>Scroll Down</p>
-        <IoChevronDownOutline className="down-icon" />
+        <div className="down-icon">
+          <span className="scroll-circle">
+            <FaArrowDown />
+          </span>
+        </div>
       </div>
     </section>
   );
