@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ProjectsDetailPage from "../../pages/ProjectsDetailPage";
 import "./ProjectsCard.scss";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosClose } from "react-icons/io";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ProjectsCard = ({ projects }) => {
   const [selectedId, setSelectedId] = useState(null);
@@ -18,9 +22,36 @@ const ProjectsCard = ({ projects }) => {
     return () => clearTimeout(timeout);
   }, [projects]);
 
+  // GSAP ScrollTrigger로 스크롤 애니메이션 추가
+  useEffect(() => {
+    const cards = document.querySelectorAll(
+      ".project-card .pr-card li.card-bg",
+    );
+
+    gsap.fromTo(
+      cards,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.15,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".project-card",
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        },
+      },
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, [projects]);
+
   const handleClick = (id) => {
-    // const numId = Number(id);
-    // if ([10, 11, 12].includes(numId)) return; // 모달 열리지 않게
     setSelectedId(id);
   };
 
@@ -50,11 +81,15 @@ const ProjectsCard = ({ projects }) => {
         {normalProjects.map((item) => (
           <li
             key={item.id}
-            className={`card-bg ${visibleProjects.includes(item) ? "visible" : ""}`}
+            className={`card-bg ${
+              visibleProjects.includes(item) ? "visible" : ""
+            }`}
             onClick={() => handleClick(item.id)}
           >
             <div
-              className={`box-top ${String(item.id) === "8" ? "different-card" : ""}`}
+              className={`box-top ${
+                String(item.id) === "8" ? "different-card" : ""
+              }`}
             >
               {item.image && (
                 <div className="card-img1">
