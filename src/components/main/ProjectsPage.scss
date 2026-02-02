@@ -46,7 +46,7 @@
     }
   }
   .pro-mbmenu {
-    z-index: 20;
+    z-index: 10;
     @include flex-layout(row, flex-end);
     padding: 0 1.5rem;
     width: 100%;

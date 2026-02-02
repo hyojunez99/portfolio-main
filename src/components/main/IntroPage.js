@@ -8,44 +8,51 @@ const IntroPage = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.set(".line", {
-        opacity: 0,
-        y: 60,
-        filter: "blur(6px)",
-      });
+      const words = [
+        { title: "DARE", desc: "도전을 두려워하지 않습니다" },
+        { title: "CONFIDENT", desc: "선택에 책임을 집니다" },
+        { title: "BUILD", desc: "끝까지 구현합니다" },
+        {
+          title: "DARE, CONFIDENT & BUILD",
+          desc: "도전을 두려워하지 않고, 선택에 책임을 지며, 끝까지 구현합니다.",
+        },
+      ];
 
-      gsap.set(".intro-date", {
-        opacity: 0,
-        y: 20,
-      });
+      const line = document.querySelector(".line");
+      const desc = document.querySelector(".desc");
+
+      gsap.set(line, { opacity: 0, y: 40, filter: "blur(6px)" });
+      gsap.set(desc, { opacity: 0, y: 20 });
+      gsap.set(".intro-date", { opacity: 0, y: 20 });
 
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      tl.to(".line-1", {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        duration: 0.8,
-      })
-        .to(
-          ".line-2",
-          {
-            opacity: 1,
-            y: 0,
+      words.forEach((word, index) => {
+        tl.call(() => {
+          line.textContent = word.title;
+          desc.textContent = word.desc;
+        });
+
+        tl.to(line, {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 0.7,
+        }).to(desc, { opacity: 1, y: 0, duration: 0.4 }, "-=0.3");
+
+        // 마지막 BUILD 제외, 나머지는 사라짐
+        if (index !== words.length - 1) {
+          tl.to([line, desc], {
+            opacity: 0,
+            y: -20,
             filter: "blur(0px)",
-            duration: 0.9,
-          },
-          "-=0.35",
-        )
-        .to(
-          ".intro-date",
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.5,
-          },
-          "-=0.25",
-        );
+            duration: 0.6,
+            delay: 0.6,
+          });
+        }
+      });
+
+      tl.to(".intro-date", { opacity: 1, y: 0, duration: 0.6 }, "-=0.2");
 
       gsap.to(".down-icon", {
         y: 8,
@@ -62,10 +69,14 @@ const IntroPage = () => {
   return (
     <section id="intro" ref={introRef}>
       <div className="title">
-        <h1 className="line line-1">I ALWAYS</h1>
-        <h1 className="line line-2">DO MY BEST</h1>
+        <div className="word-line">
+          <h1 className="line"></h1>
+          <p className="desc"></p>
+        </div>
+
         <p className="intro-date">HyoJun’s portfolio 2026.01</p>
       </div>
+
       <div className="bottom">
         <div className="down-icon">
           <span className="scroll-circle">

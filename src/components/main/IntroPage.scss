@@ -5,25 +5,31 @@
 #intro {
   position: relative;
   z-index: 1;
-
-  @include flex-layout(column, center);
+  @include flex-layout(column, center, center, 0);
   width: 100%;
   height: auto;
   min-height: 100vh;
-  .title {
-    height: 100%;
-    @include flex-layout(column, center, center, 1.5rem);
-    text-align: center;
+  padding: 1.5rem;
 
-    h1 {
-      // @include font-h1;
-      font-size: clamp(3rem, 6vw + 1rem, 7.5rem);
-      line-height: 1.2;
-      word-break: keep-all;
+  .title {
+    @include flex-layout(column, center, center, 1.5rem);
+    height: auto;
+    .word-line {
+      @include flex-layout(column, center, center, 1rem);
+    }
+    .line {
+      font-size: clamp(2rem, 8vw, 5rem);
+      line-height: 1.3;
+    }
+    .desc {
+      margin-top: 1rem;
+      font-size: clamp(0.75rem, 3vw, 1.2rem);
+      color: #d1d5db;
     }
     .intro-date {
-      @include font-m;
-      color: #9ca3af;
+      margin-top: 0.5rem;
+      font-size: clamp(0.75rem, 3vw, 1rem);
+      color: var(--color-font-sub);
     }
   }
   .bottom {

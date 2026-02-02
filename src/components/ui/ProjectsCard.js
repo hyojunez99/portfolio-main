@@ -110,7 +110,13 @@ const ProjectsCard = ({ projects }) => {
 
             <div className="txt-box">
               <div className="txt-top">
-                <p className="type2">{item.type2}</p>
+                <p
+                  className={`type2 ${
+                    item.type2 === "개인 프로젝트" ? "solo" : "team"
+                  }`}
+                >
+                  {item.type2}
+                </p>
 
                 <IoIosArrowForward className="detail" />
                 <p className="pc-detail">더보기</p>

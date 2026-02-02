@@ -8,110 +8,171 @@
   overflow-y: auto;
   padding: 24px;
   @include flex-layout(column, flex-start, flex-start, 1rem);
+
   .top {
-    @include flex-layout(column, center, flex-start, 1.5rem);
-    padding-bottom: 1.5rem;
     width: 100%;
+    padding-bottom: 1.5rem;
+    @include flex-layout(column, center, flex-start, 1.5rem);
   }
+
   .summary {
     @include font-BL;
   }
+
   .links {
     width: 100%;
-    > ul {
-      @include flex-layout(column, center, flex-start, 1.5rem);
-      @include desktop {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+    .links-list {
+      @include flex-layout(column, center, flex-start, 1rem);
+
+      @include tablet {
         @include flex-layout(row, flex-start, center, 2.5rem);
       }
       > li {
-        > a {
+        display: flex;
+        width: 100%;
+        a {
+          width: 100%;
           @include font-BL;
           transition: 0.3s;
+
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          background: rgba(255, 255, 255, 0.05);
+          padding: 1rem;
+          border-radius: 1rem;
+
+          &::after {
+            content: "↗";
+            font-size: 1rem;
+            opacity: 0.5;
+            transition: 0.2s;
+          }
           &:hover {
-            color: var(--color-font-sub);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+          }
+
+          &:hover::after {
+            opacity: 1;
           }
         }
       }
     }
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   }
+
   .table {
     width: 100%;
-    .day,
-    .team {
-      @include flex-layout(column, flex-start, flex-start, 1rem);
-    }
+    @include flex-layout(column, center, flex-start, 2rem);
+    padding: 1.5rem 0;
+
     .title {
       @include font-m;
     }
-    @include flex-layout(column, center, flex-start, 2rem);
-    .team {
+
+    /* 프로젝트 개요 */
+    .pro-sec {
       width: 100%;
-    }
-    .main,
-    .role,
-    .troubleShooting,
-    .insights {
-      @include flex-layout(column, center, flex-start, 1rem);
-      > ul {
-        @include flex-layout(column, center, flex-start, 0.5rem);
-        padding-left: 1.5rem;
-        > li {
-          list-style-type: disc;
+      @include flex-layout(column, flex-start, flex-start, 1rem);
+
+      .table-top {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 1rem;
+        border-left: 3px solid rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.05);
+
+        .row {
+          display: grid;
+          grid-template-columns: 120px 1fr;
+          padding: 1rem 0;
+        }
+
+        .value {
+          @include flex-layout(column, flex-start, flex-start, 1rem);
         }
       }
     }
+
+    /* 기술 스택 */
     .stack {
       width: 100%;
-      @include flex-layout(column, center, flex-start, 1rem);
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-      .stack-group {
-        @include flex-layout(column, center, flex-start, 1rem);
-        .stack-tags {
-          @include flex-layout(row, flex-start, center, 1rem);
-          flex-wrap: wrap;
-          .stack-tag {
-            padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: 0.3s;
-            &:hover {
-              transform: translateY(-2px);
-              background: rgba(255, 255, 255, 0.18);
+      @include flex-layout(column, flex-start, flex-start, 1rem);
+
+      .stack-top {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 1rem;
+        border-left: 3px solid rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.05);
+        @include flex-layout(column, flex-start, flex-start, 1rem);
+
+        .stack-group {
+          padding: 1rem 0;
+          @include flex-layout(column, center, flex-start, 1rem);
+
+          .stack-tags {
+            flex-wrap: wrap;
+            @include flex-layout(row, flex-start, center, 1rem);
+
+            .stack-tag {
+              @include font-cap;
+              padding: 0.5rem 0.7rem;
+              border-radius: 0.5rem;
+              cursor: pointer;
+              transition: 0.3s;
+              background: rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+
+              &:hover {
+                transform: translateY(-2px);
+                background: rgba(255, 255, 255, 0.18);
+              }
             }
           }
         }
       }
     }
+
+    /* 개발 이슈 */
     .troubleShooting {
       width: 100%;
+      @include flex-layout(column, center, flex-start, 1rem);
+
       .issue {
         width: 100%;
-        @include flex-layout(column, center, flex-start, 0.5rem);
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 0.5rem;
         padding: 1rem;
+        border-radius: 0.5rem;
         border-left: 3px solid rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.05);
+        @include flex-layout(column, center, flex-start, 0.5rem);
+        > p {
+          padding: 1rem 0;
+        }
         .problem {
           color: #fca5a5;
         }
+
         .solve {
           color: #86efac;
         }
       }
     }
+
+    /* 느낀점 */
     .insights {
       width: 100%;
-      .feel {
+      @include flex-layout(column, center, flex-start, 1rem);
+      .insight-item {
         width: 100%;
-        background: rgba(255, 255, 255, 0.05);
         border-radius: 0.5rem;
         padding: 1rem;
         border-left: 3px solid rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.05);
+        .feel {
+          padding: 1rem 0;
+        }
       }
     }
   }

@@ -19,7 +19,7 @@ const ProjectsDetailPage = ({ id }) => {
       </div>
 
       <div className="links">
-        <ul>
+        <ul className="links-list">
           {project.deploy && (
             <li>
               <a
@@ -31,21 +31,24 @@ const ProjectsDetailPage = ({ id }) => {
               </a>
             </li>
           )}
-          {project.pdf && (
+          {project.github && (
             <li>
               <a
-                href={`${process.env.PUBLIC_URL}${project.pdf}`}
+                href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                📄 기획 / 결과 PDF
+                💻 GitHub 저장소
               </a>
             </li>
           )}
-
           {project.pdf && (
             <li>
-              <a href={project.pdf} target="_blank" rel="noopener noreferrer">
+              <a
+                href={`${process.env.PUBLIC_URL}/pdf/${project.pdf}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 📄 기획 / 결과 PDF
               </a>
             </li>
@@ -54,66 +57,74 @@ const ProjectsDetailPage = ({ id }) => {
       </div>
 
       <div className="table">
-        <div className="day">
-          <p className="title">진행 기간 </p>
-          <p>{project.duration}</p>
-        </div>
-        {project.teamSize && (
-          <div className="team">
-            <p className="title">참여 인원 </p>
-            <p>{project.teamSize}</p>
-          </div>
-        )}
-        {project.mainFeatures && (
-          <div className="main">
-            <p className="title">주요 기능</p>
-            <ul>
-              {project.mainFeatures.map((feature, idx) => (
-                <li key={idx}>{feature}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <div className="pro-sec">
+          <p className="title">프로젝트 개요</p>
 
-        {project.responsibilities && project.responsibilities.length > 0 && (
-          <div className="role">
-            <p className="title">담당 역할</p>
-            <ul>
-              {project.responsibilities.map((role, idx) => (
-                <li key={idx}>{role}</li>
-              ))}
-            </ul>
+          <div className="table-top">
+            <div className="row">
+              <h4 className="label">진행 기간</h4>
+              <p className="value">{project.duration}</p>
+            </div>
+
+            <div className="row">
+              <h4 className="label">참여 인원</h4>
+              <p className="value">{project.teamSize}</p>
+            </div>
+
+            {project.mainFeatures && (
+              <div className="row">
+                <h4 className="label">주요 기능</h4>
+                <ul className="value">
+                  {project.mainFeatures.map((feature, idx) => (
+                    <li key={idx}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {project.responsibilities?.length > 0 && (
+              <div className="row">
+                <h4 className="label">담당 역할</h4>
+                <ul className="value">
+                  {project.responsibilities.map((role, idx) => (
+                    <li key={idx}>{role}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
-        )}
+        </div>
 
         {project.techStack && (
           <div className="stack">
             <p className="title">기술 스택</p>
-            {typeof project.techStack === "object" &&
-            !Array.isArray(project.techStack) ? (
-              Object.entries(project.techStack).map(([category, items]) => (
-                <div className="stack-group" key={category}>
-                  <h4 className="stack-category">{category}</h4>
-                  <ul className="stack-tags">
-                    {(Array.isArray(items) ? items : [items]).map(
-                      (tech, idx) => (
-                        <li className="stack-tag" key={idx}>
-                          {tech}
-                        </li>
-                      ),
-                    )}
-                  </ul>
-                </div>
-              ))
-            ) : (
-              <ul className="stack-tags">
-                {project.techStack.map((tech, idx) => (
-                  <li className="stack-tag" key={idx}>
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-            )}
+            <div className="stack-top">
+              {typeof project.techStack === "object" &&
+              !Array.isArray(project.techStack) ? (
+                Object.entries(project.techStack).map(([category, items]) => (
+                  <div className="stack-group" key={category}>
+                    <h4 className="stack-category">{category}</h4>
+                    <ul className="stack-tags">
+                      {(Array.isArray(items) ? items : [items]).map(
+                        (tech, idx) => (
+                          <li className="stack-tag" key={idx}>
+                            {tech}
+                          </li>
+                        ),
+                      )}
+                    </ul>
+                  </div>
+                ))
+              ) : (
+                <ul className="stack-tags">
+                  {project.techStack.map((tech, idx) => (
+                    <li className="stack-tag" key={idx}>
+                      {tech}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </div>
         )}
 
@@ -142,14 +153,17 @@ const ProjectsDetailPage = ({ id }) => {
         {project.insights && (
           <div className="insights">
             <p className="title">개발 후 느낀점</p>
+
             {Array.isArray(project.insights) ? (
               project.insights.map((insight, idx) => (
-                <p className="feel" key={idx}>
-                  {insight}
-                </p>
+                <div className="insight-item" key={idx}>
+                  <p className="feel">{insight}</p>
+                </div>
               ))
             ) : (
-              <p className="feel">{project.insights}</p>
+              <div className="insight-item">
+                <p className="feel">{project.insights}</p>
+              </div>
             )}
           </div>
         )}

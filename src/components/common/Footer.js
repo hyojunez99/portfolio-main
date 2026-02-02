@@ -64,28 +64,32 @@ const Footer = () => {
       <div className="bg-footer" />
 
       <section id="contact">
-        <p className="footer-txt footer-animate">끝까지 봐주셔서 감사합니다.</p>
+        <p className="footer-txt footer-animate">
+          <span className="glow">
+            첫 페이지는 끝났고, 다음 페이지는 함께 만들고 싶습니다.
+          </span>
+        </p>
 
-        <p className="footer-desc footer-animate">
-          이 페이지의 모든 요소를 직접 구현했습니다.
+        <p className="foote-subtxt footer-animate">
+          이 포트폴리오는 기획부터 구현까지 전 과정을 직접 설계했습니다.
         </p>
 
         <div className="footer-links footer-animate">
           <button onClick={() => window.open("https://github.com/hyojunez99")}>
-            GitHub
+            GitHub <span className="arrow">↗</span>
           </button>
-          <span>·</span>
+          <span className="dot">·</span>
           <button
             onClick={() =>
               window.open("https://hyojunez99.github.io/portfolio/")
             }
           >
-            Resume
+            Resume <span className="arrow">↗</span>
           </button>
         </div>
 
         <div className="footer-cta footer-animate">
-          <p className="cta-title">Contact Me</p>
+          <p className="cta-title">Let’s Talk</p>
           <form ref={formRef} onSubmit={sendEmail} className="cta">
             <div className="field">
               <input type="text" name="name" placeholder=" " required />
@@ -107,9 +111,6 @@ const Footer = () => {
             </button>
           </form>
         </div>
-
-        <div className="footer-end footer-animate">— END —</div>
-
         <p className="copyright footer-animate">
           © 2026 Web Publisher Lee Hyojun
         </p>
