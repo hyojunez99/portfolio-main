@@ -42,3 +42,20 @@
   scroll-margin-top: 100px;
   padding-top: 100px;
 }
+
+.cursor::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    rgba(173, 70, 255, 0.2),
+    rgba(246, 51, 154, 0.2)
+  );
+  filter: blur(20px);
+}

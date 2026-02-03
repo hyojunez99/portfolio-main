@@ -3,6 +3,7 @@ import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import bgVideo from "../assets/video/bg-video.mp4";
 import "./Layout.scss";
+import CursorBackground from "../components/common/CursorBackground";
 
 const Layout = () => {
   return (
@@ -14,17 +15,20 @@ const Layout = () => {
         </main>
         <Footer />
       </div>
+
+      {/* 배경 동영상 */}
       <div className="video-bg">
-        <video src={bgVideo} autoPlay muted loop playsInline />
         <video
-          src={bgVideo}
           autoPlay
           muted
           loop
           playsInline
-          style={{ opacity: 0 }}
-        />
+          poster="../../assets/images/bg.png" // 대체 이미지
+        >
+          <source src={bgVideo} type="video/mp4" />
+        </video>
       </div>
+      <CursorBackground />
     </div>
   );
 };
