@@ -29,6 +29,12 @@ const IntroPage = () => {
 
       words.forEach((word, index) => {
         tl.call(() => {
+          line.classList.remove("is-highlight");
+
+          if (word.title === "DARE, CONFIDENT & BUILD") {
+            line.classList.add("is-highlight");
+          }
+
           line.textContent = word.title;
           desc.textContent = word.desc;
         });
@@ -38,21 +44,31 @@ const IntroPage = () => {
           y: 0,
           filter: "blur(0px)",
           duration: 0.7,
-        }).to(desc, { opacity: 1, y: 0, duration: 0.4 }, "-=0.3");
+        }).to(
+          desc,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.4,
+          },
+          "-=0.3"
+        );
 
-        // 마지막 BUILD 제외, 나머지는 사라짐
         if (index !== words.length - 1) {
           tl.to([line, desc], {
             opacity: 0,
             y: -20,
-            filter: "blur(0px)",
             duration: 0.6,
             delay: 0.6,
           });
         }
       });
 
-      tl.to(".intro-date", { opacity: 1, y: 0, duration: 0.6 }, "-=0.2");
+      tl.to(".intro-date", {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+      });
 
       gsap.to(".down-icon", {
         y: 8,
@@ -73,7 +89,6 @@ const IntroPage = () => {
           <h1 className="line"></h1>
           <p className="desc"></p>
         </div>
-
         <p className="intro-date">HyoJun’s portfolio 2026.01</p>
       </div>
 

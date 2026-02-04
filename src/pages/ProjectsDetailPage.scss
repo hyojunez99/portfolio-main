@@ -109,9 +109,10 @@
         @include flex-layout(column, flex-start, flex-start, 1rem);
 
         .stack-group {
+          display: grid;
+          grid-template-columns: 120px 1fr;
           padding: 1rem 0;
-          @include flex-layout(column, center, flex-start, 1rem);
-
+          align-items: center;
           .stack-tags {
             flex-wrap: wrap;
             @include flex-layout(row, flex-start, center, 1rem);
@@ -148,15 +149,19 @@
         background: rgba(255, 255, 255, 0.05);
         @include flex-layout(column, center, flex-start, 0.5rem);
         > p {
+          display: grid;
+          grid-template-columns: 120px 1fr;
           padding: 1rem 0;
-        }
-        .problem {
-          color: #fca5a5;
-        }
+          align-items: center;
 
-        .solve {
-          color: #86efac;
         }
+        // .problem {
+        //   color: #fca5a5;
+        // }
+
+        // .solve {
+        //   color: #86efac;
+        // }
       }
     }
 

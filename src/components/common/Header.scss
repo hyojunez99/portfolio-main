@@ -19,23 +19,29 @@ header {
     @include desktop {
       @include flex-layout(row, flex-end);
     }
-    ul {
+    > ul {
       @include font-BL();
       @include flex-layout();
-      li {
+
+      > li {
         @include flex-layout();
         padding: 1rem 2rem;
         border-radius: 0.5rem;
-        transition: 0.3s;
         cursor: pointer;
         color: var(--color-font-sub);
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.25s ease;
         &:hover {
+          background: var(--color-main);
           color: var(--color-white);
+          transform: translateY(-2px);
         }
         &.active {
           color: var(--color-white);
           font-weight: 600;
-          background: rgba(255, 255, 255, 0.2);
+          background: var(--color-main);
         }
       }
     }

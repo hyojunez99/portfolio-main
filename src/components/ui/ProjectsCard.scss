@@ -28,7 +28,7 @@
       height: 100%;
       opacity: 0;
       transform: translateY(20px);
-      border: 0.5px solid transparent;
+      border: 2.5px solid transparent;
       transition: 0.3s;
       &.visible {
         opacity: 1;
@@ -118,6 +118,7 @@
       @include flex-layout(column, center, flex-start, 0.5rem);
       .proname {
         @include font-h4;
+        font-weight: 600;
       }
       .skills {
         @include flex-layout(row, center, center, 0.5rem);

@@ -55,7 +55,7 @@
     ],
     "techStack": {
       "Frontend": ["JavaScript (ES6+)", "React.js", "SCSS"],
-      "Backend / Data": ["Supabase"],
+      "Backend": ["Supabase"],
       "Tools": ["Figma", "Photoshop", "Illustrator", "Git/GitHub", "GSAP"]
     },
     "troubleShooting": [

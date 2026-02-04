@@ -17,11 +17,12 @@
     @include flex-layout(column, center, center, 1.5rem);
     .skills-txt {
       @include flex-layout(column, center, center, 1.5rem);
-
       padding: 0 2rem;
       text-align: center;
-      h3 {
-        @include font-h3;
+      > h3 {
+        font-size: clamp(1.75rem, 8vw, 3rem);
+        line-height: 1.2;
+        height: auto;
       }
     }
   }
