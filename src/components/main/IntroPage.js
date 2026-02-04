@@ -21,17 +21,19 @@ const IntroPage = () => {
       const line = document.querySelector(".line");
       const desc = document.querySelector(".desc");
 
-      gsap.set(line, { opacity: 0, y: 40, filter: "blur(6px)" });
-      gsap.set(desc, { opacity: 0, y: 20 });
-      gsap.set(".intro-date", { opacity: 0, y: 20 });
+      gsap.set([line, desc, ".intro-date"], {
+        opacity: 0,
+      });
 
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      const tl = gsap.timeline({
+        defaults: { ease: "power3.out" },
+      });
 
       words.forEach((word, index) => {
         tl.call(() => {
           line.classList.remove("is-highlight");
 
-          if (word.title === "DARE, CONFIDENT & BUILD") {
+          if (index === words.length - 1) {
             line.classList.add("is-highlight");
           }
 
@@ -39,43 +41,56 @@ const IntroPage = () => {
           desc.textContent = word.desc;
         });
 
-        tl.to(line, {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 0.7,
-        }).to(
-          desc,
+        // TITLE 등장
+        tl.fromTo(
+          line,
+          { y: 40, opacity: 0, filter: "blur(8px)", scale: 0.96 },
           {
-            opacity: 1,
             y: 0,
-            duration: 0.4,
+            opacity: 1,
+            filter: "blur(0px)",
+            scale: 1,
+            duration: 0.8,
           },
-          "-=0.3"
-        );
+        )
 
+          // DESC 등장
+          .fromTo(
+            desc,
+            { y: 20, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.5,
+            },
+            "-=0.35",
+          );
+
+        // 마지막 문장이 아닐 경우 사라짐
         if (index !== words.length - 1) {
           tl.to([line, desc], {
+            y: -30,
             opacity: 0,
-            y: -20,
             duration: 0.6,
-            delay: 0.6,
+            delay: 0.7,
           });
         }
       });
 
-      tl.to(".intro-date", {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-      });
+      // intro-date 등장
+      tl.fromTo(
+        ".intro-date",
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6 },
+      );
 
+      // 스크롤 아이콘
       gsap.to(".down-icon", {
-        y: 8,
+        y: 10,
         repeat: -1,
         yoyo: true,
-        duration: 1,
-        ease: "power1.inOut",
+        duration: 1.2,
+        ease: "sine.inOut",
       });
     }, introRef);
 
@@ -89,7 +104,7 @@ const IntroPage = () => {
           <h1 className="line"></h1>
           <p className="desc"></p>
         </div>
-        <p className="intro-date">HyoJun’s portfolio 2026.01</p>
+        <p className="intro-date">HyoJun’s portfolio</p>
       </div>
 
       <div className="bottom">

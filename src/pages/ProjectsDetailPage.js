@@ -11,6 +11,26 @@ const ProjectsDetailPage = ({ id }) => {
     );
   }
 
+  const highlightText = (text, highlights = []) => {
+    if (!highlights || highlights.length === 0) return text;
+
+    const regex = new RegExp(`(${highlights.join("|")})`, "g");
+
+    return text.split(regex).map((part, idx) =>
+      highlights.includes(part) ? (
+        <span
+          key={idx}
+          className="
+accent"
+        >
+          {part}
+        </span>
+      ) : (
+        part
+      ),
+    );
+  };
+
   return (
     <section id="projectsdetail">
       <div className="top">
@@ -131,19 +151,24 @@ const ProjectsDetailPage = ({ id }) => {
         {project.troubleShooting && project.troubleShooting.length > 0 && (
           <div className="troubleShooting">
             <p className="title">개발 이슈</p>
+
             {project.troubleShooting.map((ts, idx) => (
               <div key={idx} className="issue">
-                <p>
-                  <strong className="problem">문제 : </strong>{" "}
-                  {ts.problem || ts.issue}
-                </p>
-                <p>
-                  <strong className="solve">└ 해결 : </strong> {ts.solution}
-                </p>
+                <div className="problem">
+                  <h4>문제 </h4>{" "}
+                  <p>{highlightText(ts.problem || ts.issue, ts.highlights)}</p>
+                </div>
+
+                <div className="solve">
+                  <h4>해결 </h4>{" "}
+                  <p>{highlightText(ts.solution, ts.highlights)}</p>
+                </div>
+
                 {ts.result && (
-                  <p>
-                    <strong> └ 결과 : </strong> {ts.result}
-                  </p>
+                  <div className="result">
+                    <h4>└ 결과 :</h4>
+                    <p>{ts.result}</p>
+                  </div>
                 )}
               </div>
             ))}

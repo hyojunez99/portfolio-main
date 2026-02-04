@@ -148,20 +148,27 @@
         border-left: 3px solid rgba(255, 255, 255, 0.15);
         background: rgba(255, 255, 255, 0.05);
         @include flex-layout(column, center, flex-start, 0.5rem);
-        > p {
+        .problem,
+        .solve,
+        .result {
           display: grid;
           grid-template-columns: 120px 1fr;
           padding: 1rem 0;
           align-items: center;
-
         }
-        // .problem {
-        //   color: #fca5a5;
-        // }
+        .problem {
+          .accent {
+            color: #fca5a5;
+            font-weight: 600;
+          }
+        }
 
-        // .solve {
-        //   color: #86efac;
-        // }
+        .solve {
+          .accent {
+            color: #86efac;
+            font-weight: 600;
+          }
+        }
       }
     }
 
