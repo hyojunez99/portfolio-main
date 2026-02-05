@@ -166,7 +166,7 @@ accent"
 
                 {ts.result && (
                   <div className="result">
-                    <h4>└ 결과 :</h4>
+                    <h4>결과 :</h4>
                     <p>{ts.result}</p>
                   </div>
                 )}
