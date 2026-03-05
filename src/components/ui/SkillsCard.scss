@@ -3,71 +3,82 @@
 @use "../../assets/scss/font" as *;
 
 .skills-card {
-  padding: 1.5rem;
   width: 100%;
   max-width: 1500px;
-
   margin: 0 auto;
   .skills-item {
-    @include flex-layout(column, center, flex-start, 1rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     @include tablet {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      align-items: stretch;
+      gap: 2rem;
     }
     @include desktop {
-      display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      align-items: stretch;
     }
     .card {
-      @include flex-layout(column, flex-start, flex-start, 1rem);
-      width: 100%;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 2.5rem 1.25rem;
+      background: #ffffff;
       border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
       transition:
-        background-color 0.3s,
-        box-shadow 0.3s;
-      &:hover {
-        background: rgba(255, 255, 255, 0.15);
-        box-shadow: 0 8px 20px rgba(106, 82, 255, 0.3);
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+      @include tablet {
+        padding: 3rem 1.5rem;
       }
-
+      @include desktop {
+        padding: 3rem 1.5rem;
+      }
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+      }
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 0.75rem;
+      }
       .items {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
         width: 100%;
-        padding: 1rem 0;
-        .item {
-          @include flex-layout(column, center, center, 1rem);
-          transition: 0.3s;
+        padding-top: 1rem;
+      }
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease;
+        img {
+          width: 40px;
+          height: 40px;
+          object-fit: contain;
+          transition: transform 0.3s ease;
+        }
+        span {
+          @include font-small;
+          color: var(--text-sub);
+          white-space: nowrap;
+          padding: 0.4rem 0.9rem;
+          border-radius: 20px;
+          background: #f1f5f9;
+        }
+        &:hover {
+          transform: translateY(-4px);
           img {
-            width: 36px;
-            height: 36px;
-            object-fit: contain;
-            aspect-ratio: 1/1;
-          }
-          &:hover {
-            transform: scale(1.1);
-          }
-
-          .logo-icon {
-            object-fit: contain;
-            opacity: 0.85;
-            transition: 0.3s;
-          }
-
-          .logo-icon:hover {
-            opacity: 1;
-          }
-
-          .logo-txt {
-            white-space: nowrap;
+            transform: scale(1.08);
           }
         }
       }

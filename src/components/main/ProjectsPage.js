@@ -1,6 +1,6 @@
-import { useState, useLayoutEffect, useRef } from "react";
+import { useState, useLayoutEffect, useRef, useMemo } from "react";
 import ProjectsCard from "../ui/ProjectsCard";
-import ProjectsDate from "../../assets/data/Projects.json";
+import ProjectsData from "../../assets/data/Projects.json";
 import "./ProjectsPage.scss";
 import { FaCaretDown } from "react-icons/fa";
 import gsap from "gsap";
@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const categories = [
+const CATEGORIES = [
   "All",
   "Portfolio",
   "Team",
@@ -20,42 +20,82 @@ const categories = [
 const ProjectsPage = () => {
   const sectionRef = useRef(null);
   const [category, setCategory] = useState("All");
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const filteredProjects =
-    category === "All"
-      ? ProjectsDate
-      : ProjectsDate.filter((item) => item.type === category);
+  const filteredProjects = useMemo(() => {
+    if (category === "All") return ProjectsData;
+    return ProjectsData.filter((item) => item.type === category);
+  }, [category]);
 
   useLayoutEffect(() => {
     if (!sectionRef.current) return;
+
     const ctx = gsap.context(() => {
-      gsap.from(".pro-title", {
+      const section = sectionRef.current;
+
+      const line = section.querySelector(".pro-line");
+      const title = section.querySelector(".pro-title h3");
+      const menus = section.querySelectorAll(".pro-pcmenu, .pro-mbmenu");
+      const cards = section.querySelectorAll(".project-card");
+      // ↑ ProjectsCard 내부 li에 className="project-card" 있어야 함
+
+      gsap.set(line, { scaleX: 0, transformOrigin: "left" });
+      gsap.set(title, { opacity: 0, y: 30 });
+      gsap.set(menus, { opacity: 0, y: 20 });
+      gsap.set(cards, { opacity: 0, y: 40 });
+
+      const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 70%",
+          trigger: section,
+          start: "top 75%",
+          toggleActions: "play none none none",
         },
-        opacity: 0,
-        y: 40,
+      });
+
+      tl.to(line, {
+        scaleX: 1,
         duration: 0.6,
-        ease: "power3.out",
-      });
-      gsap.from(".pro-pcmenu, .pro-mbmenu", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 65%",
-        },
-        opacity: 0,
-        y: 20,
-        duration: 0.4,
         ease: "power2.out",
-      });
+      })
+        .to(
+          title,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power3.out",
+          },
+          "+=0.2",
+        )
+        .to(
+          menus,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+          "-=0.2",
+        )
+        .to(
+          cards,
+          {
+            opacity: 1,
+            y: 0,
+            stagger: 0.15,
+            duration: 0.7,
+            ease: "power3.out",
+          },
+          "-=0.1",
+        );
     }, sectionRef);
+
     return () => ctx.revert();
   }, []);
-  const handleSelect = (item) => {
-    setCategory(item);
-    setOpen(false);
+
+  const handleCategoryChange = (value) => {
+    setCategory(value);
+    setIsOpen(false);
   };
 
   return (
@@ -63,36 +103,38 @@ const ProjectsPage = () => {
       <div className="project-zip">
         <div className="pro-title">
           <h3>Projects</h3>
-          <p>구현 과정과 결과 모두에 책임을 두고 작업한 기록입니다.</p>
+          <div className="pro-line" />
         </div>
-        {/* PC */}
         <div className="pro-pcmenu">
           <ul>
-            {categories.map((item) => (
+            {CATEGORIES.map((item) => (
               <li
                 key={item}
                 className={category === item ? "active" : ""}
-                onClick={() => setCategory(item)}
+                onClick={() => handleCategoryChange(item)}
               >
                 {item}
               </li>
             ))}
           </ul>
         </div>
-        {/* Mobile */}
         <div className="pro-mbmenu">
-          <p className="label" onClick={() => setOpen(!open)}>
+          <button
+            type="button"
+            className="label"
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
             {category}
-            <span className={`arrow ${open ? "open" : ""}`}>
+            <span className={`arrow ${isOpen ? "open" : ""}`}>
               <FaCaretDown />
             </span>
-          </p>
-          <ul className={`dropdown ${open ? "open" : ""}`}>
-            {categories.map((item) => (
+          </button>
+          <ul className={`dropdown ${isOpen ? "open" : ""}`}>
+            {CATEGORIES.map((item) => (
               <li
                 key={item}
                 className={category === item ? "active" : ""}
-                onClick={() => handleSelect(item)}
+                onClick={() => handleCategoryChange(item)}
               >
                 {item}
               </li>

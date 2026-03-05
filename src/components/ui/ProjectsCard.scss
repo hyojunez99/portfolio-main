@@ -4,19 +4,16 @@
 
 .project-card {
   width: 100%;
-  padding: 1.5rem;
   .pr-card {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 24px;
     @include tablet {
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
       align-items: stretch;
     }
     @include desktop {
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
       align-items: stretch;
     }
     .card-bg {
@@ -28,22 +25,29 @@
       height: 100%;
       opacity: 0;
       transform: translateY(20px);
-      border: 2.5px solid transparent;
-      transition: 0.3s;
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
+      transition: all 0.35s ease;
       &.visible {
         opacity: 1;
         transform: translateY(0);
       }
       &:hover {
-        border-color:  rgba(200, 190, 255, 0.35);
-        .card-img {
+        transform: translateY(-6px);
+        border-color: rgba(108, 140, 255, 0.35);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+        .card-img1 img,
+        .card-img2 img {
           animation: float 1.5s ease-in-out infinite;
+        }
+        .proname {
+          color: var(--color-main);
         }
       }
       .box-top {
         position: relative;
         padding: 4rem 1.5rem;
-        background: var(--color-main);
+        background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%);
         .card-img1 {
           position: absolute;
           bottom: 24px;
@@ -82,7 +86,7 @@
   .txt-box {
     flex: 1;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--text-white);
     @include flex-layout(column, space-between, flex-start, 1rem);
     .txt-top {
       @include flex-layout(row, space-between);
@@ -91,27 +95,27 @@
         @include font-cap;
       }
       .solo {
-        color: #9fd3ff;
+        color: var(--color-blue);
       }
       .team {
-        color: #ffd27d;
+        color: var(--color-purple);
       }
       .detail {
+        font-size: 18px;
+        color: var(--color-font-sub);
         @include tablet {
           display: none;
         }
-        font-size: 18px;
-        color: var(--color-font-sub);
       }
       .pc-detail {
         display: none;
-        text-decoration-line: underline;
+        text-decoration: underline;
         text-underline-offset: 4px;
         @include tablet {
           display: block;
         }
         @include font-cap;
-        color: var(--color-font-sub);
+        color: var(--text-sub);
       }
     }
     .txt-mid {
@@ -119,13 +123,14 @@
       .proname {
         @include font-h4;
         font-weight: 600;
+        transition: color 0.3s ease;
       }
       .skills {
         @include flex-layout(row, center, center, 0.5rem);
         .skill-icon {
           width: 20px;
           height: 20px;
-          background-color: #444;
+          border: 1px solid #f7f8fa;
           border-radius: 50%;
         }
       }
@@ -141,77 +146,63 @@
       flex-wrap: wrap;
       span {
         @include font-small;
-        padding: 0.5rem 1rem;
-        background: rgba(255, 255, 255, 0.1);
+        padding: 0.45rem 0.9rem;
         border-radius: 24px;
+        background: #f1f5f9;
+        color: var(--text-sub);
       }
     }
   }
 }
 
-// modal
+/* modal */
+
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
   z-index: 99;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(6px);
   animation: backdropFadeIn 0.25s ease-out forwards;
 }
-
 .project-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  transform: none;
+  inset: 0;
   width: 100%;
   height: 100%;
   z-index: 100;
-  background: #1e1f22;
+  background: var(--color-bg);
   display: flex;
   flex-direction: column;
-  border: none;
-  border-radius: 0;
-
   .modal-content {
     flex: 1;
     min-height: 0;
     display: flex;
     flex-direction: column;
     position: relative;
-
     .btn {
       padding: 1rem;
-      @include flex-layout(row, flex-end);
       width: 100%;
-
+      @include flex-layout(row, flex-end);
       .close-btn {
-        transition: 0.3s;
-        border-radius: 16px;
-        background: rgba(255, 255, 255, 0.5);
-
-        &:hover {
-          background: rgba(255, 255, 255, 0.7);
-        }
-
-        flex-shrink: 0;
         width: 36px;
         height: 36px;
+        border-radius: 12px;
+        background: #d1d5db;
         cursor: pointer;
-        color: var(--color-white);
+        transition: all 0.2s ease;
+        &:hover {
+          background: #9ca3af;
+        }
       }
     }
   }
-
   &.open {
     animation: modalSlideUp 0.35s ease-out forwards;
   }
-
   &.closing {
     animation: modalSlideDown 0.25s ease-in forwards;
   }
-
-  // desktop
   @include desktop {
     top: 50%;
     left: 50%;
@@ -219,28 +210,28 @@
     width: 60%;
     height: 95%;
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
     &.open {
       animation: modalFadeScale 0.3s ease-out forwards;
     }
-
     &.closing {
       animation: modalFadeScaleOut 0.25s ease-in forwards;
     }
   }
 }
 
-// 애니메이션
+/* animation */
+
 @keyframes float {
   0% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px); // 위로 5px 이동
+    transform: translateY(-6px);
   }
   100% {
-    transform: translateY(0); // 원위치
+    transform: translateY(0);
   }
 }
 
@@ -250,6 +241,28 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes modalSlideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(40px);
+    opacity: 0;
   }
 }
 
@@ -263,7 +276,6 @@
     transform: translate(-50%, -50%) scale(1);
   }
 }
-
 @keyframes modalFadeScaleOut {
   from {
     opacity: 1;

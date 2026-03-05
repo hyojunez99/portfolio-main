@@ -3,155 +3,90 @@
 @use "../../assets/scss/font" as *;
 
 #intro {
-  position: relative;
-  z-index: 1;
   @include flex-layout(column, center, center, 0);
   width: 100%;
   min-height: 100vh;
-  padding: 1.5rem;
-
-  .title {
-    @include flex-layout(column, center, center, 1.5rem);
-    text-align: center;
-
-    .word-line {
-      @include flex-layout(column, center, center, 1rem);
-    }
-
-    .line {
-      font-size: clamp(2rem, 8vw, 6rem);
-      line-height: 1.3;
-      color: #fff;
-      transition:
-        text-shadow 0.3s ease,
-        transform 0.3s ease;
-      &.is-highlight {
-        animation: glowPulse 2.2s ease-in-out infinite;
-        color: #fff;
-        text-shadow:
-          0 0 12px rgba(173, 70, 255, 0.5),
-          0 0 32px rgba(246, 51, 154, 0.3);
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+  background-color: var(--color-bg);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  .intro-title {
+    @include flex-layout(column, flex-start, flex-start, 1.5rem);
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    .title-main {
+      @include flex-layout(column, flex-start, flex-start, 0.5rem);
+      h1 {
+        @include font-h1;
+      }
+      p {
+        @include font-body;
+        color: var(--color-blue);
       }
     }
-
-    .desc {
-      margin-top: 1rem;
-      font-size: clamp(0.75rem, 3vw, 1.2rem);
-      color: #d1d5db;
+    .title-sub {
+      p {
+        @include font-h3;
+      }
     }
-
-    .intro-date {
-      font-size: clamp(0.75rem, 3vw, 1rem);
-      color: var(--color-font-sub);
+    .title-desc {
+      color: var(--text-sub);
+      p {
+        @include font-body;
+      }
+      .keywords {
+        @include flex-layout(row, flex-start, center, 0.75rem);
+        flex-wrap: wrap;
+        margin-top: 0.75rem;
+      }
     }
   }
 
-  .bottom {
-    padding-top: 5rem;
-    @include flex-layout(column, center, center);
+  // 태블릿
+  @include tablet {
+    padding: 4rem 2rem;
+    .intro-title {
+      gap: 2rem;
+      .title-main {
+        h1 {
+          @include font-title;
+        }
+      }
+      .title-sub {
+        p {
+          @include font-h2;
+        }
+      }
+      .title-desc {
+        .keywords {
+          gap: 1rem;
+        }
+      }
+    }
   }
-  .down-icon {
-    position: relative;
-  }
-  .scroll-circle {
-    position: relative;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    @include flex-layout(column, center, center, 0);
-    animation: floatY 3s ease-in-out infinite;
-    overflow: visible;
-    border: 0.5px solid rgba(255, 255, 255, 0.5);
-    box-shadow:
-      0 0 12px rgba(173, 70, 255, 0.3),
-      0 0 32px rgba(246, 51, 154, 0.3);
-  }
-  .scroll-circle svg {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.75);
-  }
-  .scroll-circle::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 44px;
-    height: 44px;
-    margin: -22px 0 0 -22px;
-    border-radius: 50%;
-    opacity: 0;
-    animation: ripple 3s infinite;
-    pointer-events: none;
-    background: radial-gradient(
-      circle,
-      rgba(173, 70, 255, 0.35) 0%,
-      rgba(246, 51, 154, 0.25) 40%,
-      rgba(246, 51, 154, 0.15) 55%,
-      transparent 70%
-    );
 
-    transform: scale(0.8);
-  }
-}
-
-// 애니메이션
-@keyframes ripple {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  30% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-    transform: scale(2.6);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(2.6);
-  }
-}
-
-@keyframes floatY {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes shadowWave {
-  0% {
-    text-shadow:
-      0 0 10px rgba(173, 70, 255, 0.4),
-      0 0 24px rgba(246, 51, 154, 0.25);
-  }
-  100% {
-    text-shadow:
-      0 0 14px rgba(173, 70, 255, 0.55),
-      0 0 36px rgba(246, 51, 154, 0.35);
-  }
-}
-
-@keyframes glowPulse {
-  0% {
-    text-shadow:
-      0 0 8px rgba(173, 70, 255, 0.3),
-      0 0 20px rgba(246, 51, 154, 0.2);
-  }
-  50% {
-    text-shadow:
-      0 0 16px rgba(173, 70, 255, 0.6),
-      0 0 40px rgba(246, 51, 154, 0.45);
-  }
-  100% {
-    text-shadow:
-      0 0 8px rgba(173, 70, 255, 0.3),
-      0 0 20px rgba(246, 51, 154, 0.2);
+  // 데스크탑
+  @include desktop {
+    padding: 6rem 2rem;
+    .intro-title {
+      gap: 2.5rem;
+      .title-main {
+        h1 {
+          @include font-title;
+        }
+        p {
+          @include font-m;
+        }
+      }
+      .title-sub {
+        p {
+          @include font-h3;
+        }
+      }
+    }
   }
 }

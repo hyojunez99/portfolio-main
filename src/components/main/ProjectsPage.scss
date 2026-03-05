@@ -3,84 +3,125 @@
 @use "../../assets/scss/font" as *;
 
 #projects {
-  height: auto;
+  @include flex-layout(column, center, flex-start, 0);
+  width: 100%;
   min-height: 100vh;
   margin: 0 auto;
-
-  @include desktop {
-    padding: 3rem;
-  }
-  max-width: 1500px;
-
-  .pro-title {
-    text-align: center;
-    padding: 1.5rem;
-    @include flex-layout(column, center, center, 1.5rem);
-    > h3 {
-      font-size: clamp(1.75rem, 8vw, 3rem);
-      line-height: 1.2;
-      height: auto;
+  padding: 3rem 1.25rem;
+  .project-zip {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    @include flex-layout(column, center, flex-start, 2rem);
+    .pro-title {
+      @include flex-layout(column, center, flex-start, 0.75rem);
+      > h3 {
+        @include font-h2;
+      }
+      .pro-line {
+        width: 48px;
+        height: 4px;
+        background: var(--color-main);
+      }
     }
   }
 
+  //PC 메뉴
+
   .pro-pcmenu {
-    padding: 1.5rem;
-    cursor: pointer;
     display: none;
+    cursor: pointer;
     @include desktop {
       @include flex-layout(row, flex-start, center);
+      padding-bottom: 1.5rem;
       ul {
-        @include flex-layout(row);
-
+        @include flex-layout(row, flex-start, center, 0.5rem);
         li {
-          padding: 1rem 2rem;
-          color: var(--color-font-sub);
-          transition: 0.3s;
+          position: relative;
+          padding: 0.8rem 1.5rem;
+          color: var(--text-sub);
+          transition: color 0.3s ease;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 2px;
+            background: var(--color-main);
+            border-radius: 2px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+          }
           &:hover {
-            color: #fff;
+            color: var(--text-black);
+            &::after {
+              transform: scaleX(1);
+            }
           }
           &.active {
-            color: #fff;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            color: var(--text-black);
+            &::after {
+              transform: scaleX(1);
+            }
           }
         }
       }
     }
   }
+
+  //Mobile 메뉴
+
   .pro-mbmenu {
-    z-index: 10;
-    @include flex-layout(row, flex-end);
-    padding: 0 1.5rem;
-    width: 100%;
     position: relative;
+    width: 100%;
+    z-index: 10;
+    @include flex-layout(row, flex-end, center);
     @include desktop {
       display: none;
     }
+
     .label {
-      padding: 1rem 2rem;
-      @include flex-layout(row, space-between, center, 0.5rem);
+      padding: 0.8rem 1.5rem;
+      border: none;
+      background: none;
+      font: inherit;
       cursor: pointer;
+      @include flex-layout(row, space-between, center, 0.5rem);
+    }
+    .arrow {
+      line-height: 0;
+      transition: transform 0.3s ease;
+      &.open {
+        transform: rotate(180deg);
+      }
     }
     .dropdown {
+      position: absolute;
+      top: 48px;
+      right: 0;
       max-height: 0;
       overflow: hidden;
       opacity: 0;
-      transition: 0.3s;
-      background: #000;
+      background: var(--color-bg);
       border-radius: 16px;
-      padding: 0 2rem;
-      position: absolute;
-      top: 55px;
-      right: 24px;
-      z-index: 10;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
       li {
-        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
         text-align: center;
-        padding: 0.5rem 0;
+        border-radius: 0.5rem;
         cursor: pointer;
-        transition: 0.3s;
+        color: var(--text-sub);
+        transition: 0.2s;
         &:hover {
-          background: rgba(255, 255, 255, 0.3);
+          background: rgba(0, 0, 0, 0.04);
+          color: var(--text-black);
+        }
+        &.active {
+          background: rgba(0, 0, 0, 0.04);
+          color: var(--text-black);
         }
       }
     }
@@ -89,7 +130,37 @@
       max-height: 300px;
       opacity: 1;
       padding: 1rem;
-      z-index: 15;
+    }
+  }
+
+  // 태블릿
+
+  @include tablet {
+    padding: 4rem 2rem;
+    .project-zip {
+      gap: 3rem;
+      .pro-title {
+        > h3 {
+          @include font-h1;
+        }
+        .pro-line {
+          width: 56px;
+        }
+      }
+    }
+  }
+
+  // 데스크탑
+
+  @include desktop {
+    padding: 6rem 2rem;
+    .project-zip {
+      gap: 4rem;
+      .pro-title {
+        .pro-line {
+          width: 64px;
+        }
+      }
     }
   }
 }

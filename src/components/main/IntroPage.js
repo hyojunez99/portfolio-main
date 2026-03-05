@@ -1,5 +1,4 @@
 import "./IntroPage.scss";
-import { FaArrowDown } from "react-icons/fa6";
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 
@@ -8,90 +7,41 @@ const IntroPage = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const words = [
-        { title: "DARE", desc: "도전을 두려워하지 않습니다" },
-        { title: "CONFIDENT", desc: "선택에 책임을 집니다" },
-        { title: "BUILD", desc: "끝까지 구현합니다" },
-        {
-          title: "DARE, CONFIDENT & BUILD",
-          desc: "도전을 두려워하지 않고, 선택에 책임을 지며, 끝까지 구현합니다.",
-        },
-      ];
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      const line = document.querySelector(".line");
-      const desc = document.querySelector(".desc");
-
-      gsap.set([line, desc, ".intro-date"], {
+      tl.from(".title-main h1", {
+        y: 80,
         opacity: 0,
-      });
-
-      const tl = gsap.timeline({
-        defaults: { ease: "power3.out" },
-      });
-
-      words.forEach((word, index) => {
-        tl.call(() => {
-          line.classList.remove("is-highlight");
-
-          if (index === words.length - 1) {
-            line.classList.add("is-highlight");
-          }
-
-          line.textContent = word.title;
-          desc.textContent = word.desc;
-        });
-
-        // TITLE 등장
-        tl.fromTo(
-          line,
-          { y: 40, opacity: 0, filter: "blur(8px)", scale: 0.96 },
+        duration: 1,
+      })
+        .from(
+          ".title-main p",
           {
-            y: 0,
-            opacity: 1,
-            filter: "blur(0px)",
-            scale: 1,
+            y: 40,
+            opacity: 0,
             duration: 0.8,
           },
+          "-=0.6",
         )
-
-          // DESC 등장
-          .fromTo(
-            desc,
-            { y: 20, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.5,
-            },
-            "-=0.35",
-          );
-
-        // 마지막 문장이 아닐 경우 사라짐
-        if (index !== words.length - 1) {
-          tl.to([line, desc], {
-            y: -30,
+        .from(
+          ".title-sub p",
+          {
+            y: 30,
             opacity: 0,
+            duration: 0.8,
+          },
+          "-=0.5",
+        )
+        .from(
+          ".keywords span",
+          {
+            opacity: 0,
+            y: 20,
+            stagger: 0.15,
             duration: 0.6,
-            delay: 0.7,
-          });
-        }
-      });
-
-      // intro-date 등장
-      tl.fromTo(
-        ".intro-date",
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6 },
-      );
-
-      // 스크롤 아이콘
-      gsap.to(".down-icon", {
-        y: 10,
-        repeat: -1,
-        yoyo: true,
-        duration: 1.2,
-        ease: "sine.inOut",
-      });
+          },
+          "-=0.4",
+        );
     }, introRef);
 
     return () => ctx.revert();
@@ -99,19 +49,28 @@ const IntroPage = () => {
 
   return (
     <section id="intro" ref={introRef}>
-      <div className="title">
-        <div className="word-line">
-          <h1 className="line"></h1>
-          <p className="desc"></p>
+      <div className="intro-title">
+        <div className="title-main">
+          <h1>Hyojun</h1>
+          <p>Web Publisher</p>
         </div>
-        <p className="intro-date">HyoJun’s portfolio</p>
-      </div>
 
-      <div className="bottom">
-        <div className="down-icon">
-          <span className="scroll-circle">
-            <FaArrowDown />
-          </span>
+        <div className="title-sub">
+          <p>
+            구조를 설계하고
+            <br />
+            완성도 있는 UI를 구현합니다.
+          </p>
+        </div>
+
+        <div className="title-desc">
+          <p className="keywords">
+            <span>Semantic Markup</span>
+            <span>·</span>
+            <span>Responsive Layout</span>
+            <span>·</span>
+            <span>Accessibility</span>
+          </p>
         </div>
       </div>
     </section>

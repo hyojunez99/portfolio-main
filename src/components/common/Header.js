@@ -9,8 +9,21 @@ const Header = () => {
 
   const handleScroll = (id) => {
     const element = document.getElementById(id);
+
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const header = document.querySelector("header");
+      const headerHeight = header ? header.offsetHeight : 0;
+
+      const offsetTop =
+        element.getBoundingClientRect().top +
+        window.pageYOffset -
+        headerHeight;
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+
       setActiveMenu(id);
     }
   };
@@ -26,9 +39,9 @@ const Header = () => {
       },
       {
         root: null,
-        rootMargin: "-40% 0px -40% 0px", // 화면 중앙 기준
+        rootMargin: "-80px 0px -40% 0px", // 헤더 높이 반영
         threshold: 0,
-      },
+      }
     );
 
     SECTION_IDS.forEach((id) => {

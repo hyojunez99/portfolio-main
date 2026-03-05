@@ -8,28 +8,7 @@
     z-index: 2;
     min-height: 100vh;
   }
-
-  /* 배경 영상 */
-  .video-bg {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-    }
-  }
 }
-
-/* 스크롤 처리 시 공백 */
 #skills,
 #projects {
   width: 100%;
@@ -41,21 +20,4 @@
   min-height: 100vh;
   scroll-margin-top: 100px;
   padding-top: 100px;
-}
-
-.cursor::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120px;
-  height: 120px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: linear-gradient(
-    45deg,
-    rgba(173, 70, 255, 0.2),
-    rgba(246, 51, 154, 0.2)
-  );
-  filter: blur(20px);
 }

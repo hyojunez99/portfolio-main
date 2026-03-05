@@ -3,85 +3,86 @@
 @use "../../assets/scss/font" as *;
 
 #about {
-  @include flex-layout(column);
-  position: relative;
+  @include flex-layout(column, center, flex-start, 0);
   width: 100%;
-
-  height: auto;
+  margin: 0 auto;
   min-height: 100vh;
-  .pc-bg {
+  padding: 3rem 1.25rem;
+  .about-sec {
+    @include flex-layout(column, center, flex-start, 4rem);
+    width: 100%;
     max-width: 1500px;
-    @include desktop {
-      padding: 3rem;
-      @include flex-layout(row, space-between, center, 3rem);
-      .pc-line {
-        width: 1px;
-        height: 400px;
-        background: rgba(255, 255, 255, 0.5);
+    margin: 0 auto;
+    .about-top-title {
+      @include flex-layout(column, center, flex-start, 0.75rem);
+      h3 {
+        @include font-h2;
+      }
+      .about-sec-line {
+        width: 48px;
+        height: 4px;
+        background: var(--color-main);
+      }
+    }
+    .about-title {
+      h1 {
+        @include font-h3;
+        line-height: 1.3;
+      }
+    }
+    .about-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      width: 100%;
+      li {
+        @include flex-layout(column, flex-start, flex-start, 0.75rem);
+        padding: 1.5rem;
+        border: 1px solid #e5e7eb;
+        background: #ffffff;
+        border-radius: 12px;
+        transition: 0.3s;
+        h3 {
+          color: var(--color-blue);
+        }
+        &:hover {
+          transform: translateY(-4px);
+        }
       }
     }
   }
 
-  .bg-img {
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 50%;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-    .bg-color {
-      background: var(--color-main);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    @include desktop {
-      max-width: 500px;
-      position: relative;
-      z-index: 0;
-      opacity: 1;
-      margin: 0 auto;
-    }
-  }
-  .txt {
-    padding: 1.5rem;
-    @include desktop {
-      padding: 0;
-    }
-    .about-top {
-      @include flex-layout(column, center, flex-start, 0.5rem);
-      @include font-m;
-      padding-bottom: 1.5rem;
-    }
-    .about-mid {
-      @include flex-layout(column, center, flex-start, 1.5rem);
-      span {
-        color: var(--color-main-pink);
-        @include font-BL;
-        font-weight: 500;
+  // 태블릿
+  @include tablet {
+    padding: 4rem 2rem;
+    .about-sec {
+      gap: 5rem;
+      .about-card {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.25rem;
       }
-      padding-bottom: 3rem;
     }
   }
-  .bottom {
-    ul {
-      @include flex-layout(row, flex-start);
-      flex-wrap: wrap;
-      li {
-        padding: 0.5rem 1.5rem;
-        border-radius: 24px;
-        border: 1px solid #fff;
-        background: var(--color-main);
+
+  // 데스크탑
+  @include desktop {
+    padding: 6rem 2rem;
+    .about-sec {
+      gap: 6rem;
+      .about-top-title {
+        h3 {
+          @include font-h1;
+        }
+      }
+      .about-title {
+        h1 {
+          @include font-h2;
+          line-height: 1.2;
+        }
+      }
+      .about-card {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
       }
     }
   }

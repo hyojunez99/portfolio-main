@@ -10,39 +10,64 @@ const SkillsPage = () => {
   const skillsRef = useRef(null);
 
   useLayoutEffect(() => {
+    if (!skillsRef.current) return;
+
     const ctx = gsap.context(() => {
-      gsap.set("#skills", {
-        opacity: 0,
-        y: 60,
-      });
+      const section = skillsRef.current;
+
+      const line = section.querySelector(".skills-top-title .about-sec-line");
+      const title = section.querySelector(".skills-top-title h3");
+      const cards = section.querySelectorAll(".skills-item .card"); // 🔥 수정
+
+      gsap.set(line, { scaleX: 0, transformOrigin: "left" });
+      gsap.set(title, { opacity: 0, y: 30 });
+      gsap.set(cards, { opacity: 0, y: 40 });
 
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: "#skills",
-          start: "top 70%",
-          once: true,
+          trigger: section,
+          start: "top 75%",
+          toggleActions: "play none none none",
         },
       });
 
-      tl.to("#skills", {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out",
-      });
-    });
-
-    ScrollTrigger.refresh();
+      tl.to(line, {
+        scaleX: 1,
+        duration: 0.6,
+        ease: "power2.out",
+      })
+        .to(
+          title,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power3.out",
+          },
+          "+=0.2"
+        )
+        .to(
+          cards,
+          {
+            opacity: 1,
+            y: 0,
+            stagger: 0.15,
+            duration: 0.7,
+            ease: "power3.out",
+          },
+          "-=0.2"
+        );
+    }, skillsRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
     <section id="skills" ref={skillsRef}>
-      <div className="skills-zip">
-        <div className="skills-txt">
+      <div className="skills-sec">
+        <div className="skills-top-title">
           <h3>Skills</h3>
-          <p>작업 과정에서 실제로 사용해 온 기술들을 중심으로 정리했습니다.</p>
+          <div className="about-sec-line"></div>
         </div>
         <SkillsCard />
       </div>

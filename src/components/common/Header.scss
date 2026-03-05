@@ -4,44 +4,68 @@
 
 header {
   position: fixed;
-  z-index: 20;
-  padding: 1rem;
+  top: 0;
+  left: 0;
   width: 100%;
-  background: linear-gradient(
-    to top,
-    rgba(8, 8, 14, 0.98),
-    rgba(8, 8, 14, 0.85),
-    rgba(8, 8, 14, 0.6)
-  );
-  backdrop-filter: blur(8px);
+  z-index: 20;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0.75rem 1rem;
+  @include tablet {
+    padding: 1rem 2rem;
+  }
+  @include desktop {
+    padding: 1rem 3rem;
+  }
+  .header-inner {
+    max-width: 1500px;
+    margin: 0 auto;
+    @include flex-layout(row, space-between, center);
+  }
   .header-desktop {
     display: none;
     @include desktop {
-      @include flex-layout(row, flex-end);
+      display: block;
     }
     > ul {
+      @include flex-layout(row, center, center, 3rem);
       @include font-BL();
-      @include flex-layout();
-
       > li {
-        @include flex-layout();
-        padding: 1rem 2rem;
+        position: relative;
+        display: block;
+        padding: 0.5rem 1rem;
         border-radius: 0.5rem;
         cursor: pointer;
-        color: var(--color-font-sub);
+        color: var(--text-sub);
         transition:
-          background-color 0.3s ease,
-          color 0.3s ease,
-          transform 0.25s ease;
-        &:hover {
+          color 0.3s,
+          background-color 0.3s,
+          transform 0.25s;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 100%;
+          height: 2px;
           background: var(--color-main);
-          color: var(--color-white);
+          transform: scaleX(0);
+          transform-origin: center;
+          transition: transform 0.3s;
+        }
+        &:hover {
+          color: var(--text-black);
           transform: translateY(-2px);
+          &::after {
+            transform: scaleX(1);
+          }
         }
         &.active {
-          color: var(--color-white);
+          color: var(--text-black);
           font-weight: 600;
-          background: var(--color-main);
+          &::after {
+            transform: scaleX(1);
+          }
         }
       }
     }
