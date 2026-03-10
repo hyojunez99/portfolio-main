@@ -170,5 +170,22 @@
       { "image": "css-icon.png" },
       { "image": "js-icon.png" }
     ]
+  },
+  {
+    "id": "13",
+    "image": "",
+    "image2": "card-img14-1.png",
+    "type": "Personal",
+    "type2": "개인 프로젝트",
+    "proname": "LUMEN",
+    "prosub": "서비스 가치 전달 구조와 CTA 설계에 집중한 SaaS 랜딩페이지",
+    "day": "2026.03.03 ~ 2026.03.06",
+    "skills": [
+      { "image": "react-icon.png" },
+      { "image": "js-icon.png" },
+      { "image": "scss-icon.png" },
+      { "image": "gsap-icon.png" },
+      { "image": "github-icon.png" }
+    ]
   }
 ]

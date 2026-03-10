@@ -422,5 +422,53 @@
       "3D UI 구현에서는 단순히 transform을 적용하는 것보다 DOM 구조와 레이어 분리를 먼저 설계하는 것이 중요하다는 점을 배웠습니다.",
       "시각적 효과를 구현할 때도 유지보수와 확장을 고려한 구조 설계가 필요하다는 기준을 갖게 되었습니다."
     ]
+  },
+  {
+    "id": "13",
+    "proname": "LUMEN 랜딩페이지",
+    "summary": "코드 없이 누구나 빠르게 프로 수준의 웹사이트를 제작할 수 있는 웹 빌더 서비스 LUMEN의 랜딩 페이지입니다. 직관적인 정보 구조와 명확한 CTA 설계를 통해 사용자가 서비스의 핵심 가치를 빠르게 이해하도록 구성했습니다.",
+    "deploy": "https://hyojunez99.github.io/lumen/",
+    "github": "https://github.com/hyojunez99/lumen.git",
+    "pdf": "",
+    "duration": "2026.03.03 ~ 2026.03.06 (3일)",
+    "teamSize": "개인 프로젝트",
+    "projectType": "개인 프로젝트",
+    "mainFeatures": [
+      "사용자 흐름 기반 랜딩페이지 정보 구조 설계 (Hero → 기능 → 상세 기능 → 요금제 → FAQ → CTA)",
+      "섹션별 목적에 맞는 UI 구성과 서비스 가치 전달 중심 레이아웃 설계",
+      "요금제 선택 인터랙션 및 FAQ 아코디언 기능 구현",
+      "섹션 단위 컴포넌트 분리로 재사용성과 유지보수성 확보"
+    ],
+    "responsibilities": [
+      "랜딩페이지 정보 구조(IA) 및 사용자 흐름 설계",
+      "UI/UX 레이아웃 설계",
+      "디자인 시스템 구축 (컬러·타이포·간격 규칙 정의)",
+      "React 기반 컴포넌트 구조 설계 및 섹션 단위 모듈화",
+      "SCSS 아키텍처 설계 및 스타일 모듈화",
+      "JSON 데이터 기반 동적 렌더링 및 인터랙션 구현"
+    ],
+    "techStack": {
+      "Frontend": ["JavaScript (ES6+)", "React.js", "SCSS"],
+      "Data": ["Mock JSON"],
+      "Tools": ["Figma", "Photoshop", "Illustrator", "Git/GitHub", "GSAP"]
+    },
+    "troubleShooting": [
+      {
+        "problem": "height: auto 상태에서는 transition이 적용되지 않아 열고 닫힘 애니메이션이 끊기는 문제가 발생했습니다.",
+        "solution": "max-height 기반 애니메이션으로 변경하고 overflow: hidden을 적용해 자연스럽게 접히도록 개선했습니다.",
+        "highlights": ["transition", "max-height", "overflow"]
+      },
+      {
+        "problem": "img 태그에 background-image 변경 방식을 사용해 hover 이미지가 정상적으로 표시되지 않았습니다.",
+        "solution": "hover 이미지를 별도로 import하고 상태값에 따라 src를 교체하는 방식으로 수정했습니다.",
+        "highlights": ["hover", "img", "상태관리"]
+      },
+      {
+        "problem": "전역 SCSS에 작성된 공통 스타일이 다른 영역에 영향을 주며 의도치 않은 UI 깨짐이 발생했습니다.",
+        "solution": "컴포넌트 단위 스타일 분리와 네이밍 스코프 구조화를 통해 스타일 충돌을 방지했습니다.",
+        "highlights": ["SCSS", "스타일 충돌", "스코프"]
+      }
+    ],
+    "insights": "랜딩페이지는 기능 나열보다 서비스의 가치를 빠르게 이해시키는 정보 구조 설계가 더 중요하다는 점을 배웠습니다. 또한 컴포넌트 단위 설계를 통해 유지보수성과 확장성을 크게 개선할 수 있었고, 디자인 시스템을 먼저 정의하면 작업 효율과 UI 일관성이 높아진다는 것을 체감했습니다."
   }
 ]
