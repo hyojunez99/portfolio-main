@@ -35,7 +35,7 @@ const IntroPage = () => {
 
       gsap.to(track, {
         y: -loopHeight,
-        duration: 25,
+        duration: 32,
         ease: "none",
         repeat: -1,
       });
