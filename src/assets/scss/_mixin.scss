@@ -14,6 +14,20 @@ $desktop: 1024px;
   }
 }
 
+// 모바일 이하
+@mixin mobile-max {
+  @media all and (max-width: 767px) {
+    @content;
+  }
+}
+
+// 태블릿 이하
+@mixin tablet-max {
+  @media all and (max-width: 1023px) {
+    @content;
+  }
+}
+
 //레이아웃 플렉스
 @mixin flex-layout($dir: row, $just: center, $align: center, $gap: 1rem) {
   display: flex;
