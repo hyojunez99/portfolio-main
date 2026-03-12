@@ -10,17 +10,18 @@ const SkillsPage = () => {
   const skillsRef = useRef(null);
 
   useLayoutEffect(() => {
-    if (!skillsRef.current) return;
+    const section = skillsRef.current;
+    if (!section) return;
 
     const ctx = gsap.context(() => {
-      const section = skillsRef.current;
-
       const line = section.querySelector(".skills-top-title .about-sec-line");
       const title = section.querySelector(".skills-top-title h3");
-      const cards = section.querySelectorAll(".skills-item .card"); // 🔥 수정
+      const desc = section.querySelector(".skills-desc");
+      const cards = section.querySelectorAll(".skills-item .card");
 
       gsap.set(line, { scaleX: 0, transformOrigin: "left" });
       gsap.set(title, { opacity: 0, y: 30 });
+      gsap.set(desc, { opacity: 0, y: 20 });
       gsap.set(cards, { opacity: 0, y: 40 });
 
       const tl = gsap.timeline({
@@ -44,18 +45,28 @@ const SkillsPage = () => {
             duration: 0.6,
             ease: "power3.out",
           },
-          "+=0.2"
+          "+=0.2",
+        )
+        .to(
+          desc,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power3.out",
+          },
+          "-=0.3",
         )
         .to(
           cards,
           {
             opacity: 1,
             y: 0,
-            stagger: 0.15,
+            stagger: 0.12,
             duration: 0.7,
             ease: "power3.out",
           },
-          "-=0.2"
+          "-=0.2",
         );
     }, skillsRef);
 
@@ -68,7 +79,12 @@ const SkillsPage = () => {
         <div className="skills-top-title">
           <h3>Skills</h3>
           <div className="about-sec-line"></div>
+
+          <p className="skills-desc">
+            프로젝트 구현과 협업 과정에서 사용한 기술 스택입니다.
+          </p>
         </div>
+
         <SkillsCard />
       </div>
     </section>

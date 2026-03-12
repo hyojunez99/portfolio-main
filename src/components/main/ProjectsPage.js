@@ -35,12 +35,14 @@ const ProjectsPage = () => {
 
       const line = section.querySelector(".pro-line");
       const title = section.querySelector(".pro-title h3");
+      const desc = section.querySelector(".pro-desc");
       const menus = section.querySelectorAll(".pro-pcmenu, .pro-mbmenu");
-      const cards = section.querySelectorAll(".project-card");
-      // ↑ ProjectsCard 내부 li에 className="project-card" 있어야 함
+
+      const cards = section.querySelectorAll(".card-bg");
 
       gsap.set(line, { scaleX: 0, transformOrigin: "left" });
       gsap.set(title, { opacity: 0, y: 30 });
+      gsap.set(desc, { opacity: 0, y: 20 });
       gsap.set(menus, { opacity: 0, y: 20 });
       gsap.set(cards, { opacity: 0, y: 40 });
 
@@ -66,6 +68,16 @@ const ProjectsPage = () => {
             ease: "power3.out",
           },
           "+=0.2",
+        )
+        .to(
+          desc,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power3.out",
+          },
+          "-=0.3",
         )
         .to(
           menus,
@@ -104,7 +116,12 @@ const ProjectsPage = () => {
         <div className="pro-title">
           <h3>Projects</h3>
           <div className="pro-line" />
+
+          <p className="pro-desc">
+            다양한 방식의 퍼블리싱 경험을 담은 웹 프로젝트입니다.
+          </p>
         </div>
+
         <div className="pro-pcmenu">
           <ul>
             {CATEGORIES.map((item) => (
@@ -118,6 +135,7 @@ const ProjectsPage = () => {
             ))}
           </ul>
         </div>
+
         <div className="pro-mbmenu">
           <button
             type="button"
@@ -129,6 +147,7 @@ const ProjectsPage = () => {
               <FaCaretDown />
             </span>
           </button>
+
           <ul className={`dropdown ${isOpen ? "open" : ""}`}>
             {CATEGORIES.map((item) => (
               <li
@@ -141,6 +160,7 @@ const ProjectsPage = () => {
             ))}
           </ul>
         </div>
+
         <ProjectsCard projects={filteredProjects} />
       </div>
     </section>

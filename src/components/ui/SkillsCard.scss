@@ -6,18 +6,22 @@
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
+
   .skills-item {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+
     @include tablet {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
     }
+
     @include desktop {
       grid-template-columns: repeat(3, 1fr);
     }
+
     .card {
       display: flex;
       flex-direction: column;
@@ -29,44 +33,52 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
       transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease;
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
       @include tablet {
-        padding: 3rem 1.5rem;
+        padding: 2.5rem 1.5rem;
       }
       @include desktop {
-        padding: 3rem 1.5rem;
+        padding: 2.5rem 1.5rem;
       }
       &:hover {
         transform: translateY(-6px);
         box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+        border-color: rgba(59, 130, 246, 0.25);
       }
       h3 {
-        font-size: 1.25rem;
+        @include font-h4;
         font-weight: 600;
         position: relative;
-        padding-bottom: 0.75rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #f1f5f9;
       }
+
       .items {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
+        gap: 1.2rem;
         width: 100%;
         padding-top: 1rem;
       }
+
       .item {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
+
         transition:
           transform 0.3s ease,
           opacity 0.3s ease;
+
         img {
           width: 40px;
           height: 40px;
           object-fit: contain;
           transition: transform 0.3s ease;
         }
+
         span {
           @include font-small;
           color: var(--text-sub);
@@ -74,11 +86,18 @@
           padding: 0.4rem 0.9rem;
           border-radius: 20px;
           background: #f1f5f9;
+          transition: color 0.3s ease;
         }
+
         &:hover {
           transform: translateY(-4px);
+
           img {
             transform: scale(1.08);
+          }
+
+          span {
+            color: var(--color-blue);
           }
         }
       }

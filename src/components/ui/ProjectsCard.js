@@ -34,7 +34,6 @@ const ProjectsCard = ({ projects }) => {
     }, 250);
   };
 
-  // 모달 열리면 body 스크롤 잠금
   useEffect(() => {
     document.body.style.overflow = selectedId ? "hidden" : "";
     return () => (document.body.style.overflow = "");
@@ -47,7 +46,7 @@ const ProjectsCard = ({ projects }) => {
           <li
             key={item.id}
             className={`card-bg ${
-              visibleProjects.includes(item) ? "visible" : ""
+              visibleProjects.some((p) => p.id === item.id) ? "visible" : ""
             }`}
             onClick={() => handleClick(item.id)}
           >
@@ -113,6 +112,7 @@ const ProjectsCard = ({ projects }) => {
           </li>
         ))}
       </ul>
+
       {selectedId &&
         createPortal(
           <>
@@ -131,7 +131,7 @@ const ProjectsCard = ({ projects }) => {
               </div>
             </div>
           </>,
-          document.body,
+          document.body
         )}
     </div>
   );

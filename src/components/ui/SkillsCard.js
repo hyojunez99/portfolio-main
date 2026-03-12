@@ -1,37 +1,30 @@
-import SkillsDate from "../../assets/data/Skills.json";
+import SkillsData from "../../assets/data/Skills.json";
 import "./SkillsCard.scss";
 
 const SkillsCard = () => {
   return (
     <div className="skills-card">
       <ul className="skills-item">
-        {SkillsDate.map((categoryItem) => (
+        {SkillsData.map((categoryItem) => (
           <li key={categoryItem.id} className="card">
-            {/* 카테고리명 */}
+            {/* 카테고리 */}
             <h3 className="category">{categoryItem.category}</h3>
 
-            {/* 서브 항목들 */}
+            {/* 스킬 목록 */}
             <ul className="items">
-              {Object.keys(categoryItem)
-                .filter((key) => key.startsWith("sub") && !key.endsWith("-img"))
-                .map((subKey) => {
-                  const imgKey = `${subKey}-img`;
-                  const imgSrc = categoryItem[imgKey];
-                  const text = categoryItem[subKey];
+              {categoryItem.items.map((item) => (
+                <li key={item.name} className="item">
+                  {item.icon && (
+                    <img
+                      src={require(`../../assets/icons/${item.icon}`)}
+                      alt={item.name}
+                      className="logo-icon"
+                    />
+                  )}
 
-                  return (
-                    <li key={subKey} className="item">
-                      {imgSrc && (
-                        <img
-                          src={require(`../../assets/icons/${imgSrc}`)}
-                          alt={text}
-                          className="logo-icon"
-                        />
-                      )}
-                      <span className="logo-txt">{text}</span>
-                    </li>
-                  );
-                })}
+                  <span className="logo-txt">{item.name}</span>
+                </li>
+              ))}
             </ul>
           </li>
         ))}

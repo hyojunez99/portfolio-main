@@ -2,55 +2,97 @@
   {
     "id": "1",
     "category": "Languages",
-    "sub1": "HTML5",
-    "sub1-img": "html-icon.png",
-    "sub2": "CSS3",
-    "sub2-img": "css-icon.png",
-    "sub3": "ES6+",
-    "sub3-img": "js-icon.png"
+    "items": [
+      {
+        "name": "HTML5",
+        "icon": "html-icon.png"
+      },
+      {
+        "name": "CSS3",
+        "icon": "css-icon.png"
+      },
+      {
+        "name": "ES6+",
+        "icon": "js-icon.png"
+      }
+    ]
   },
   {
     "id": "2",
     "category": "Styling & Animation",
-    "sub1": "SCSS",
-    "sub1-img": "scss-icon.png",
-    "sub2": "GSAP",
-    "sub2-img": "gsap-icon.png"
+    "items": [
+      {
+        "name": "SCSS",
+        "icon": "scss-icon.png"
+      },
+      {
+        "name": "GSAP",
+        "icon": "gsap-icon.png"
+      }
+    ]
   },
   {
     "id": "3",
     "category": "Framework",
-    "sub1": "React",
-    "sub1-img": "react-icon.png"
+    "items": [
+      {
+        "name": "React",
+        "icon": "react-icon.png"
+      }
+    ]
   },
   {
     "id": "4",
     "category": "Design Tools",
-    "sub1": "Figma",
-    "sub1-img": "figma-icon.png",
-    "sub2": "Photoshop",
-    "sub2-img": "ps-icon.png",
-    "sub3": "Illustrator",
-    "sub3-img": "Illustrator-icon.png"
+    "items": [
+      {
+        "name": "Figma",
+        "icon": "figma-icon.png"
+      },
+      {
+        "name": "Photoshop",
+        "icon": "ps-icon.png"
+      },
+      {
+        "name": "Illustrator",
+        "icon": "Illustrator-icon.png"
+      }
+    ]
   },
   {
     "id": "5",
     "category": "Dev & Collaboration",
-    "sub1": "Git",
-    "sub1-img": "git-icon.png",
-    "sub2": "GitHub",
-    "sub2-img": "github-icon.png",
-    "sub3": "Supabase",
-    "sub3-img": "supabase-icon.png",
-    "sub4": "Notion",
-    "sub4-img": "notion-icon.png",
-    "sub5": "Slack",
-    "sub5-img": "slack-icon.png"
+    "items": [
+      {
+        "name": "Git",
+        "icon": "git-icon.png"
+      },
+      {
+        "name": "GitHub",
+        "icon": "github-icon.png"
+      },
+      {
+        "name": "Supabase",
+        "icon": "supabase-icon.png"
+      },
+      {
+        "name": "Notion",
+        "icon": "notion-icon.png"
+      },
+      {
+        "name": "Slack",
+        "icon": "slack-icon.png"
+      }
+    ]
   },
   {
     "id": "6",
     "category": "AI Efficiency",
-    "sub1": "ChatGPT",
-    "sub1-img": "chatgpt-icon.png"
+    "items": [
+      {
+        "name": "ChatGPT",
+        "icon": "chatgpt-icon.png"
+      }
+    ]
   }
 ]

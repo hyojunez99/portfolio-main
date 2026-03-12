@@ -53,7 +53,7 @@
   @include desktop {
     .card-flow {
       display: block;
-      height: calc(100vh - 8rem);
+      height: calc(100vh - 6rem);
       position: relative;
       .card-mask {
         height: 100%;
@@ -62,15 +62,15 @@
         -webkit-mask-image: linear-gradient(
           to bottom,
           transparent 0%,
-          black 12%,
-          black 88%,
+          black 18%,
+          black 82%,
           transparent 100%
         );
         mask-image: linear-gradient(
           to bottom,
           transparent 0%,
-          black 12%,
-          black 88%,
+          black 18%,
+          black 82%,
           transparent 100%
         );
       }
@@ -96,8 +96,8 @@
       transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
       box-shadow 0.35s ease;
     &:hover {
-      transform: translateY(-10px) rotate(0deg);
       box-shadow: 0 22px 48px rgba(0, 0, 0, 0.14);
+      transform: translateY(-10px) rotate(0deg) scale(1.02);
     }
     &:nth-child(odd) {
       align-self: flex-start;
@@ -113,6 +113,9 @@
     }
     &:nth-child(4n) {
       max-width: 520px;
+    }
+    &:first-child {
+      transform: scale(1.04) rotate(-0.8deg);
     }
     .thumb {
       width: 100%;
@@ -135,7 +138,6 @@
         }
       }
     }
-
     .body {
       padding: 2rem;
       background: #fafbfc;
@@ -157,11 +159,12 @@
         }
       }
       .title-text {
-        @include font-BL;
-        font-weight: 800; // 제목 강조
+        @include font-m;
+        font-weight: 700;
         margin: 1.2rem 0 1.4rem;
-        line-height: 1.5;
         letter-spacing: -0.01em;
+        line-height: 1.4;
+        word-break: keep-all;
       }
       .keywords {
         display: flex;
@@ -173,11 +176,14 @@
           border-radius: 8px;
           @include font-cap;
           color: var(--text-sub);
+          transition: 0.3s;
+          &:hover {
+            background: #e9eef6;
+          }
         }
       }
     }
   }
-
   @include desktop {
     .card .body {
       padding: 1.7rem;

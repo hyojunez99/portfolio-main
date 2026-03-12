@@ -9,20 +9,32 @@
   margin: 0 auto;
   padding: 3rem 1.25rem;
   background-color: var(--color-bg);
+
   .skills-sec {
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
+
     @include flex-layout(column, center, flex-start, 4rem);
+
     .skills-top-title {
       @include flex-layout(column, center, flex-start, 0.75rem);
+
       h3 {
         @include font-h2;
       }
+
       .about-sec-line {
         width: 48px;
         height: 4px;
         background: var(--color-main);
+      }
+
+      .skills-desc {
+        color: var(--text-sub);
+        max-width: 520px;
+        line-height: 1.6;
+        padding-top: 1rem;
       }
     }
   }
@@ -30,14 +42,21 @@
   // 태블릿
   @include tablet {
     padding: 4rem 2rem;
+
     .skills-sec {
       gap: 5rem;
+
       .skills-top-title {
         h3 {
           @include font-h1;
         }
+
         .about-sec-line {
           width: 56px;
+        }
+
+        .skills-desc {
+          max-width: 560px;
         }
       }
     }
@@ -46,11 +65,17 @@
   // 데스크탑
   @include desktop {
     padding: 6rem 2rem;
+
     .skills-sec {
       gap: 6rem;
+
       .skills-top-title {
         .about-sec-line {
           width: 64px;
+        }
+
+        .skills-desc {
+          max-width: 620px;
         }
       }
     }
