@@ -118,7 +118,7 @@ const ProjectsPage = () => {
           <div className="pro-line" />
 
           <p className="pro-desc">
-            다양한 방식의 퍼블리싱 경험을 담은 웹 프로젝트입니다.
+            사용자 경험을 고려해 구현한 다양한 웹 퍼블리싱 프로젝트입니다.
           </p>
         </div>
 
