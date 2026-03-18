@@ -12,6 +12,17 @@ const IntroPage = () => {
 
   const projects = introData.introProjects.slice(0, 6);
 
+  const handleCardClick = () => {
+    const el = document.querySelector("#projects");
+
+    if (el) {
+      window.scrollTo({
+        top: el.offsetTop - 80,
+        behavior: "smooth",
+      });
+    }
+  };
+
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -47,7 +58,6 @@ const IntroPage = () => {
         repeat: -1,
       });
 
-      // hover 속도 제어
       track.addEventListener("mouseenter", () => {
         gsap.to(flow, { timeScale: 0.3, duration: 0.6 });
       });
@@ -56,7 +66,6 @@ const IntroPage = () => {
         gsap.to(flow, { timeScale: 1, duration: 0.6 });
       });
 
-      // 스크롤 패럴랙스
       gsap.to(".card-flow", {
         y: -60,
         scrollTrigger: {
@@ -74,7 +83,6 @@ const IntroPage = () => {
   return (
     <section id="intro" ref={introRef}>
       <div className="intro-inner">
-        {/* TEXT */}
         <div className="intro-title">
           <div className="title">
             <h1>Hyojun</h1>
@@ -98,7 +106,6 @@ const IntroPage = () => {
           </div>
         </div>
 
-        {/* CARD FLOW */}
         <div className="card-flow">
           <div className="card-mask">
             <div className="card-track" ref={trackRef}>
@@ -107,6 +114,8 @@ const IntroPage = () => {
                   className="card"
                   key={`${p.title}-${i}`}
                   title={p.keywords.join(", ")}
+                  onClick={handleCardClick}
+                  style={{ cursor: "pointer" }}
                 >
                   <div className="thumb">
                     <img

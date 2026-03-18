@@ -22,9 +22,14 @@ const ProjectsPage = () => {
   const [category, setCategory] = useState("All");
   const [isOpen, setIsOpen] = useState(false);
 
+  // priority 순서만 기준으로 정렬 (낮은 숫자가 위)
   const filteredProjects = useMemo(() => {
-    if (category === "All") return ProjectsData;
-    return ProjectsData.filter((item) => item.type === category);
+    let filtered =
+      category === "All"
+        ? ProjectsData
+        : ProjectsData.filter((item) => item.type === category);
+
+    return [...filtered].sort((a, b) => (a.priority || 1) - (b.priority || 1));
   }, [category]);
 
   useLayoutEffect(() => {
@@ -37,7 +42,6 @@ const ProjectsPage = () => {
       const title = section.querySelector(".pro-title h3");
       const desc = section.querySelector(".pro-desc");
       const menus = section.querySelectorAll(".pro-pcmenu, .pro-mbmenu");
-
       const cards = section.querySelectorAll(".card-bg");
 
       gsap.set(line, { scaleX: 0, transformOrigin: "left" });
@@ -54,39 +58,20 @@ const ProjectsPage = () => {
         },
       });
 
-      tl.to(line, {
-        scaleX: 1,
-        duration: 0.6,
-        ease: "power2.out",
-      })
+      tl.to(line, { scaleX: 1, duration: 0.6, ease: "power2.out" })
         .to(
           title,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "power3.out",
-          },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
           "+=0.2",
         )
         .to(
           desc,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "power3.out",
-          },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
           "-=0.3",
         )
         .to(
           menus,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.4,
-            ease: "power2.out",
-          },
+          { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
           "-=0.2",
         )
         .to(
@@ -116,7 +101,6 @@ const ProjectsPage = () => {
         <div className="pro-title">
           <h3>Projects</h3>
           <div className="pro-line" />
-
           <p className="pro-desc">
             사용자 경험을 고려해 구현한 다양한 웹 퍼블리싱 프로젝트입니다.
           </p>

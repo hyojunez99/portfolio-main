@@ -1,6 +1,7 @@
 [
   {
     "id": "1",
+    "priority": 1,
     "image": "card-img13.png",
     "image2": "card-img13-1.png",
     "type": "Portfolio",
@@ -15,8 +16,10 @@
       { "image": "github-icon.png" }
     ]
   },
+
   {
     "id": "2",
+    "priority": 2,
     "image": "card-img2.png",
     "image2": "card-img2-1.png",
     "type": "Team",
@@ -32,8 +35,10 @@
       { "image": "github-icon.png" }
     ]
   },
+
   {
     "id": "3",
+    "priority": 3,
     "image": "card-img3.png",
     "image2": "card-img3-1.png",
     "type": "Team",
@@ -45,11 +50,14 @@
       { "image": "react-icon.png" },
       { "image": "js-icon.png" },
       { "image": "scss-icon.png" },
+      { "image": "gsap-icon.png" },
       { "image": "github-icon.png" }
     ]
   },
+
   {
     "id": "4",
+    "priority": 20,
     "image": "card-img4.png",
     "image2": "card-img4-1.png",
     "type": "Clone",
@@ -63,8 +71,10 @@
       { "image": "gsap-icon.png" }
     ]
   },
+
   {
     "id": "5",
+    "priority": 21,
     "image": "",
     "image2": "card-img5.png",
     "type": "Clone",
@@ -78,8 +88,10 @@
       { "image": "css-icon.png" }
     ]
   },
+
   {
     "id": "6",
+    "priority": 22,
     "image": "card-img6.png",
     "image2": "card-img6-1.png",
     "type": "Clone",
@@ -93,8 +105,10 @@
       { "image": "js-icon.png" }
     ]
   },
+
   {
     "id": "7",
+    "priority": 23,
     "image": "card-img7.png",
     "image2": "card-img7-1.png",
     "type": "Clone",
@@ -104,8 +118,10 @@
     "day": "2025.10.23 ~ 2025.10.24",
     "skills": [{ "image": "html-icon.png" }, { "image": "css-icon.png" }]
   },
+
   {
     "id": "8",
+    "priority": 24,
     "image": "",
     "image2": "card-img8.png",
     "type": "Personal",
@@ -119,8 +135,10 @@
       { "image": "css-icon.png" }
     ]
   },
+
   {
     "id": "9",
+    "priority": 25,
     "image": "card-img9.png",
     "image2": "card-img9-1.png",
     "type": "Personal",
@@ -130,8 +148,10 @@
     "day": "2025.10.24 ~ 2025.10.26",
     "skills": [{ "image": "html-icon.png" }, { "image": "css-icon.png" }]
   },
+
   {
     "id": "10",
+    "priority": 26,
     "image": "",
     "image2": "card-img10.png",
     "type": "Practical",
@@ -145,8 +165,10 @@
       { "image": "js-icon.png" }
     ]
   },
+
   {
     "id": "11",
+    "priority": 27,
     "image": "",
     "image2": "card-img11.png",
     "type": "Practical",
@@ -156,8 +178,10 @@
     "day": "",
     "skills": [{ "image": "html-icon.png" }, { "image": "css-icon.png" }]
   },
+
   {
     "id": "12",
+    "priority": 28,
     "image": "",
     "image2": "card-img12.png",
     "type": "Practical",
@@ -171,8 +195,10 @@
       { "image": "js-icon.png" }
     ]
   },
+
   {
     "id": "13",
+    "priority": 4,
     "image": "",
     "image2": "card-img14-1.png",
     "type": "Personal",
@@ -180,6 +206,25 @@
     "proname": "LUMEN",
     "prosub": "서비스 가치 전달 구조와 CTA 설계에 집중한 SaaS 랜딩페이지",
     "day": "2026.03.03 ~ 2026.03.06",
+    "skills": [
+      { "image": "react-icon.png" },
+      { "image": "js-icon.png" },
+      { "image": "scss-icon.png" },
+      { "image": "gsap-icon.png" },
+      { "image": "github-icon.png" }
+    ]
+  },
+  
+  {
+    "id": "14",
+    "priority": 5,
+    "image": "",
+    "image2": "card-img15-1.png",
+    "type": "clone",
+    "type2": "개인 프로젝트",
+    "proname": "Apple Product Detail Page",
+    "prosub": "Apple 스타일 UI/UX와 스크롤 기반 인터랙션, 제품 상세 경험 구현",
+    "day": "2026.03.16 ~ 2026.03.17",
     "skills": [
       { "image": "react-icon.png" },
       { "image": "js-icon.png" },

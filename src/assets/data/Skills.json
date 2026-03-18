@@ -17,6 +17,7 @@
       }
     ]
   },
+
   {
     "id": "2",
     "category": "Styling & Animation",
@@ -31,6 +32,7 @@
       }
     ]
   },
+
   {
     "id": "3",
     "category": "Framework",
@@ -41,6 +43,7 @@
       }
     ]
   },
+
   {
     "id": "4",
     "category": "Design Tools",
@@ -59,6 +62,7 @@
       }
     ]
   },
+
   {
     "id": "5",
     "category": "Dev & Collaboration",
@@ -85,6 +89,7 @@
       }
     ]
   },
+  
   {
     "id": "6",
     "category": "AI Efficiency",
