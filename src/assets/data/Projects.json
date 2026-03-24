@@ -214,16 +214,34 @@
       { "image": "github-icon.png" }
     ]
   },
-  
+
   {
     "id": "14",
     "priority": 5,
     "image": "",
     "image2": "card-img15-1.png",
-    "type": "clone",
+    "type": "Clone",
     "type2": "개인 프로젝트",
     "proname": "Apple Product Detail Page",
     "prosub": "Apple 스타일 UI/UX와 스크롤 기반 인터랙션, 제품 상세 경험 구현",
+    "day": "2026.03.16 ~ 2026.03.17",
+    "skills": [
+      { "image": "react-icon.png" },
+      { "image": "js-icon.png" },
+      { "image": "scss-icon.png" },
+      { "image": "gsap-icon.png" },
+      { "image": "github-icon.png" }
+    ]
+  },
+  {
+    "id": "15",
+    "priority": 6,
+    "image": "card-img16.png",
+    "image2": "card-img16-1.png",
+    "type": "Personal",
+    "type2": "개인 프로젝트",
+    "proname": "AER Brand Website",
+    "prosub": "하이엔드 패션 브랜드 AER을 컨셉으로, 미니멀한 레이아웃과 GSAP 기반 스크롤 인터랙션을 통해 브랜드 중심의 UI/UX를 구현",
     "day": "2026.03.16 ~ 2026.03.17",
     "skills": [
       { "image": "react-icon.png" },

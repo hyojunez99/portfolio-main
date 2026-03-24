@@ -6,18 +6,16 @@
       "type": "Portfolio Website",
       "team": "개인 프로젝트",
       "image": "intro-card-img-2.png",
-      "keywords": ["React", "GSAP", "Scroll Interaction", "Responsive", "UI/UX"]
+      "keywords": ["React", "GSAP", "Scroll Interaction", "Responsive", "UX"]
     },
-
     {
       "year": "2025",
       "title": "주차장 관리 웹사이트",
       "type": "Web Application",
       "team": "팀 프로젝트",
       "image": "intro-card-img-3.png",
-      "keywords": ["React", "Role-based UI", "Workflow", "Supabase"]
+      "keywords": ["React", "Role-based UI", "UI Flow", "Supabase"]
     },
-
     {
       "year": "2025",
       "title": "쇼핑몰 프론트엔드 웹앱",
@@ -26,16 +24,14 @@
       "image": "intro-card-img-4.png",
       "keywords": ["React", "Mock Data", "Semantic HTML", "UI Flow"]
     },
-
     {
       "year": "2026",
       "title": "LUMEN 랜딩페이지",
       "type": "Landing Page",
       "team": "개인 프로젝트",
       "image": "intro-card-img-1.png",
-      "keywords": ["React", "SCSS", "Design System", "Component Structure"]
+      "keywords": ["React", "SCSS", "Component Structure", "UX"]
     },
-
     {
       "year": "2026",
       "title": "Apple Product Detail Page",
@@ -44,14 +40,13 @@
       "image": "intro-card-img-6.png",
       "keywords": ["React", "GSAP", "Scroll Interaction", "Motion UI", "UX"]
     },
-    
     {
-      "year": "2025",
-      "title": "ScrollWave",
-      "type": "Interactive Clone",
+      "year": "2026",
+      "title": "AER Brand Website",
+      "type": "Brand Website",
       "team": "개인 프로젝트",
-      "image": "intro-card-img-5.png",
-      "keywords": ["GSAP", "Scroll Animation", "Motion UI"]
+      "image": "intro-card-img-7.png",
+      "keywords": ["React", "GSAP", "Scroll Interaction", "Motion UI", "UX"]
     }
   ]
 }
