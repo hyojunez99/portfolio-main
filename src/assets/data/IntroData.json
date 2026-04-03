@@ -8,6 +8,7 @@
       "image": "intro-card-img-2.png",
       "keywords": ["React", "GSAP", "Scroll Interaction", "Responsive", "UX"]
     },
+
     {
       "year": "2025",
       "title": "주차장 관리 웹사이트",
@@ -16,6 +17,7 @@
       "image": "intro-card-img-3.png",
       "keywords": ["React", "Role-based UI", "UI Flow", "Supabase"]
     },
+
     {
       "year": "2025",
       "title": "쇼핑몰 프론트엔드 웹앱",
@@ -24,6 +26,7 @@
       "image": "intro-card-img-4.png",
       "keywords": ["React", "Mock Data", "Semantic HTML", "UI Flow"]
     },
+
     {
       "year": "2026",
       "title": "LUMEN 랜딩페이지",
@@ -32,6 +35,7 @@
       "image": "intro-card-img-1.png",
       "keywords": ["React", "SCSS", "Component Structure", "UX"]
     },
+
     {
       "year": "2026",
       "title": "Apple Product Detail Page",
@@ -40,6 +44,7 @@
       "image": "intro-card-img-6.png",
       "keywords": ["React", "GSAP", "Scroll Interaction", "Motion UI", "UX"]
     },
+
     {
       "year": "2026",
       "title": "AER Brand Website",
@@ -47,6 +52,21 @@
       "team": "개인 프로젝트",
       "image": "intro-card-img-7.png",
       "keywords": ["React", "GSAP", "Scroll Interaction", "Motion UI", "UX"]
+    },
+
+    {
+      "year": "2026",
+      "title": "Aura Music App",
+      "type": "Web Application",
+      "team": "개인 프로젝트",
+      "image": "intro-card-img-8.png",
+      "keywords": [
+        "React",
+        "Music Player",
+        "State Management",
+        "UX",
+        "Responsive"
+      ]
     }
   ]
 }

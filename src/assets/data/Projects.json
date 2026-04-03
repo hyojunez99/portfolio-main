@@ -250,5 +250,23 @@
       { "image": "gsap-icon.png" },
       { "image": "github-icon.png" }
     ]
+  },
+
+  {
+    "id": "16",
+    "priority": 7,
+    "image": "",
+    "image2": "card-img17.png",
+    "type": "Personal",
+    "type2": "개인 프로젝트",
+    "proname": "Aura Music App",
+    "prosub": "MiniPlayer/FullPlayer 기반 음악 스트리밍 앱으로, 재생·검색·라이브러리 기능과 상태 관리 중심 UX를 구현한 프로젝트",
+    "day": "2026.03.31 ~ 2026.04.03",
+    "skills": [
+      { "image": "react-icon.png" },
+      { "image": "js-icon.png" },
+      { "image": "scss-icon.png" },
+      { "image": "github-icon.png" }
+    ]
   }
 ]

@@ -10,7 +10,7 @@ const IntroPage = () => {
   const introRef = useRef(null);
   const trackRef = useRef(null);
 
-  const projects = introData.introProjects.slice(0, 6);
+  const projects = introData.introProjects.slice(0, 7);
 
   const handleCardClick = () => {
     const el = document.querySelector("#projects");

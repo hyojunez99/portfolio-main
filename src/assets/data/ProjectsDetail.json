@@ -566,5 +566,49 @@
       }
     ],
     "insights": "브랜드 중심의 UI/UX 설계가 사용자 경험에 큰 영향을 미친다는 것을 깨달았습니다. GSAP을 활용한 인터랙션 구현을 통해 시각적인 완성도를 높일 수 있었고, JSON 기반 데이터 구조 설계를 통해 유지보수성과 확장성을 함께 고려하는 개발 방식을 익힐 수 있었습니다."
+  },
+
+  {
+    "id": "16",
+    "proname": "Aura Music App",
+    "summary": "음악 스트리밍 서비스 컨셉의 React 기반 웹 애플리케이션으로, MiniPlayer와 FullPlayer 구조를 통해 실제 서비스와 유사한 사용자 경험을 구현했습니다. 재생·검색·라이브러리 기능을 중심으로 전역 상태 관리와 UX 흐름 설계에 집중한 프로젝트입니다.",
+    "deploy": "https://hyojunez99.github.io/aura/",
+    "github": "https://github.com/hyojunez99/aura.git",
+    "pdf": "",
+    "duration": "2026.03.31 ~ 2026.04.03 (4일)",
+    "teamSize": "개인 프로젝트",
+    "projectType": "개인 프로젝트",
+    "mainFeatures": [
+      "MiniPlayer와 FullPlayer 전환 구조를 구현해 자연스러운 음악 재생 UX를 제공함",
+      "Play / Pause / Next / Prev 등 기본적인 음악 재생 기능을 구현함",
+      "검색 기능을 통해 실시간으로 음악 데이터를 필터링할 수 있도록 구현함",
+      "좋아요 및 저장 기능을 통해 사용자 라이브러리를 구성할 수 있도록 설계함",
+      "최근 재생 히스토리를 기록하여 사용자 행동 기반 UX를 강화함",
+      "localStorage를 활용해 좋아요 및 저장 데이터를 유지하도록 구현함",
+      "반응형 레이아웃을 적용해 다양한 디바이스 환경을 지원함"
+    ],
+    "techStack": {
+      "Frontend": ["JavaScript (ES6+)", "React.js", "SCSS"],
+      "Data": ["Mock JSON", "localStorage"],
+      "Tools": ["Figma", "Git/GitHub"]
+    },
+    "troubleShooting": [
+      {
+        "problem": "각 컴포넌트에서 상태를 개별적으로 관리하면서 음악 재생 상태가 일관되지 않는 문제가 발생함.",
+        "solution": "App.jsx에서 currentTrack, currentIndex, isPlaying을 전역 상태로 통합 관리하고 props로 전달하여 상태 흐름을 일관되게 유지함.",
+        "highlights": ["상태", "전역 상태", "통합 관리", "일관되게"]
+      },
+      {
+        "problem": "좋아요 및 저장 데이터가 새로고침 시 유지되지 않는 문제가 발생함.",
+        "solution": "localStorage를 활용해 초기 상태를 불러오고 상태 변경 시마다 데이터를 저장하도록 구현함.",
+        "highlights": ["localStorage", "초기 상태", "데이터를 저장", "유지"]
+      },
+      {
+        "problem": "저작권 이슈로 인해 실제 음원 파일을 배포 환경에 포함할 수 없는 문제가 발생함.",
+        "solution": "오디오 파일을 개발 환경에서만 사용하도록 분리하고, 배포 시에는 음원이 없어도 정상 동작하도록 구조를 설계함.",
+        "highlights": ["저작권", "오디오 파일", "배포", "정상 동작"]
+      }
+    ],
+    "insights": "컴포넌트 간 상태를 상위에서 통합 관리하는 구조가 애플리케이션의 안정성과 확장성에 큰 영향을 미친다는 것을 경험했습니다. 또한 단순 UI 구현을 넘어 사용자 흐름(UX)을 설계하는 과정이 중요하다는 점을 깨달았으며, localStorage를 활용한 상태 유지와 실제 서비스 구조를 반영한 설계를 통해 전반적인 개발 역량을 향상시킬 수 있었습니다."
   }
 ]

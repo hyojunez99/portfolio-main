@@ -52,7 +52,7 @@ const ProjectsCard = ({ projects }) => {
           >
             <div
               className={`box-top ${
-                String(item.id) === "8" ? "different-card" : ""
+                ["8", "16"].includes(String(item.id)) ? "different-card" : ""
               }`}
             >
               {item.image && (
@@ -131,7 +131,7 @@ const ProjectsCard = ({ projects }) => {
               </div>
             </div>
           </>,
-          document.body
+          document.body,
         )}
     </div>
   );
