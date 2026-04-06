@@ -38,39 +38,32 @@
 
 ## 4. 디렉토리 구조
 
-```text
 src
 │
-├── assets                # 정적 리소스 관리
-│   ├── data              # 프로젝트 정보, 스킬 목록 등 JSON 데이터
-│   ├── icons             # 기술 스택 및 UI 아이콘
-│   ├── images            # 프로젝트 이미지 및 UI 이미지
-│   └── scss              # 전역 스타일 (변수, 믹스인, 폰트 등)
+├── assets
+│   ├── data              # JSON 데이터 (Projects, Skills 등)
+│   ├── icons             # 아이콘 이미지
+│   ├── images            # 프로젝트 / UI 이미지
+│   └── scss              # variables, mixin, font, global
 │
-├── components            # 재사용 가능한 UI 컴포넌트
+├── components
+│   └── common            # 재사용 컴포넌트 (Button, Card 등)
+│
+├── hooks                 # GSAP, Loading 등 커스텀 훅
+│
+├── layout                # 페이지 레이아웃 조합
+│
+├── pages
+│   ├── About
 │   │
-│   ├── common            # 공통 UI 요소
+│   ├── intro
 │   │
+│   ├── projects
 │   │
-│   ├── main              # 메인 페이지 구성 컴포넌트
-│   │
-│   │
-│   └── ui                # 작은 단위의 UI 컴포넌트
-│                         # (ProjectsCard, Modal 등 인터랙션 중심 컴포넌트)
+│   └── skills
 │
-├── layout                # 전체 레이아웃 구조
-│
-│
-├── pages                 # 페이지 단위 컴포넌트
-│                         # (실제 화면 단위 페이지)
-│
-├── App.jsx               # 전체 애플리케이션 루트 컴포넌트
-│                         # 페이지 및 컴포넌트 조합
-│
-└── index.js
-
-```
-
+├── App.jsx               
+└── index.js             
 ---
 
 ## 5. 담당 역할
