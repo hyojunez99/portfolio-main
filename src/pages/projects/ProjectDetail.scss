@@ -12,37 +12,62 @@
   backdrop-filter: blur(14px);
   @include m.flex-layout(row, center, center);
   z-index: 9999;
+  padding: 1rem;
 
   .modal-content {
     position: relative;
-    width: 90%;
-    max-width: 1000px;
-    max-height: 80vh;
+    width: 100%;
+    max-width: 100%;
+    max-height: 90vh;
     background: #fff;
     color: #111;
-    padding: 50px 60px;
-    border-radius: 24px;
+    padding: 1.5rem;
+    border-radius: 16px;
     overflow-y: auto;
     animation: modalIn 0.35s ease;
+
     &::-webkit-scrollbar {
       display: none;
     }
     -ms-overflow-style: none;
     scrollbar-width: none;
+
+    /* 📱➡️📲 TABLET */
+    @include m.tablet {
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+
+    /* 💻 DESKTOP */
+    @include m.desktop {
+      width: 90%;
+      max-width: 1000px;
+      max-height: 80vh;
+      padding: 50px 60px;
+      border-radius: 24px;
+    }
   }
 
   .close {
     position: absolute;
-    top: 24px;
-    right: 24px;
-    width: 36px;
-    height: 36px;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: #f3f3f3;
     @include m.flex-layout(row, center, center);
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
     transition: 0.2s;
+
+    @include m.desktop {
+      top: 24px;
+      right: 24px;
+      width: 36px;
+      height: 36px;
+      font-size: 14px;
+    }
 
     &:hover {
       background: #111;
@@ -52,19 +77,37 @@
 
   .modal-content h2 {
     @include f.font-h2;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
+
+    @include m.desktop {
+      margin-bottom: 24px;
+    }
   }
 
   .summary {
     color: #555;
     line-height: 1.6;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+
+    @include m.desktop {
+      margin-bottom: 32px;
+    }
   }
 
+  /* 🔥 핵심: info 반응형 */
   .info {
-    display: flex;
-    gap: 70px;
-    margin-bottom: 24px;
+    @include m.flex-layout(column, flex-start, flex-start, 1rem);
+    margin-bottom: 20px;
+
+    @include m.tablet {
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    @include m.desktop {
+      gap: 70px;
+      margin-bottom: 24px;
+    }
 
     p {
       color: #666;
@@ -73,7 +116,7 @@
         display: block;
         @include f.font-cap;
         color: #999;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
       }
     }
   }
@@ -84,10 +127,14 @@
   }
 
   .highlight-tags {
-    margin-top: 10px;
+    margin-top: 8px;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
+
+    @include m.desktop {
+      gap: 8px;
+    }
 
     span {
       @include f.font-cap;
@@ -98,22 +145,39 @@
     }
   }
 
+  /* 🔥 링크 버튼 반응형 */
   .links {
     display: flex;
-    gap: 12px;
-    margin-bottom: 36px;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+
+    @include m.tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    @include m.desktop {
+      gap: 12px;
+      margin-bottom: 36px;
+    }
 
     a {
-      @include m.flex-layout(row, center, center, 0.8rem);
+      @include m.flex-layout(row, center, center, 0.6rem);
       padding: 8px 14px;
       border-radius: 8px;
       background: #222;
       color: #fff;
       transition: v.$transition-default;
+      width: 100%;
+
+      @include m.tablet {
+        width: auto;
+      }
 
       span {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
         @include m.flex-layout(row, center, center);
 
         svg {
@@ -128,19 +192,27 @@
   }
 
   .section {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+
+    @include m.desktop {
+      margin-bottom: 40px;
+    }
 
     h3 {
       @include f.font-h3;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       border-bottom: 1px solid #eee;
-      padding-bottom: 8px;
+      padding-bottom: 6px;
+
+      @include m.desktop {
+        margin-bottom: 24px;
+        padding-bottom: 8px;
+      }
     }
 
     ul {
-
       li {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         line-height: 1.5;
         color: #444;
       }
@@ -148,18 +220,24 @@
   }
 
   .trouble-item {
-    padding: 1rem 1.125rem;
+    padding: 0.875rem 1rem;
     border-radius: 12px;
     background: #f8f8f8;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+
+    @include m.desktop {
+      padding: 1rem 1.125rem;
+      margin-bottom: 12px;
+    }
 
     .problem {
       margin-bottom: 6px;
-      font-size: 14px;
+      @include f.font-cap;
       color: #444;
       background: rgba(239, 68, 68, 0.1);
       padding: 6px 10px;
       border-radius: 6px;
+
       strong {
         color: #111;
         margin-right: 6px;
@@ -168,11 +246,12 @@
 
     .solution {
       margin-bottom: 6px;
-      font-size: 14px;
+      @include f.font-cap;
       color: #444;
       background: rgba(34, 197, 94, 0.1);
       padding: 6px 10px;
       border-radius: 6px;
+
       strong {
         color: #111;
         margin-right: 6px;
@@ -183,7 +262,11 @@
   .modal-nav {
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 30px;
+
+    @include m.desktop {
+      margin-top: 50px;
+    }
 
     button {
       border: none;

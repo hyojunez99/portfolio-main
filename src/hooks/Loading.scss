@@ -8,7 +8,7 @@
   z-index: 9999;
   overflow: hidden;
 
-  @include m.flex-layout(center, center, center);
+  @include m.flex-layout(row, center, center);
 
   background: transparent;
 
@@ -16,20 +16,38 @@
   .loader-right {
     position: absolute;
     top: 0;
-    width: 50%;
     height: 100%;
     background: #0a0a0a;
     z-index: 2;
   }
 
+  /* 📱 MOBILE */
   .loader-left {
     left: 0;
+    width: 49%;
     border-right: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .loader-right {
     right: 0;
+    width: 49%;
     border-left: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* 📲 TABLET */
+  @include m.tablet {
+    .loader-left,
+    .loader-right {
+      width: 48%;
+    }
+  }
+
+  /* 💻 DESKTOP */
+  @include m.desktop {
+    .loader-left,
+    .loader-right {
+      width: 50%;
+    }
   }
 
   .loader-center {
@@ -40,19 +58,28 @@
 
     .logo {
       @include f.font-title;
-      font-size: 42px;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
+      font-size: clamp(28px, 6vw, 42px);
+      letter-spacing: 1px;
+      margin-bottom: 10px;
 
       background: v.$gradient-primary;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+
+      @include m.desktop {
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+      }
     }
 
     .loading {
-      font-size: 14px;
+      @include f.font-cap;
       color: v.$color-gray;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
+
+      @include m.desktop {
+        letter-spacing: 2px;
+      }
     }
   }
 }

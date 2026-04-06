@@ -3,7 +3,15 @@
 @use "../../assets/scss/mixin" as m;
 
 #about {
-  padding: 7.5rem 0;
+  padding: 4rem 1.5rem;
+
+  @include m.tablet {
+    padding: 6rem 2rem;
+  }
+
+  @include m.desktop {
+    padding: 7.5rem 0;
+  }
 }
 
 .about {
@@ -28,13 +36,14 @@
 
   .about-wrap {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 160px;
-    margin-top: 50px;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    margin-top: 40px;
 
-    @media (max-width: 1024px) {
-      grid-template-columns: 1fr;
-      gap: 60px;
+    @include m.desktop {
+      grid-template-columns: 1fr 1.2fr;
+      gap: 160px;
+      margin-top: 50px;
     }
   }
 
@@ -45,24 +54,29 @@
     color: #a78bfa;
     border-radius: 20px;
     font-size: 13px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
   .about-title {
     @include f.font-h2;
     font-weight: 800;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+
+    @include m.desktop {
+      margin-bottom: 40px;
+    }
   }
 
   .about-intro {
     h2 {
       @include f.font-h3;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
   }
 
   .about-desc {
-    @include m.flex-layout(column, center, center, 1rem);
+    @include m.flex-layout(column, flex-start, flex-start, 1rem);
+
     p {
       color: #555;
     }
@@ -74,17 +88,27 @@
 
   .about-actions {
     display: flex;
-    gap: 15px;
-    margin: 40px 0;
+    flex-direction: column;
+    gap: 12px;
+    margin: 30px 0;
+
+    @include m.tablet {
+      flex-direction: row;
+      gap: 15px;
+      margin: 40px 0;
+    }
 
     .btn {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 22px;
+      @include m.flex-layout(row, center, center, 8px);
+      padding: 12px 20px;
       border-radius: 999px;
       cursor: pointer;
       transition: 0.3s;
+      width: 100%;
+
+      @include m.tablet {
+        width: auto;
+      }
     }
 
     .primary {
@@ -117,10 +141,10 @@
 
   .about-social {
     display: flex;
-    gap: 20px;
+    gap: 16px;
 
     a {
-      font-size: 22px;
+      font-size: 20px;
       color: #888;
 
       &:hover {
@@ -130,36 +154,50 @@
   }
 
   .about-section {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+
+    @include m.desktop {
+      margin-bottom: 60px;
+    }
 
     h3 {
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       @include f.font-h3;
     }
   }
 
   .about-timeline {
     border-left: 2px solid #eee;
-    padding-left: 24px;
+    padding-left: 20px;
+
+    @include m.desktop {
+      padding-left: 24px;
+    }
   }
 
   .about-item {
     position: relative;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
 
     &::before {
       content: "";
       position: absolute;
-      left: -31px;
+      left: -27px;
       top: 4px;
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: #8b5cf6;
+
+      @include m.desktop {
+        left: -31px;
+        width: 10px;
+        height: 10px;
+      }
     }
 
     span {
-      font-size: 12px;
+      @include f.font-cap;
       color: #999;
     }
 
@@ -169,25 +207,34 @@
     }
 
     p {
-      font-size: 14px;
+      @include f.font-body;
       color: #666;
     }
   }
 }
+
 .top-btn {
   position: fixed;
-  right: 40px;
-  bottom: 40px;
-  width: 48px;
-  height: 48px;
+  right: 20px;
+  bottom: 20px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: #111;
   color: #fff;
   border: none;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   z-index: 1000;
   transition: 0.3s;
+
+  @include m.desktop {
+    right: 40px;
+    bottom: 40px;
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
 
   &:hover {
     transform: translateY(-5px);

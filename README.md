@@ -38,6 +38,7 @@
 
 ## 4. 디렉토리 구조
 
+```text
 src
 │
 ├── assets
@@ -53,7 +54,8 @@ src
 │
 ├── layout                # 페이지 레이아웃 조합
 │
-├── pages
+├── pages                 # 페이지 단위 컴포넌트
+│   │                     # (실제 화면 단위 페이지)
 │   ├── About
 │   │
 │   ├── intro
@@ -62,8 +64,11 @@ src
 │   │
 │   └── skills
 │
-├── App.jsx               
-└── index.js             
+├── App.jsx
+└── index.js
+
+```
+
 ---
 
 ## 5. 담당 역할

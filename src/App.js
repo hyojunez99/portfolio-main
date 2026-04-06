@@ -16,7 +16,6 @@ function App() {
 
   const [isLoading, setIsLoading] = useState(true);
 
-  // 👉 최초 1회만 로딩
   useEffect(() => {
     const hasVisited = sessionStorage.getItem("visited");
 
@@ -27,7 +26,6 @@ function App() {
     }
   }, []);
 
-  // 👉 로딩 중이면 Loader만 보여줌
   if (isLoading) {
     return <Loading onComplete={() => setIsLoading(false)} />;
   }
