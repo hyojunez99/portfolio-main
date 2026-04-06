@@ -1,17 +1,72 @@
-:root {
-  --color-main: linear-gradient(
-    331deg,
-    rgba(108, 140, 255, 1),
-    rgba(155, 92, 255, 1)
-  );
+// COLOR SYSTEM
 
-  --color-blue: #6c8cff;
-  --color-purple: #9b5cff;
-  --color-green: #2ed3b7;
-  --text-black: #1a1a1a;
-  --text-sub: #64748b;
-  --text-light: #666;
-  --text-muted: #9ca3af;
-  --text-white: #fff;
-  --color-bg: #f7f8fa;
-}
+// background
+$color-bg: #0a0a0a;
+$color-bg-light: #111111;
+$color-bg-elevated: #181818;
+$color-bg-hover: #1f1f1f;
+
+// text
+$color-white: #ffffff;
+$color-gray: #a1a1a1;
+$color-gray-light: #666666;
+$color-gray-dark: #2a2a2a;
+
+// accent
+$color-primary: #8b5cf6;
+$color-primary-light: #a78bfa;
+$color-primary-dark: #6d28d9;
+
+// sub accent (포인트 다양화)
+$color-secondary: #22c55e;
+$color-danger: #ef4444;
+$color-warning: #f59e0b;
+
+// ui
+$color-border: rgba(255, 255, 255, 0.08);
+$color-border-strong: rgba(255, 255, 255, 0.15);
+$color-glass: rgba(255, 255, 255, 0.05);
+$color-overlay: rgba(0, 0, 0, 0.6);
+
+// GRADIENT
+
+$gradient-primary: linear-gradient(135deg, #8b5cf6, #6366f1);
+$gradient-glow: radial-gradient(
+  circle,
+  rgba(139, 92, 246, 0.4),
+  transparent 70%
+);
+
+// SPACING
+
+$spacing-xxs: 2px;
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+
+// RADIUS
+
+$radius-xs: 4px;
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 20px;
+$radius-xl: 32px;
+
+// TRANSITION
+
+$transition-fast: 0.2s ease;
+$transition-default: 0.4s ease;
+$transition-slow: 0.6s ease;
+$transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// EFFECT
+
+$blur: blur(20px);
+$blur-strong: blur(40px);
+
+$shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.2);
+$shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+$shadow-glow: 0 0 30px rgba(139, 92, 246, 0.4);

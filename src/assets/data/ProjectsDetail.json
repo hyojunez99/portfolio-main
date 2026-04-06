@@ -338,85 +338,9 @@
       "사용자가 콘텐츠를 자연스럽게 읽고 이해할 수 있도록 흐름을 우선적으로 고민하는 것이 UI 구현의 출발점이라는 점을 다시 한 번 확인했습니다."
     ]
   },
+
   {
     "id": "10",
-    "proname": "Infinite Image",
-    "summary": "이 프로젝트는 외부 라이브러리를 사용하지 않고 JavaScript만으로 무한 이미지 캐러셀을 구현한 UI 인터랙션 사례입니다. 이전·다음 버튼뿐만 아니라 자동 재생과 정지 기능까지 직접 구현하여 사용자의 다양한 조작을 지원했습니다.",
-    "deploy": "https://hyojunez99.github.io/loop/",
-    "github": "https://github.com/hyojunez99/loop.git",
-    "pdf": "",
-    "duration": "2025.09.23 ~ 2025.09.25 (2일)",
-    "teamSize": "개인 프로젝트",
-    "projectType": "개인 프로젝트",
-    "mainFeatures": [
-      "이미지 슬라이드를 이전 또는 다음 버튼으로 자연스럽게 전환할 수 있음",
-      "첫 번째와 마지막 이미지가 부드럽게 연결되는 무한 루프 캐러셀 구조 구현",
-      "자동 재생 및 일시정지 기능 추가, 사용자의 편의성 향상"
-    ],
-    "responsibilities": [],
-    "techStack": {
-      "Frontend": ["HTML5", "CSS3", "JavaScript (ES6+)"]
-    },
-    "troubleShooting": [],
-    "insights": [
-      "외부 라이브러리 없이도 JavaScript를 활용해 복잡한 UI 인터랙션을 충분히 구현할 수 있다는 자신감을 얻었다.",
-      "무한 슬라이드 UI를 설계하며 DOM 구조와 현재 위치 상태 관리를 제대로 파악하는 것이 중요함을 깨달았다."
-    ]
-  },
-
-  {
-    "id": "11",
-    "proname": "Skill Chart",
-    "summary": "CSS 애니메이션을 활용해 퍼센트 기반 스킬 차트를 구현한 UI 프로젝트입니다. 페이지가 열리면 프로그레스 바가 순차적으로 채워지는 애니메이션 효과를 구현해, 사용자가 각 스킬 레벨을 보다 직관적으로 확인할 수 있도록 했습니다.",
-    "deploy": "https://hyojunez99.github.io/chart/",
-    "github": "https://github.com/hyojunez99/chart.git",
-    "pdf": "",
-    "duration": "2025.09.16 ~ 2025.09.18 (2일)",
-    "teamSize": "개인 프로젝트",
-    "projectType": "개인 프로젝트",
-    "mainFeatures": [
-      "CSS keyframe을 활용하여 프로그레스 바의 애니메이션 효과 구현",
-      "nth-of-type 선택자를 사용해 각 요소별로 순차적으로 애니메이션 딜레이 적용"
-    ],
-    "responsibilities": [],
-    "techStack": {
-      "Frontend": ["HTML5", "CSS3"]
-    },
-    "troubleShooting": [],
-    "insights": [
-      "JavaScript 없이도 CSS만으로 다양한 단계형 인터랙션을 구현할 수 있다는 점을 새롭게 배웠습니다.",
-      "애니메이션 구현 시 동작 그 자체보다 타이밍과 순서가 사용자 경험에 훨씬 더 큰 영향을 미친다는 사실을 체감했습니다."
-    ]
-  },
-
-  {
-    "id": "12",
-    "proname": "3D Book Archive",
-    "summary": "CSS 3D Transform을 활용하여 책 표지가 마치 실제 오브젝트처럼 3D로 회전하는 인터랙션을 구현한 개인 아카이브형 웹 프로젝트입니다. 직접 읽은 책의 한 줄 요약과 인상 깊은 내용을 기록할 수 있도록 구성하였으며, 개인의 독서 기록을 쉽고 직관적으로 관리할 수 있도록 했습니다.",
-    "deploy": "https://hyojunez99.github.io/bookstore/",
-    "github": "https://github.com/hyojunez99/bookstore.git",
-    "pdf": "",
-    "duration": "2025.09.29 ~ 2025.10.01 (2일)",
-    "teamSize": "개인 프로젝트",
-    "projectType": "개인 프로젝트",
-    "mainFeatures": [
-      "CSS 3D Transform을 활용한 책 표지 회전 인터랙션",
-      "마우스와 버튼 동작에 따라 3D 시점 전환",
-      "책 정보와 감상 기록을 위한 콘텐츠 구조 설계"
-    ],
-    "responsibilities": [],
-    "techStack": {
-      "Frontend": ["HTML5", "CSS3", "JavaScript (ES6+)"]
-    },
-    "troubleShooting": [],
-    "insights": [
-      "3D UI를 구현할 때에는 단순히 transform 속성만 적용하기보다, DOM 구조와 레이어의 분리를 우선적으로 설계하는 것이 훨씬 더 중요하다는 점을 경험했습니다",
-      "시각적 효과에만 집중할 것이 아니라 유지보수와 확장성을 함께 고려해야 효과적으로 구조를 설계할 수 있다는 기준을 갖게 되었습니다."
-    ]
-  },
-
-  {
-    "id": "13",
     "proname": "LUMEN 랜딩페이지",
     "summary": "LUMEN은 코드 없이 누구나 빠르고 쉽게 프로페셔널한 웹사이트를 만들 수 있는 웹 빌더 서비스로, 이를 소개하는 랜딩페이지를 제작했습니다. 정보 구조는 직관적으로 구성했고, 명확한 CTA(콜 투 액션) 설계를 통해 사용자가 서비스의 핵심 가치를 짧은 시간 내에 이해할 수 있도록 했습니다.",
     "deploy": "https://hyojunez99.github.io/lumen/",
@@ -465,7 +389,7 @@
   },
 
   {
-    "id": "14",
+    "id": "11",
     "proname": "Apple Product Detail Page",
     "summary": "Apple 스타일의 제품 상세 페이지를 직접 구현한 개인 프로젝트입니다. 스크롤 기반의 인터랙션과 사용자 경험(UX)에 중점을 두었으며, GSAP을 활용해 각 섹션이 자연스럽게 전환되도록 설계했습니다. 단순한 UI 구현을 넘어, 사용자가 실제로 느끼는 흐름과 몰입감에 초점을 맞추었습니다.",
     "deploy": "https://hyojunez99.github.io/apple-clone/",
@@ -519,7 +443,7 @@
   },
 
   {
-    "id": "15",
+    "id": "12",
     "proname": "AER Brand Website",
     "summary": "미니멀한 패션 브랜드 경험을 중심으로 설계한 React 기반 웹사이트입니다. GSAP을 활용한 스크롤 인터랙션과 세련된 UI를 통해 브랜드 감성과 사용자 경험(UX)을 동시에 강화하는 데 집중했습니다.",
     "deploy": "https://hyojunez99.github.io/aer/",
@@ -569,7 +493,7 @@
   },
 
   {
-    "id": "16",
+    "id": "13",
     "proname": "Aura Music App",
     "summary": "음악 스트리밍 서비스 컨셉의 React 기반 웹 애플리케이션으로, MiniPlayer와 FullPlayer 구조를 통해 실제 서비스와 유사한 사용자 경험을 구현했습니다. 재생·검색·라이브러리 기능을 중심으로 전역 상태 관리와 UX 흐름 설계에 집중한 프로젝트입니다.",
     "deploy": "https://hyojunez99.github.io/aura/",

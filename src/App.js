@@ -1,20 +1,54 @@
-import { HashRouter, Route, Routes } from "react-router-dom";
-import "./assets/scss/global.scss";
-import Layout from "./layout/Layout";
-import MainPage from "./pages/MainPage";
-import ProjectsDetailPage from "./pages/ProjectsDetailPage";
+import { Routes, Route, useLocation } from "react-router-dom";
+import "../src/assets/scss/global.scss";
 
-const App = () => {
+import Intro from "./pages/intro/Intro";
+import AboutPage from "./layout/AboutPage";
+import ProjectPage from "./layout/ProjectPage";
+import ProjectsAll from "./pages/projects/ProjectsAll";
+import ProjectDetail from "./pages/projects/ProjectDetail";
+
+import { useState, useEffect } from "react";
+import Loading from "./hooks/Loading";
+
+function App() {
+  const location = useLocation();
+  const state = location.state;
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const hasVisited = sessionStorage.getItem("visited");
+
+    if (hasVisited) {
+      setIsLoading(false);
+    } else {
+      sessionStorage.setItem("visited", "true");
+    }
+  }, []);
+
+  if (isLoading) {
+    return <Loading onComplete={() => setIsLoading(false)} />;
+  }
+
   return (
-    <HashRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/detail/:id" element={<ProjectsDetailPage />} />
-        </Route>
+    <>
+      {/* 메인 라우트 */}
+      <Routes location={state?.background || location}>
+        <Route path="/" element={<Intro />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/projects" element={<ProjectPage />} />
+        <Route path="/projects/all" element={<ProjectsAll />} />
+        <Route path="/projects/:id" element={<ProjectDetail />} />
       </Routes>
-    </HashRouter>
+
+      {/* 모달 라우트 */}
+      {state?.background && (
+        <Routes>
+          <Route path="/projects/:id" element={<ProjectDetail />} />
+        </Routes>
+      )}
+    </>
   );
-};
+}
 
 export default App;

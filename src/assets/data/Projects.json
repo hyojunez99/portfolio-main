@@ -8,6 +8,7 @@
     "type2": "개인 프로젝트",
     "proname": "웹 포트폴리오",
     "prosub": "개인 포트폴리오 웹사이트",
+    "keywords": ["직접 기획한", "부드러운 화면", "반응형 웹"],
     "day": "2026.01.19 ~ 2026.02.02",
     "skills": [
       { "image": "react-icon.png" },
@@ -16,7 +17,6 @@
       { "image": "github-icon.png" }
     ]
   },
-
   {
     "id": "2",
     "priority": 2,
@@ -26,6 +26,7 @@
     "type2": "팀 프로젝트",
     "proname": "주차장 관리 웹 사이트",
     "prosub": "역할별 실시간 주차 관리 기능을 구현한 웹 시스템",
+    "keywords": ["관리자 페이지", "팀 프로젝트", "실제 기능 구현"],
     "day": "2025.01.02 ~ 2025.01.13",
     "skills": [
       { "image": "react-icon.png" },
@@ -35,7 +36,6 @@
       { "image": "github-icon.png" }
     ]
   },
-
   {
     "id": "3",
     "priority": 3,
@@ -45,6 +45,7 @@
     "type2": "팀 프로젝트",
     "proname": "쇼핑몰 프론트엔드 웹 앱",
     "prosub": "상품 탐색과 UI 흐름에 집중한 쇼핑몰 SPA",
+    "keywords": ["상품 리스트", "데이터 연동", "장바구니 기획"],
     "day": "2025.12.19 ~ 2025.12.29",
     "skills": [
       { "image": "react-icon.png" },
@@ -54,7 +55,6 @@
       { "image": "github-icon.png" }
     ]
   },
-
   {
     "id": "4",
     "priority": 20,
@@ -64,6 +64,7 @@
     "type2": "개인 프로젝트",
     "proname": "ScrollWave",
     "prosub": "스크롤 인터랙션으로 콘텐츠 전환을 구현한 웹사이트 클론",
+    "keywords": ["스크롤 애니메이션", "화면 전환", "눈에 띄는"],
     "day": "2025.12.08 ~ 2025.12.11",
     "skills": [
       { "image": "react-icon.png" },
@@ -71,7 +72,6 @@
       { "image": "gsap-icon.png" }
     ]
   },
-
   {
     "id": "5",
     "priority": 21,
@@ -81,6 +81,7 @@
     "type2": "개인 프로젝트",
     "proname": "My Widget",
     "prosub": "날씨 정보와 개인화 위젯을 제공하는 대시보드 웹 앱",
+    "keywords": ["날씨 API", "메모 기능", "개인 대시보드"],
     "day": "2025.12.01 ~ 2025.12.04",
     "skills": [
       { "image": "react-icon.png" },
@@ -88,7 +89,6 @@
       { "image": "css-icon.png" }
     ]
   },
-
   {
     "id": "6",
     "priority": 22,
@@ -98,6 +98,7 @@
     "type2": "개인 프로젝트",
     "proname": "FlexK",
     "prosub": "PC·모바일 반응형 UI를 재현한 기업 웹사이트 클론",
+    "keywords": ["깔끔한 코딩", "모바일 최적화", "기본기 탄탄"],
     "day": "2025.11.12 ~ 2025.11.14",
     "skills": [
       { "image": "html-icon.png" },
@@ -105,7 +106,6 @@
       { "image": "js-icon.png" }
     ]
   },
-
   {
     "id": "7",
     "priority": 23,
@@ -115,19 +115,20 @@
     "type2": "개인 프로젝트",
     "proname": "GridSpace",
     "prosub": "CSS Grid 기반 레이아웃 중심의 예약 서비스 메인 페이지 클론",
+    "keywords": ["격자 레이아웃", "세련된 배치", "숙련된 CSS"],
     "day": "2025.10.23 ~ 2025.10.24",
     "skills": [{ "image": "html-icon.png" }, { "image": "css-icon.png" }]
   },
-
   {
     "id": "8",
     "priority": 24,
-    "image": "",
-    "image2": "card-img8.png",
+    "image": "card-img8.png",
+    "image2": "",
     "type": "Personal",
     "type2": "개인 프로젝트",
     "proname": "HealthPick",
     "prosub": "선택 흐름을 설계한 JSON 기반 퀴즈 웹 앱",
+    "keywords": ["퀴즈 게임", "결과 보기", "선택지 필터링"],
     "day": "2025.11.24 ~ 2025.11.27",
     "skills": [
       { "image": "react-icon.png" },
@@ -135,7 +136,6 @@
       { "image": "css-icon.png" }
     ]
   },
-
   {
     "id": "9",
     "priority": 25,
@@ -145,59 +145,12 @@
     "type2": "개인 프로젝트",
     "proname": "ClearDrive",
     "prosub": "정보 구조와 가독성을 고려한 기업형 웹사이트 클론",
+    "keywords": ["가독성 좋은", "깔끔한 정렬", "브랜드 페이지"],
     "day": "2025.10.24 ~ 2025.10.26",
     "skills": [{ "image": "html-icon.png" }, { "image": "css-icon.png" }]
   },
-
   {
     "id": "10",
-    "priority": 26,
-    "image": "",
-    "image2": "card-img10.png",
-    "type": "Practical",
-    "type2": "개인 프로젝트",
-    "proname": "무한 루프 이미지 슬라이더",
-    "prosub": "이전/다음 버튼과 자동 재생·정지 기능이 포함된 슬라이드 동작을 직접 구현",
-    "day": "",
-    "skills": [
-      { "image": "html-icon.png" },
-      { "image": "css-icon.png" },
-      { "image": "js-icon.png" }
-    ]
-  },
-
-  {
-    "id": "11",
-    "priority": 27,
-    "image": "",
-    "image2": "card-img11.png",
-    "type": "Practical",
-    "type2": "개인 프로젝트",
-    "proname": "CSS 애니메이션 프로그래스바",
-    "prosub": "점차 채워지는 퍼센트 기반 스킬 차트 프로그레스 바를 구현",
-    "day": "",
-    "skills": [{ "image": "html-icon.png" }, { "image": "css-icon.png" }]
-  },
-
-  {
-    "id": "12",
-    "priority": 28,
-    "image": "",
-    "image2": "card-img12.png",
-    "type": "Practical",
-    "type2": "개인 프로젝트",
-    "proname": "CSS 3D 북 이펙트",
-    "prosub": "책을 3D 회전 효과로 보여주며, 읽은 책의 요약과 인상 깊은 내용을 기록하는 개인 아카이브형 웹 프로젝트",
-    "day": "",
-    "skills": [
-      { "image": "html-icon.png" },
-      { "image": "css-icon.png" },
-      { "image": "js-icon.png" }
-    ]
-  },
-
-  {
-    "id": "13",
     "priority": 4,
     "image": "",
     "image2": "card-img14-1.png",
@@ -205,6 +158,7 @@
     "type2": "개인 프로젝트",
     "proname": "LUMEN",
     "prosub": "서비스 가치 전달 구조와 CTA 설계에 집중한 SaaS 랜딩페이지",
+    "keywords": ["서비스 소개", "컴포넌트 재사용", "유지보수 강조"],
     "day": "2026.03.03 ~ 2026.03.06",
     "skills": [
       { "image": "react-icon.png" },
@@ -214,9 +168,8 @@
       { "image": "github-icon.png" }
     ]
   },
-
   {
-    "id": "14",
+    "id": "11",
     "priority": 5,
     "image": "",
     "image2": "card-img15-1.png",
@@ -224,6 +177,7 @@
     "type2": "개인 프로젝트",
     "proname": "Apple Product Detail Page",
     "prosub": "Apple 스타일 UI/UX와 스크롤 기반 인터랙션, 제품 상세 경험 구현",
+    "keywords": ["고퀄리티 구현", "몰입감 있는", "스크롤 효과"],
     "day": "2026.03.16 ~ 2026.03.17",
     "skills": [
       { "image": "react-icon.png" },
@@ -234,7 +188,7 @@
     ]
   },
   {
-    "id": "15",
+    "id": "12",
     "priority": 6,
     "image": "card-img16.png",
     "image2": "card-img16-1.png",
@@ -242,6 +196,7 @@
     "type2": "개인 프로젝트",
     "proname": "AER Brand Website",
     "prosub": "하이엔드 패션 브랜드 AER을 컨셉으로, 미니멀한 레이아웃과 GSAP 기반 스크롤 인터랙션을 통해 브랜드 중심의 UI/UX를 구현",
+    "keywords": ["브랜드 감성", "미니멀 디자인", "부드러운 움직임"],
     "day": "2026.03.16 ~ 2026.03.17",
     "skills": [
       { "image": "react-icon.png" },
@@ -251,16 +206,16 @@
       { "image": "github-icon.png" }
     ]
   },
-
   {
-    "id": "16",
+    "id": "13",
     "priority": 7,
-    "image": "",
-    "image2": "card-img17.png",
+    "image": "card-img17.png",
+    "image2": "",
     "type": "Personal",
     "type2": "개인 프로젝트",
     "proname": "Aura Music App",
     "prosub": "MiniPlayer/FullPlayer 기반 음악 스트리밍 앱으로, 재생·검색·라이브러리 기능과 상태 관리 중심 UX를 구현한 프로젝트",
+    "keywords": ["음악 재생기", "데이터 저장", "사용자 편의성"],
     "day": "2026.03.31 ~ 2026.04.03",
     "skills": [
       { "image": "react-icon.png" },

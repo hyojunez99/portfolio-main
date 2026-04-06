@@ -1,35 +1,21 @@
-//태블릿 기준 반응형
+// 태블릿
 $tablet: 768px;
 @mixin tablet {
-  @media all and (min-width: $tablet) {
+  @media (min-width: $tablet) {
     @content;
   }
 }
 
-//데스크탑 기준 반응형
+// 데스크탑
 $desktop: 1024px;
 @mixin desktop {
-  @media all and (min-width: $desktop) {
-    @content;
-  }
-}
-
-// 모바일 이하
-@mixin mobile-max {
-  @media all and (max-width: 767px) {
-    @content;
-  }
-}
-
-// 태블릿 이하
-@mixin tablet-max {
-  @media all and (max-width: 1023px) {
+  @media (min-width: $desktop) {
     @content;
   }
 }
 
 //레이아웃 플렉스
-@mixin flex-layout($dir: row, $just: center, $align: center, $gap: 1rem) {
+@mixin flex-layout($dir: row, $just: center, $align: center, $gap: 0) {
   display: flex;
   flex-direction: $dir;
   justify-content: $just;
