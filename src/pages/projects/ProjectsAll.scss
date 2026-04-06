@@ -69,9 +69,6 @@
       }
     }
 
-    /* =========================
-       이미지 영역
-    ========================= */
     .project-left {
       position: relative;
       width: 100%;
@@ -86,56 +83,46 @@
         width: 100%;
         display: block;
         border-radius: v.$radius-lg;
-
         aspect-ratio: 16 / 10;
         object-fit: cover;
       }
 
-      /* 🔥 mobile 이미지 반응형 (핵심) */
       .mobile-img {
         position: absolute;
-
-        /* 📱 MOBILE */
-        bottom: -10px;
+        bottom: -5px;
         left: 10px;
         width: 90px;
         border-radius: v.$radius-md;
         transform: rotate(-4deg);
         transition: v.$transition-default;
 
-        /* 📱➡️📲 TABLET */
         @include m.tablet {
-          bottom: -15px;
+          bottom: -10px;
           left: 20px;
-          width: 130px;
+          width: 180px;
           transform: rotate(-6deg);
         }
 
-        /* 💻 DESKTOP */
         @include m.desktop {
-          bottom: -40px;
+          bottom: -10px;
           left: 40px;
-          width: 200px;
+          width: 180px;
           transform: rotate(-8deg);
         }
       }
 
-      /* 🔥 reverse 대응 (left → right 완전 전환) */
       .project-item.reverse & {
         .mobile-img {
           left: auto;
 
-          /* 📱 MOBILE */
           right: 10px;
           transform: rotate(4deg);
 
-          /* TABLET */
           @include m.tablet {
             right: 20px;
             transform: rotate(6deg);
           }
 
-          /* DESKTOP */
           @include m.desktop {
             right: 40px;
             transform: rotate(8deg);
@@ -143,7 +130,6 @@
         }
       }
 
-      /* hover (데스크탑 전용) */
       @include m.desktop {
         &:hover .mobile-img {
           transform: rotate(0deg) scale(1.05);
@@ -151,9 +137,6 @@
       }
     }
 
-    /* =========================
-       텍스트 영역
-    ========================= */
     .project-right {
       width: 100%;
       position: relative;
