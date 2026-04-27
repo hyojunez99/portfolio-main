@@ -11,6 +11,9 @@ const About = () => {
   const [showTop, setShowTop] = useState(false);
   useAboutAnimation(containerRef);
 
+  // 배포 환경에서도 안전하게 파일을 찾을 수 있도록 PUBLIC_URL을 사용합니다.
+  const resumePath = process.env.PUBLIC_URL + "/pdf/resume.pdf";
+
   const scrollToFooter = () => {
     const footerSection = document.getElementById("contact");
     if (footerSection) {
@@ -24,10 +27,6 @@ const About = () => {
         setTimeout(() => nameInput.focus(), 800);
       }
     }
-  };
-
-  const openResume = () => {
-    window.open("/pdf/resume.pdf", "_blank");
   };
 
   useEffect(() => {
@@ -80,7 +79,7 @@ const About = () => {
                 </p>
 
                 <p>
-                  문제를 발견하면 원인을 끝까지 분석하고 개선하는 과정에서
+                  問題を 발견하면 원인을 끝까지 분석하고 개선하는 과정에서
                   즐거움을 느낍니다. 이러한 집요함이 서비스의 완성도를 결정짓는
                   핵심이라고 믿습니다.
                 </p>
@@ -97,9 +96,22 @@ const About = () => {
               <button className="btn primary" onClick={scrollToFooter}>
                 <FiSend /> 문의하기
               </button>
-              <button className="btn secondary" onClick={openResume}>
-                <FiFileText /> 이력서 보기
-              </button>
+
+              {/* 이력서 보기 버튼: <a> 태그를 사용하여 팝업 차단 없이 안전하게 열리도록 수정 */}
+              <a
+                href={resumePath}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn secondary"
+                style={{
+                  textDecoration: "none",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <FiFileText style={{ marginRight: "8px" }} /> 이력서 보기
+              </a>
             </div>
 
             <div className="about-social">
@@ -149,6 +161,7 @@ const About = () => {
           </div>
         </div>
       </div>
+
       {/* Top 버튼 */}
       {showTop && (
         <button
