@@ -48,7 +48,9 @@ const Projects = () => {
               className={`project-item ${index % 2 !== 0 ? "reverse" : ""}`}
               key={item.id}
             >
-              <div className="project-left">
+              <div
+                className={`project-left ${!item.image2 ? "is-mobile-only" : ""}`}
+              >
                 {item.image && (
                   <img
                     className="mobile-img"
@@ -65,21 +67,19 @@ const Projects = () => {
                   />
                 )}
               </div>
-              {/* 텍스트 */}
+
+              {/* 텍스트 섹션 */}
               <div className="project-right">
                 <span className="number">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                {/* 타입 */}
                 <p className="type">{item.type2}</p>
                 <h2>{item.proname}</h2>
                 <p className="name">{item.prosub}</p>
 
-                {/* 기간 */}
                 {item.day && <p className="day">{item.day}</p>}
 
-                {/* 키워드 */}
                 {item.keywords && (
                   <div className="keywords">
                     {item.keywords.map((kw, i) => (
@@ -90,7 +90,6 @@ const Projects = () => {
                   </div>
                 )}
 
-                {/* 스킬 */}
                 <div className="skills">
                   {item.skills?.map((skill, i) => (
                     <img
@@ -106,7 +105,7 @@ const Projects = () => {
                     to={`/projects/${item.id}`}
                     state={{ background: currentLocation }}
                   >
-                    자세히 보기 →
+                    자세히 보기
                   </Link>
                 </div>
               </div>

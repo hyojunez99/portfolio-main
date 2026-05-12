@@ -102,7 +102,11 @@ const ProjectDetail = () => {
             </a>
           )}
           {project.pdf && (
-            <a href={`/pdf/${project.pdf}`} target="_blank" rel="noreferrer">
+            <a
+              href={`${process.env.PUBLIC_URL}/pdf/${project.pdf}`}
+              target="_blank"
+              rel="noreferrer"
+            >
               <span>
                 <ImFilePdf />
               </span>

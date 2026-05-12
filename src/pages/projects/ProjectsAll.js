@@ -104,7 +104,7 @@ const ProjectsAll = () => {
                     to={`/projects/${item.id}`}
                     state={{ background: currentLocation }}
                   >
-                    자세히 보기 →
+                    자세히 보기
                   </Link>
                 </div>
               </div>

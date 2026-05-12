@@ -151,7 +151,7 @@
   },
   {
     "id": "10",
-    "priority": 4,
+    "priority": 5,
     "image": "",
     "image2": "card-img14-1.png",
     "type": "Personal",
@@ -170,7 +170,7 @@
   },
   {
     "id": "11",
-    "priority": 5,
+    "priority": 6,
     "image": "",
     "image2": "card-img15-1.png",
     "type": "Clone",
@@ -189,7 +189,7 @@
   },
   {
     "id": "12",
-    "priority": 6,
+    "priority": 7,
     "image": "card-img16.png",
     "image2": "card-img16-1.png",
     "type": "Personal",
@@ -208,7 +208,7 @@
   },
   {
     "id": "13",
-    "priority": 7,
+    "priority": 8,
     "image": "card-img17.png",
     "image2": "",
     "type": "Personal",
@@ -221,6 +221,25 @@
       { "image": "react-icon.png" },
       { "image": "js-icon.png" },
       { "image": "scss-icon.png" },
+      { "image": "github-icon.png" }
+    ]
+  },
+  {
+    "id": "14",
+    "priority": 4,
+    "image": "card-img18.png",
+    "image2": "",
+    "type": "Personal",
+    "type2": "개인 프로젝트",
+    "proname": "Runday APP Redesign",
+    "prosub": "러닝 앱의 복잡한 UX를 개선하고 기록·챌린지·스토어를 통합한 리디자인 프로젝트로, 공통 컴포넌트 시스템과 다크모드를 구현함",
+    "keywords": ["UX 리디자인", "컴포넌트 시스템", "다크모드"],
+    "day": "2026.05.04 ~ 2026.05.10",
+    "skills": [
+      { "image": "react-icon.png" },
+      { "image": "js-icon.png" },
+      { "image": "scss-icon.png" },
+      { "image": "figma-icon.png" },
       { "image": "github-icon.png" }
     ]
   }

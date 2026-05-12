@@ -534,5 +534,55 @@
       }
     ],
     "insights": "컴포넌트 간 상태를 상위에서 통합 관리하는 구조가 애플리케이션의 안정성과 확장성에 큰 영향을 미친다는 것을 경험했습니다. 또한 단순 UI 구현을 넘어 사용자 흐름(UX)을 설계하는 과정이 중요하다는 점을 깨달았으며, localStorage를 활용한 상태 유지와 실제 서비스 구조를 반영한 설계를 통해 전반적인 개발 역량을 향상시킬 수 있었습니다."
+  },
+  
+  {
+    "id": "14",
+    "proname": "Runday APP Redesign",
+    "summary": "기존 러닝 앱의 복잡한 사용자 흐름을 개선하고 기록, 챌린지, 크루, 스토어 기능을 하나의 UX 흐름으로 연결한 모바일 리디자인 프로젝트입니다. 공통 컴포넌트와 디자인 시스템을 구축하여 실제 서비스 수준의 완성도를 구현했습니다.",
+    "deploy": "https://hyojunez99.github.io/runday_redesign/",
+    "github": "https://github.com/hyojunez99/runday_redesign.git",
+    "pdf": "",
+    "duration": "2026.05.04 ~ 2026.05.10 (6일)",
+    "teamSize": "개인 프로젝트",
+    "projectType": "개인 프로젝트",
+    "mainFeatures": [
+      "기록, 챌린지, 크루, 스토어를 통합한 사용자 행동 흐름 중심의 UX 설계",
+      "재사용성을 높인 공통 UI 컴포넌트(Button, Card, Chip, ProgressBar) 시스템 구축",
+      "다크모드 지원을 위한 CSS Variable 시스템 및 컬러 가이드 적용",
+      "모바일 환경에 최적화된 가로 슬라이드 인터랙션 및 반응형 레이아웃 구현",
+      "카테고리 필터링, 진행률 시각화, 탭 활성 상태 등 인터랙티브 요소 개발",
+      "React Router 기반의 체계적인 페이지 전환 및 상세 페이지 연결 구조 설계"
+    ],
+    "responsibilities": [
+      "전체 UI/UX 설계 및 정보 구조(IA) 수립",
+      "디자인 시스템 구축(컬러, 타이포그래피, 공통 컴포넌트 정의)",
+      "React 기반 페이지 및 기능 컴포넌트 전체 개발",
+      "SCSS 아키텍처 설계 및 공통 믹스인(Mixin) 구축",
+      "JSON 데이터 기반의 동적 렌더링 시스템 설계"
+    ],
+    "techStack": {
+      "Frontend": ["JavaScript (ES6+)", "React.js", "SCSS"],
+      "Data": ["Mock JSON"],
+      "Tools": ["Figma", "Git/GitHub"]
+    },
+    "troubleShooting": [
+      {
+        "problem": "공통 Button 스타일이 각 페이지별 스타일과 충돌하여 디자인 일관성이 깨지는 문제가 발생함.",
+        "solution": "variant(타입)와 size(크기) 기반의 Props 구조로 Button 컴포넌트를 재설계하여 중복 코드를 제거하고 확장성을 확보함.",
+        "highlights": ["컴포넌트 재설계", "스타일 충돌", "재사용성", "디자인 시스템"]
+      },
+      {
+        "problem": "JSON 데이터 내부에 작성된 이미지 경로가 React 빌드 환경에서 정상적으로 참조되지 않음.",
+        "solution": "imageMap 객체를 활용하여 JSON의 파일명 키값과 실제 import한 이미지 리소스를 매핑하는 방식으로 경로 최적화 및 이미지 출력 문제를 해결함.",
+        "highlights": ["이미지 경로", "imageMap", "동적 렌더링", "데이터 매핑"]
+      },
+      {
+        "problem": "React Router의 중복 설정 및 잘못된 경로 구조로 인해 상세 페이지가 정상적으로 출력되지 않는 현상이 발생함.",
+        "solution": "Router 구조를 전면 수정하고 Outlet 기능을 활용하여 레이아웃과 상세 페이지 간의 계층 구조를 재정리함으로써 경로 충돌 문제를 해결함.",
+        "highlights": ["React Router", "경로 충돌", "Outlet", "중첩 라우팅"]
+      }
+    ],
+    "insights": "디자인 시스템과 공통 컴포넌트 시스템 구축이 실제 유지보수성과 개발 속도에 얼마나 큰 영향을 미치는지 직접 체감했습니다. 단순히 보기 좋은 UI를 넘어, 사용자 흐름(User Flow)을 고려한 설계가 프로젝트의 완성도를 결정한다는 점을 배웠으며, 실제 서비스 수준의 폴더 구조를 직접 설계하며 React 프로젝트 구조화 역량을 크게 향상시켰습니다."
   }
 ]
