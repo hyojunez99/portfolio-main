@@ -306,7 +306,7 @@ export const useIntroAnimation = (containerRef) => {
         "<",
       );
   };
-
+  
   return {
     animateHover,
     animateClick,
