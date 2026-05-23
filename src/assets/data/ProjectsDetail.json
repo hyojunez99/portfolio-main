@@ -542,7 +542,7 @@
     "summary": "기존 러닝 앱의 복잡한 사용자 흐름을 개선하고 기록, 챌린지, 크루, 스토어 기능을 하나의 UX 흐름으로 연결한 모바일 리디자인 프로젝트입니다. 공통 컴포넌트와 디자인 시스템을 구축하여 실제 서비스 수준의 완성도를 구현했습니다.",
     "deploy": "https://hyojunez99.github.io/runday_redesign/",
     "github": "https://github.com/hyojunez99/runday_redesign.git",
-    "pdf": "",
+    "pdf": "runday_redesign.pdf",
     "duration": "2026.05.04 ~ 2026.05.10 (6일)",
     "teamSize": "개인 프로젝트",
     "projectType": "개인 프로젝트",
