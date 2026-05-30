@@ -1,0 +1,113 @@
+@use "../assets/scss/mixin" as *;
+@use "../assets/scss/variables" as v;
+@use "../assets/scss/font" as f;
+
+.intro-header {
+  @include flex(space-between, center);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  // 다크/라이트 모드 배경 그라데이션 자동 변환
+  background: linear-gradient(to bottom, var(--bg-color) 50%, transparent);
+  backdrop-filter: blur(4px);
+  transition: background 0.3s ease;
+
+  .logo {
+    font-family: f.$font-chalk;
+    font-size: 34px;
+    color: var(--text-color);
+    @include chalk-glow(var(--text-color), 1px);
+    letter-spacing: 0.02em;
+    cursor: pointer;
+
+    span {
+      color: v.$color-point-green;
+      @include chalk-glow(v.$color-point-green, 2px);
+    }
+  }
+
+  .nav-links {
+    @include flex;
+    gap: 35px;
+
+    a {
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      transition: all 0.3s ease;
+      position: relative;
+
+      &:hover {
+        color: var(--text-color);
+        @include chalk-glow(var(--text-color), 2px);
+      }
+
+      &.active::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 4px;
+        background-color: v.$color-point-green;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .theme-toggle-container {
+    .theme-toggle-btn {
+      width: 50px;
+      height: 26px;
+      background: var(--border-color);
+      @include chalk-border(var(--text-muted), 15px);
+      position: relative;
+      padding: 0;
+      transition: all 0.3s ease;
+
+      .toggle-ball {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 3px;
+        width: 18px;
+        height: 18px;
+        background: var(--card-bg);
+        @include chalk-border(var(--text-muted), 50%);
+        @include flex;
+        font-size: 10px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      &.dark {
+        background: rgba(v.$color-point-purple, 0.1);
+        @include chalk-border(v.$color-point-purple, 15px);
+        .toggle-ball {
+          left: 27px;
+          border-color: v.$color-point-purple;
+        }
+      }
+
+      &:hover {
+        background: var(--text-muted);
+        cursor: pointer;
+      }
+    }
+  }
+
+  @include respond-to("tablet") {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    .nav-links {
+      gap: 20px;
+    }
+  }
+}

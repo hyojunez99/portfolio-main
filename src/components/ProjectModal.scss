@@ -1,0 +1,196 @@
+@use "../assets/scss/mixin" as *;
+@use "../assets/scss/variables" as v;
+@use "../assets/scss/font" as f;
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  @include flex(center, center);
+  padding: 20px;
+}
+
+.chalkboard-popup {
+  width: 100%;
+  max-width: 1100px;
+  max-height: 85vh;
+  background: var(--bg-color);
+  @include chalkboard-texture;
+  @include chalk-border(var(--text-color), 16px);
+  position: relative;
+  color: var(--text-color);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--text-muted);
+    cursor: pointer;
+    z-index: 20;
+    &:hover {
+      color: var(--text-color);
+    }
+  }
+
+  .modal-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg-color);
+    padding: 15px 60px 15px 40px;
+    border-bottom: 1px dashed var(--border-color);
+    display: flex;
+    flex-direction: column;
+
+    .project-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 12px;
+      color: v.$color-point-blue;
+      border: 1px solid v.$color-point-blue;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 5px;
+    }
+    .project-title {
+      font-family: f.$font-chalk;
+      font-size: 28px;
+      margin: 5px 0;
+      @include chalk-glow(var(--text-color), 1px);
+    }
+    .project-duration {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+  }
+
+  .modal-body-grid {
+    background: var(--bg-color);
+    padding: 40px;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    @include respond-to("tablet") {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .visual-preview-area {
+    .preview-screen-list {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 10px;
+      @include chalk-border(var(--border-color), 8px);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .outlink-group {
+      @include flex(center, center);
+      gap: 15px;
+      margin-top: 25px;
+
+      .link-btn {
+        flex: 1;
+        padding: 12px;
+        text-align: center;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid var(--border-color);
+        color: var(--text-color);
+
+        &:hover {
+          transform: translateY(-2px);
+          filter: brightness(1.2);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        &.live {
+          background: v.$color-point-purple;
+        }
+        &.git {
+          background: #24292e;
+          color: #fff;
+        }
+        &.pdf {
+          background-color: #1e3a8a;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .info-spec-area {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    .spec-section {
+      h3 {
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        color: v.$color-point-blue;
+        border-bottom: 1px dashed var(--border-color);
+        padding-bottom: 6px;
+        margin-bottom: 12px;
+      }
+      .summary-text,
+      li {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--text-color);
+        opacity: 0.8;
+      }
+      .tech-stack-tags .stack-badge {
+        font-size: 11px;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-weight: 500;
+        margin-right: 8px;
+        &.FE {
+          background: rgba(v.$color-point-green, 0.1);
+          color: v.$color-point-green;
+          border: 1px solid rgba(v.$color-point-green, 0.3);
+        }
+        &.DT {
+          background: rgba(v.$color-point-blue, 0.1);
+          color: v.$color-point-blue;
+          border: 1px solid rgba(v.$color-point-blue, 0.3);
+        }
+        &.TL {
+          background: var(--card-bg);
+          color: var(--text-muted);
+          border: 1px solid var(--border-color);
+        }
+      }
+    }
+    .troubleshooting-section .ts-card {
+      background: var(--card-bg);
+      @include chalk-border(var(--border-color), 6px);
+      padding: 15px;
+      margin-top: 10px;
+      font-size: 13px;
+      .ts-prob {
+        color: var(--color-ts-prob);
+      }
+
+      .ts-sol {
+        color: var(--color-ts-sol);
+      }
+    }
+  }
+}

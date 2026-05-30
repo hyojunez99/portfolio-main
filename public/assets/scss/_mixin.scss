@@ -1,0 +1,72 @@
+@import "variables";
+
+$fluid-max-width: 1440;
+$fluid-min-width: 360;
+
+@mixin fluid-size($property, $min-value, $max-value) {
+  #{$property}: clamp(
+    #{$min-value} * 1px,
+    calc(
+      #{$min-value} * 1px + (#{$max-value} - #{$min-value}) *
+        (
+          (100vw - #{$fluid-min-width} * 1px) /
+            (#{$fluid-max-width} - #{$fluid-min-width})
+        )
+    ),
+    #{$max-value} * 1px
+  );
+}
+
+@mixin flex($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin chalk-border($color: $color-chalk-muted, $radius: 8px) {
+  border: 1px solid $color;
+  border-radius: $radius;
+  box-shadow:
+    0 0 2px rgba(255, 255, 255, 0.05),
+    inset 0 0 4px rgba(255, 255, 255, 0.02);
+}
+
+@mixin chalk-glow($color: $color-chalk-white, $intensity: 2px) {
+  color: $color;
+  text-shadow:
+    0 0 $intensity rgba($color, 0.6),
+    0 0 ($intensity * 2) rgba($color, 0.3);
+}
+
+@mixin chalkboard-texture {
+  background-color: $color-chalkboard-bg;
+  background-image:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.02) 0%,
+      transparent 80%
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
+  background-size:
+    auto,
+    24px 24px,
+    24px 24px;
+}
+
+$breakpoints: (
+  "mobile": 576px,
+  "tablet": 992px,
+  "desktop": 1200px,
+);
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "정의되지 않은 브레이크포인트: #{$breakpoint}";
+  }
+}

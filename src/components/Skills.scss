@@ -1,0 +1,141 @@
+@use "../assets/scss/mixin" as *;
+@use "../assets/scss/variables" as v;
+@use "../assets/scss/font" as f;
+
+.skills-section {
+  width: 100%;
+  padding: 100px 0;
+  @include chalkboard-texture;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  .skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-title-area {
+    margin-bottom: 60px;
+    text-align: left;
+
+    .sub-title {
+      font-family: "Pretendard", sans-serif;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      @include fluid-size(font-size, 14, 18);
+      margin-bottom: 12px;
+    }
+
+    .main-title {
+      font-family: f.$font-chalk;
+      font-size: 36px;
+      @include chalk-glow(var(--text-color), 1px);
+      color: var(--text-color);
+      min-height: 3rem;
+      margin: 0;
+    }
+  }
+
+  .skills-grid-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @include respond-to("tablet") {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    @include respond-to("mobile") {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .skill-category-card {
+    background: var(--card-bg);
+    @include chalk-border(var(--border-color), 8px);
+    padding: 30px;
+    border-radius: 4px;
+    transition:
+      border 0.35s,
+      background 0.35s;
+
+    &:hover {
+      @include chalk-border(v.$color-point-green, 8px);
+      @include chalk-glow(v.$color-point-green, 1px);
+      transform: translateY(-5px);
+
+      .category-title {
+        color: v.$color-point-green;
+        @include chalk-glow(v.$color-point-green, 1px);
+      }
+      .chalk-divider {
+        background: v.$color-point-green;
+        box-shadow: 0 0 6px v.$color-point-green;
+      }
+    }
+
+    .category-title {
+      font-family: f.$font-chalk;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--text-color);
+      transition: color 0.3s;
+    }
+
+    .chalk-divider {
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: var(--border-color);
+      margin: 15px 0 25px 0;
+      transition: all 0.3s;
+    }
+  }
+
+  .skill-items-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    .skill-item-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: rgba(128, 128, 128, 0.1);
+      border: 1px dashed var(--border-color);
+      border-radius: 30px;
+      transition:
+        background 0.25s,
+        border 0.25s;
+
+      &:hover {
+        border-color: var(--text-color);
+        background: var(--border-color);
+        .skill-name {
+          color: var(--text-color);
+        }
+      }
+
+      .skill-icon {
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+      }
+
+      .skill-name {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text-muted);
+        transition: color 0.2s;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+$color-chalkboard-bg: #16191c;      
+$color-chalkboard-card: #1c2024;    
+$color-chalk-white: rgba(245, 245, 240, 0.95); 
+$color-chalk-muted: rgba(245, 245, 240, 0.4); 
+
+$color-point-green: #7ca884;    
+$color-point-blue: #6482a2;     
+$color-point-purple: #7f6e9e;    
+$color-point-yellow: #eada93;    
+
+// 3. Layout & Grid
+$max-width: 1200px;
+$container-padding: clamp(16px, 4vw, 40px); 
+
+$font-size-h1: clamp(44px, 7.5vw, 90px);   
+$font-size-h2: clamp(24px, 3.5vw, 32px);  
+$font-size-h3: clamp(18px, 2.5vw, 22px);   
+$font-size-body: clamp(14px, 1.5vw, 16px);
+$font-size-sm: clamp(11px, 1.2vw, 13px);   

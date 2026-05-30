@@ -1,0 +1,302 @@
+@use "../assets/scss/mixin" as *;
+@use "../assets/scss/variables" as v;
+@use "../assets/scss/font" as f;
+
+.process-section {
+  background-color: var(--bg-color);
+  @include fluid-size(padding-top, 80, 140);
+  @include fluid-size(padding-bottom, 80, 140);
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+
+  .process-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-title-area {
+    margin-bottom: 60px;
+    text-align: left;
+
+    .sub-title {
+      min-height: 1.5rem;
+    }
+
+    .sub-title {
+      font-family: "Pretendard", sans-serif;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      @include fluid-size(font-size, 14, 18);
+      margin-bottom: 12px;
+    }
+
+    .main-title {
+      font-family: f.$font-chalk;
+      font-size: 36px;
+      @include chalk-glow(var(--text-color), 1px);
+      color: var(--text-color);
+      min-height: 3rem;
+      margin: 0;
+    }
+  }
+
+  .diagram-grid {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .diagram-box {
+    background: var(--card-bg);
+    border: 2px dashed var(--border-color);
+    border-radius: 16px;
+    @include fluid-size(padding, 24, 40);
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+
+    &:hover {
+      border-color: var(--text-muted);
+    }
+
+    .box-title {
+      font-family: "Pretendard", sans-serif;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+      @include fluid-size(font-size, 16, 20);
+    }
+  }
+
+  .sketch-box .flow-step {
+    margin-bottom: 20px;
+    .step-num {
+      font-family: "Caveat", cursive, sans-serif;
+      font-weight: 700;
+      color: v.$color-point-green;
+      @include fluid-size(font-size, 24, 32);
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .step-content {
+      h4 {
+        font-weight: 600;
+        color: var(--text-color);
+        margin-bottom: 6px;
+      }
+      p {
+        color: var(--text-muted);
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .center-arrow .arrow-chalk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--border-color);
+    @include fluid-size(font-size, 32, 48);
+    font-weight: bold;
+  }
+
+  .code-box {
+    position: relative;
+    background: var(--card-bg);
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    padding: 40px;
+    overflow: hidden;
+
+    .identity-map {
+      display: grid;
+      grid-template-columns: 1fr 160px 1fr;
+      grid-template-rows: auto 160px auto;
+      grid-template-areas:
+        ". top ."
+        "left center right"
+        ". bottom .";
+      align-items: center;
+      justify-items: center;
+      gap: 20px;
+      margin-top: 20px;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        background: var(--border-color);
+        z-index: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &::before {
+        width: 2px;
+        height: 320px;
+      }
+
+      &::after {
+        width: 320px;
+        height: 2px;
+      }
+    }
+
+    .node {
+      background-color: var(--card-bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 2;
+    }
+    .top {
+      grid-area: top;
+    }
+    .left {
+      grid-area: left;
+    }
+    .right {
+      grid-area: right;
+    }
+    .bottom {
+      grid-area: bottom;
+    }
+
+    .center-node {
+      z-index: 10;
+      grid-area: center;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: var(--color-root);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      span {
+        font-size: 1.4rem;
+        font-weight: 800;
+      }
+      small {
+        font-size: 0.75rem;
+        opacity: 0.8;
+      }
+    }
+
+    .main-node {
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--card-bg);
+      border: 2px solid;
+      font-size: 0.9rem;
+      font-weight: 700;
+      backdrop-filter: blur(10px);
+
+      &.top-node {
+        border-color: var(--color-common);
+        color: var(--color-common);
+      }
+      &.left-node {
+        border-color: var(--color-main);
+        color: var(--color-main);
+      }
+      &.right-node {
+        border-color: var(--color-root);
+        color: var(--color-root);
+      }
+      &.bottom-node {
+        border-color: var(--color-common);
+        color: var(--color-common);
+      }
+    }
+
+    .sub-branches {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      max-width: 180px;
+    }
+
+    .child-node {
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      border-radius: 999px;
+      background: var(--bg-color);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      transition: 0.3s;
+      text-align: center;
+      &:hover {
+        background: var(--border-color);
+        color: var(--text-color);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .identity-map {
+        grid-template-columns: 1fr;
+        grid-template-areas: "top" "center" "left" "right" "bottom";
+        gap: 24px;
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .postit-box {
+    position: relative;
+    grid-column: span 3;
+    background: #fdf6e2;
+    color: #333;
+    border-radius: 4px;
+    padding: 30px 40px;
+    margin-top: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: rotate(-0.5deg);
+
+    .postit-tape {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-2deg);
+      width: 80px;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+    }
+
+    .postit-title {
+      color: #222;
+      font-weight: 700;
+    }
+    .postit-list li .check-box {
+      margin-right: 8px;
+      color: #4caf50;
+      font-weight: bold;
+    }
+  }
+}

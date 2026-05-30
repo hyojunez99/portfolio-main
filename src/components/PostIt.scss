@@ -1,0 +1,57 @@
+@use "../assets/scss/mixin" as *;
+@use "../assets/scss/variables" as v;
+@use "../assets/scss/font" as f;
+
+.post-it-note {
+  background: var(--card-bg);
+  padding: 22px 18px;
+  transform: rotate(var(--postit-rotate, 2deg));
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.4);
+  z-index: 5;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+
+  &:hover {
+    transform: rotate(0deg) scale(1.02);
+  }
+
+  .note-title {
+    font-family: f.$font-chalk;
+    font-size: 25px;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .note-list li {
+    @include flex(flex-start, center);
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-color);
+    margin-bottom: 8px;
+
+    input[type="checkbox"] {
+      cursor: default;
+    }
+  }
+
+  &.theme-yellow {
+    @include chalk-border(v.$color-point-yellow, 2px);
+    .note-title {
+      color: v.$color-point-yellow;
+    }
+    .note-list input[type="checkbox"] {
+      accent-color: v.$color-point-yellow;
+    }
+  }
+
+  &.theme-green {
+    @include chalk-border(v.$color-point-green, 2px);
+    .note-title {
+      color: v.$color-point-green;
+    }
+    .note-list input[type="checkbox"] {
+      accent-color: v.$color-point-green;
+    }
+  }
+}
