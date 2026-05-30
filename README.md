@@ -7,7 +7,7 @@
 - **진행 기간:** 2026.05.16 ~ 2026.05.31 (15일)
 - **개발 인원:** 개인 프로젝트
 - **배포 링크:** [Portfolio Main](https://hyojunez99.github.io/portfolio-main/)
-- **GitHub:** [Repository Link](https://github.com/hyojunez99/portfolio.git)
+- **GitHub:** [Repository Link](https://github.com/hyojunez99/portfolio-main.git)
 
 ---
 
