@@ -12,7 +12,7 @@
         "icon": "css-icon.png"
       },
       {
-        "name": "ES6+",
+        "name": "JS",
         "icon": "js-icon.png"
       }
     ]
@@ -97,6 +97,14 @@
       {
         "name": "ChatGPT",
         "icon": "chatgpt-icon.png"
+      },
+      {
+        "name": "Gemini",
+        "icon": "Gemini-icon.png"
+      },
+      {
+        "name": "Claude",
+        "icon": "Claude-icon.png"
       }
     ]
   }
