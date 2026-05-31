@@ -7,7 +7,6 @@
   padding: 120px 0 40px 0;
   background-color: var(--bg-color);
   @include chalkboard-texture;
-
   border-top: 2px dashed var(--border-color);
   color: var(--text-color);
   position: relative;
@@ -46,6 +45,12 @@
     @include respond-to("tablet") {
       grid-template-columns: 1fr;
       gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    @include respond-to("mobile") {
+      gap: 32px;
+      margin-bottom: 40px;
     }
   }
 
@@ -61,6 +66,19 @@
       margin-bottom: 24px;
       color: var(--text-color);
       @include chalk-glow(var(--text-color), 1px);
+
+      @include respond-to("tablet") {
+        font-size: 22px;
+      }
+
+      @include respond-to("mobile") {
+        font-size: 20px;
+        margin-bottom: 16px;
+
+        br {
+          display: none;
+        }
+      }
     }
 
     .message-subtxt {
@@ -68,11 +86,25 @@
       line-height: 1.7;
       color: var(--text-muted);
       margin-bottom: 35px;
+
+      @include respond-to("mobile") {
+        font-size: 13px;
+        margin-bottom: 24px;
+
+        br {
+          display: none;
+        }
+      }
     }
 
     .contact-links-group {
       display: flex;
+      flex-wrap: wrap;
       gap: 15px;
+
+      @include respond-to("mobile") {
+        gap: 10px;
+      }
 
       .chalk-link-btn {
         padding: 12px 24px;
@@ -91,6 +123,13 @@
           background: rgba(v.$color-point-blue, 0.03);
           transform: translateY(-3px);
         }
+
+        @include respond-to("mobile") {
+          flex: 1;
+          text-align: center;
+          padding: 10px 16px;
+          font-size: 12px;
+        }
       }
     }
   }
@@ -100,10 +139,22 @@
     @include chalk-border(var(--border-color), 12px);
     padding: 40px;
 
+    @include respond-to("tablet") {
+      padding: 30px;
+    }
+
+    @include respond-to("mobile") {
+      padding: 24px 20px;
+    }
+
     .chalk-form {
       display: flex;
       flex-direction: column;
       gap: 30px;
+
+      @include respond-to("mobile") {
+        gap: 24px;
+      }
     }
 
     .chalk-field {
@@ -132,6 +183,10 @@
         &:focus ~ .chalk-line {
           width: 100%;
         }
+
+        @include respond-to("mobile") {
+          font-size: 13px;
+        }
       }
 
       textarea {
@@ -147,6 +202,10 @@
         color: var(--text-muted);
         pointer-events: none;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        @include respond-to("mobile") {
+          font-size: 12px;
+        }
       }
 
       .chalk-line {
@@ -179,6 +238,11 @@
         box-shadow: 0 0 15px rgba(v.$color-point-green, 0.4);
         cursor: pointer;
       }
+
+      @include respond-to("mobile") {
+        padding: 12px;
+        font-size: 13px;
+      }
     }
   }
 
@@ -187,10 +251,21 @@
     padding-top: 30px;
     @include flex(space-between, center);
 
+    @include respond-to("mobile") {
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+      padding-top: 24px;
+    }
+
     .copyright-txt {
       font-size: 12px;
       color: var(--text-muted);
       letter-spacing: 0.02em;
+
+      @include respond-to("mobile") {
+        font-size: 11px;
+      }
     }
 
     .top-scroll-btn {
@@ -203,6 +278,26 @@
       &:hover {
         color: var(--text-color);
         @include chalk-glow(var(--text-color), 1px);
+      }
+    }
+  }
+
+  @include respond-to("tablet") {
+    padding: 80px 0 40px 0;
+
+    .section-title-area {
+      margin-bottom: 40px;
+    }
+  }
+
+  @include respond-to("mobile") {
+    padding: 60px 0 32px 0;
+
+    .section-title-area {
+      margin-bottom: 32px;
+
+      .main-title {
+        font-size: 28px;
       }
     }
   }

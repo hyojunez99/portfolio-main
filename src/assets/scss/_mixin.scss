@@ -17,6 +17,7 @@ $fluid-min-width: 360;
   );
 }
 
+// 플렉스박스
 @mixin flex($justify: center, $align: center, $direction: row) {
   display: flex;
   justify-content: $justify;
@@ -39,6 +40,7 @@ $fluid-min-width: 360;
     0 0 ($intensity * 2) rgba($color, 0.3);
 }
 
+// 칠판 배경 텍스처
 @mixin chalkboard-texture {
   background-color: var(--bg-color);
   background-image:
@@ -56,9 +58,9 @@ $fluid-min-width: 360;
 }
 
 $breakpoints: (
-  "mobile": 576px,
-  "tablet": 992px,
-  "desktop": 1200px,
+  "mobile": 768px,
+  "tablet": 1024px,
+  "desktop": 1280px,
 );
 
 @mixin respond-to($breakpoint) {

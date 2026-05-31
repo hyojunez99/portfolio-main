@@ -53,6 +53,7 @@
 
     @include respond-to("mobile") {
       grid-template-columns: 1fr;
+      gap: 16px;
     }
   }
 
@@ -80,6 +81,10 @@
       }
     }
 
+    @include respond-to("mobile") {
+      padding: 20px;
+    }
+
     .category-title {
       font-family: f.$font-chalk;
       font-size: 20px;
@@ -87,6 +92,10 @@
       letter-spacing: 0.05em;
       color: var(--text-color);
       transition: color 0.3s;
+
+      @include respond-to("mobile") {
+        font-size: 18px;
+      }
     }
 
     .chalk-divider {
@@ -96,6 +105,10 @@
       background: var(--border-color);
       margin: 15px 0 25px 0;
       transition: all 0.3s;
+
+      @include respond-to("mobile") {
+        margin: 12px 0 18px 0;
+      }
     }
   }
 
@@ -103,6 +116,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+
+    @include respond-to("mobile") {
+      gap: 8px;
+    }
 
     .skill-item-box {
       display: flex;
@@ -124,10 +141,20 @@
         }
       }
 
+      @include respond-to("mobile") {
+        padding: 6px 12px;
+        gap: 6px;
+      }
+
       .skill-icon {
         width: 18px;
         height: 18px;
         object-fit: contain;
+
+        @include respond-to("mobile") {
+          width: 16px;
+          height: 16px;
+        }
       }
 
       .skill-name {
@@ -135,6 +162,26 @@
         font-weight: 500;
         color: var(--text-muted);
         transition: color 0.2s;
+
+        @include respond-to("mobile") {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  @include respond-to("tablet") {
+    padding: 80px 0;
+  }
+
+  @include respond-to("mobile") {
+    padding: 60px 0;
+
+    .section-title-area {
+      margin-bottom: 40px;
+
+      .main-title {
+        font-size: 28px;
       }
     }
   }

@@ -11,8 +11,18 @@
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(6px);
   z-index: 1000;
+  touch-action: none; 
+  overscroll-behavior: contain;
+  overflow: hidden;
   @include flex(center, center);
   padding: 20px;
+
+  @include respond-to("mobile") {
+body {
+    position: fixed;
+    width: 100%;
+  }
+  }
 }
 
 .chalkboard-popup {
@@ -29,6 +39,16 @@
   flex-direction: column;
   overflow: hidden;
 
+  @include respond-to("tablet") {
+    max-height: 90vh;
+  }
+
+  @include respond-to("mobile") {
+    max-height: 92vh;
+    border-radius: 20px 20px 0 0; // 하단 시트 스타일
+    border-bottom: none;
+  }
+
   .close-btn {
     position: absolute;
     top: 15px;
@@ -39,8 +59,15 @@
     color: var(--text-muted);
     cursor: pointer;
     z-index: 20;
+
     &:hover {
       color: var(--text-color);
+    }
+
+    @include respond-to("mobile") {
+      top: 12px;
+      right: 16px;
+      font-size: 18px;
     }
   }
 
@@ -54,6 +81,25 @@
     display: flex;
     flex-direction: column;
 
+    @include respond-to("tablet") {
+      padding: 14px 56px 14px 28px;
+    }
+
+    @include respond-to("mobile") {
+      padding: 14px 48px 14px 20px;
+
+      // 모바일 상단 드래그 핸들
+      &::before {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 4px;
+        background: var(--border-color);
+        border-radius: 2px;
+        margin: 0 auto 12px;
+      }
+    }
+
     .project-badge {
       display: inline-block;
       align-self: flex-start;
@@ -64,15 +110,29 @@
       border-radius: 4px;
       margin-bottom: 5px;
     }
+
     .project-title {
       font-family: f.$font-chalk;
       font-size: 28px;
       margin: 5px 0;
       @include chalk-glow(var(--text-color), 1px);
+
+      @include respond-to("tablet") {
+        font-size: 24px;
+      }
+
+      @include respond-to("mobile") {
+        font-size: 20px;
+      }
     }
+
     .project-duration {
       font-size: 13px;
       color: var(--text-muted);
+
+      @include respond-to("mobile") {
+        font-size: 12px;
+      }
     }
   }
 
@@ -83,8 +143,17 @@
     display: grid;
     grid-template-columns: 1.1fr 1fr;
     gap: 40px;
+
     @include respond-to("tablet") {
       grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 28px;
+    }
+
+    @include respond-to("mobile") {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 20px 16px;
     }
   }
 
@@ -97,14 +166,31 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
+
+      .image-box {
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 4px;
+          display: block;
+        }
+      }
     }
+
     .outlink-group {
       @include flex(center, center);
-      gap: 15px;
+      flex-wrap: wrap;
+      gap: 10px;
       margin-top: 25px;
+
+      @include respond-to("mobile") {
+        gap: 8px;
+        margin-top: 16px;
+      }
 
       .link-btn {
         flex: 1;
+        min-width: 80px;
         padding: 12px;
         text-align: center;
         border-radius: 6px;
@@ -120,6 +206,7 @@
           filter: brightness(1.2);
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
+
         &.live {
           background: v.$color-point-purple;
         }
@@ -131,6 +218,11 @@
           background-color: #1e3a8a;
           color: #fff;
         }
+
+        @include respond-to("mobile") {
+          padding: 10px 8px;
+          font-size: 12px;
+        }
       }
     }
   }
@@ -139,6 +231,11 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
+
+    @include respond-to("mobile") {
+      gap: 20px;
+    }
+
     .spec-section {
       h3 {
         font-size: 13px;
@@ -147,49 +244,78 @@
         border-bottom: 1px dashed var(--border-color);
         padding-bottom: 6px;
         margin-bottom: 12px;
+
+        @include respond-to("mobile") {
+          font-size: 12px;
+        }
       }
+
       .summary-text,
       li {
         font-size: 14px;
         line-height: 1.6;
         color: var(--text-color);
         opacity: 0.8;
+
+        @include respond-to("mobile") {
+          font-size: 13px;
+        }
       }
-      .tech-stack-tags .stack-badge {
-        font-size: 11px;
-        padding: 4px 10px;
-        border-radius: 4px;
-        font-weight: 500;
-        margin-right: 8px;
-        &.FE {
-          background: rgba(v.$color-point-green, 0.1);
-          color: v.$color-point-green;
-          border: 1px solid rgba(v.$color-point-green, 0.3);
-        }
-        &.DT {
-          background: rgba(v.$color-point-blue, 0.1);
-          color: v.$color-point-blue;
-          border: 1px solid rgba(v.$color-point-blue, 0.3);
-        }
-        &.TL {
-          background: var(--card-bg);
-          color: var(--text-muted);
-          border: 1px solid var(--border-color);
+
+      li {
+        margin-bottom: 6px;
+      }
+
+      .tech-stack-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        .stack-badge {
+          font-size: 11px;
+          padding: 4px 10px;
+          border-radius: 4px;
+          font-weight: 500;
+
+          &.FE {
+            background: rgba(v.$color-point-green, 0.1);
+            color: v.$color-point-green;
+            border: 1px solid rgba(v.$color-point-green, 0.3);
+          }
+          &.DT {
+            background: rgba(v.$color-point-blue, 0.1);
+            color: v.$color-point-blue;
+            border: 1px solid rgba(v.$color-point-blue, 0.3);
+          }
+          &.TL {
+            background: var(--card-bg);
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+          }
         }
       }
     }
-    .troubleshooting-section .ts-card {
-      background: var(--card-bg);
-      @include chalk-border(var(--border-color), 6px);
-      padding: 15px;
-      margin-top: 10px;
-      font-size: 13px;
-      .ts-prob {
-        color: var(--color-ts-prob);
-      }
 
-      .ts-sol {
-        color: var(--color-ts-sol);
+    .troubleshooting-section {
+      .ts-card {
+        background: var(--card-bg);
+        @include chalk-border(var(--border-color), 6px);
+        padding: 15px;
+        margin-top: 10px;
+        font-size: 13px;
+
+        @include respond-to("mobile") {
+          padding: 12px;
+          font-size: 12px;
+        }
+
+        .ts-prob {
+          color: var(--color-ts-prob);
+          margin-bottom: 8px;
+        }
+        .ts-sol {
+          color: var(--color-ts-sol);
+        }
       }
     }
   }

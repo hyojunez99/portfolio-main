@@ -5,8 +5,10 @@ import "./ProjectModal.scss";
 
 const ProjectModal = ({ projectId, onClose }) => {
   useEffect(() => {
+    document.documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
     return () => {
+      document.documentElement.style.overflow = "unset";
       document.body.style.overflow = "unset";
     };
   }, []);

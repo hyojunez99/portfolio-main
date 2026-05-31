@@ -31,7 +31,7 @@
     "proname": "주차장 관리 웹 사이트",
     "images": {
       "main": "card-img2.png",
-      "detail": ["card-img2-1.png", "card-img2-2.png", "card-img2-3.png"]
+      "detail": ["card-img2-1.gif", "card-img2-2.gif"]
     },
     "pdf": "stay.pdf",
     "projectType": "팀 프로젝트",
