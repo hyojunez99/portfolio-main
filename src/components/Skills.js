@@ -7,41 +7,37 @@ import "./Skills.scss";
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-const iconContext = require.context(
-  "../assets/images/icons",
-  false,
-  /\.(png|svg|jpg|jpeg)$/,
-);
+const SkillCard = ({ category }) => {
+  const getImagePath = (icon) => {
+    try {
+      return require(`../assets/images/icons/${icon}`);
+    } catch (e) {
+      return "https://placehold.co/100x100?text=NO+IMAGE";
+    }
+  };
 
-const getIconUrl = (filename) => {
-  try {
-    return iconContext(`./${filename}`);
-  } catch (e) {
-    return null;
-  }
+  return (
+    <div className="skill-category-card">
+      <h3 className="category-title">{category.category}</h3>
+      <span className="chalk-divider"></span>
+      <ul className="skill-items-list">
+        {category.items.map((item, idx) => (
+          <li key={idx} className="skill-item-box">
+            <img
+              src={getImagePath(item.icon)}
+              alt={item.name}
+              className="skill-icon"
+              onError={(e) => {
+                e.target.src = "https://placehold.co/100x100?text=ERROR";
+              }}
+            />
+            <span className="skill-name">{item.name}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
-
-const SkillCard = ({ category }) => (
-  <div className="skill-category-card">
-    <h3 className="category-title">{category.category}</h3>
-    <span className="chalk-divider"></span>
-    <ul className="skill-items-list">
-      {category.items.map((item, idx) => (
-        <li key={idx} className="skill-item-box">
-          <img
-            src={getIconUrl(item.icon)}
-            alt={item.name}
-            className="skill-icon"
-            onError={(e) => {
-              e.target.style.display = "none";
-            }}
-          />
-          <span className="skill-name">{item.name}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
 
 const Skills = () => {
   const sectionRef = useRef(null);
