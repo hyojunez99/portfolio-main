@@ -133,17 +133,23 @@ const Archive = () => {
                 </div>
 
                 <div className="tech-icon-list">
-                  {project.skills?.map((skill, idx) => (
-                    <img
-                      key={idx}
-                      src={`/assets/images/icons/${skill}-icon.png`}
-                      alt={skill}
-                      className="mini-icon"
-                      onError={(e) => {
-                        e.target.style.display = "none";
-                      }}
-                    />
-                  ))}
+                  {project.skills?.map((skill, idx) => {
+                    try {
+                      const iconSrc = require(
+                        `../assets/images/icons/${skill}-icon.png`,
+                      );
+                      return (
+                        <img
+                          key={idx}
+                          src={iconSrc}
+                          alt={skill}
+                          className="mini-icon"
+                        />
+                      );
+                    } catch (e) {
+                      return null;
+                    }
+                  })}
                 </div>
               </div>
             </article>

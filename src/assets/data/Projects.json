@@ -49,7 +49,7 @@
     "prosub": "러닝 앱의 복잡한 UX를 개선하고 기록·챌린지·스토어를 통합한 리디자인 프로젝트로, 공통 컴포넌트 시스템과 다크모드를 구현함",
     "keywords": ["UX 리디자인", "컴포넌트 시스템", "다크모드"],
     "day": "2026.05.04 ~ 2026.05.10",
-    "skills": ["react", "js", "scss", "figma", "github"]
+    "skills": ["react", "js", "scss", "github"]
   },
   {
     "id": "10",
@@ -182,28 +182,18 @@
     "skills": ["html", "css"]
   },
   {
-  "id": "15",
-  "order": 15,
-  "priority": 0,
-  "images": {
-    "main": "card-img19.png"
-  },
-  "type": "Design System",
-  "type2": "피그마 컴포넌트",
-  "proname": "UI Design System",
-  "prosub": "Variables와 Components를 활용한 디자인 시스템 구축",
-  "keywords": [
-    "Typography",
-    "Color",
-    "Button",
-    "Input",
-    "Navigation"
-  ],
-  "day": "2025.06",
-  "skills": [
-    "Figma",
-    "Variables",
-    "Auto Layout"
-  ]
-}
+    "id": "15",
+    "order": 15,
+    "priority": 0,
+    "images": {
+      "main": "card-img19.png"
+    },
+    "type": "Design System",
+    "type2": "피그마 컴포넌트",
+    "proname": "UI Design System",
+    "prosub": "Variables와 Components를 활용한 디자인 시스템 구축",
+    "keywords": ["Typography", "Color", "Button", "Input", "Navigation"],
+    "day": "2025.06",
+    "skills": ["figma", "Variables", "Auto Layout"]
+  }
 ]

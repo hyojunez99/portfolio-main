@@ -36,7 +36,7 @@
 
   .filter-tab-bar {
     @include flex(flex-start, center);
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     gap: 10px 15px;
     margin-bottom: 50px;
     border-bottom: 1px dashed var(--border-color);
@@ -186,9 +186,14 @@
 
       .keyword-tags {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        overflow-x: auto;
         gap: 6px;
         margin-bottom: 14px;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
 
         .tag {
           font-size: 12px;
@@ -196,6 +201,8 @@
           background: rgba(v.$color-point-blue, 0.1);
           padding: 2px 8px;
           border-radius: 4px;
+          white-space: nowrap;
+          flex-shrink: 0;
 
           @include respond-to("mobile") {
             font-size: 11px;
