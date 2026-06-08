@@ -97,14 +97,14 @@ const Archive = () => {
         </div>
 
         <div className="archive-grid">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <article
               key={project.id}
               className="project-card"
               onClick={() => setSelectedProjectId(project.id)}
             >
               <div className="card-number">
-                {project.order.toString().padStart(2, "0")}
+                {(index + 1).toString().padStart(2, "0")}
               </div>
 
               <div className="card-thumb-wrap">

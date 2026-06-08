@@ -44,7 +44,6 @@ const ProjectModal = ({ projectId, onClose }) => {
     : detail.images?.detail
       ? [detail.images.detail]
       : [];
-  console.log(detailImages);
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -114,6 +113,16 @@ const ProjectModal = ({ projectId, onClose }) => {
                   PDF VIEW 📄
                 </a>
               )}
+              {detail.figma && (
+                <a
+                  href={detail.figma}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="link-btn figma"
+                >
+                  FIGMA 🎨
+                </a>
+              )}
             </div>
           </div>
 
@@ -150,6 +159,21 @@ const ProjectModal = ({ projectId, onClose }) => {
               <div className="tech-stack-tags">
                 {detail.techStack?.Frontend?.map((t, i) => (
                   <span key={i} className="stack-badge FE">
+                    {t}
+                  </span>
+                ))}
+                {detail.techStack?.Design?.map((t, i) => (
+                  <span key={i} className="stack-badge FE">
+                    {t}
+                  </span>
+                ))}
+                {detail.techStack?.System?.map((t, i) => (
+                  <span key={i} className="stack-badge TL">
+                    {t}
+                  </span>
+                ))}
+                {detail.techStack?.Documentation?.map((t, i) => (
+                  <span key={i} className="stack-badge DT">
                     {t}
                   </span>
                 ))}

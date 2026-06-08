@@ -238,5 +238,63 @@
     "troubleShooting": [
       { "problem": "스타일 충돌", "solution": "Props 기반 컴포넌트 재설계" }
     ]
+  },
+  {
+    "id": "15",
+    "proname": "UI Design System",
+    "images": {
+      "main": "card-img19.png",
+      "detail": [
+        "card-img19-1.png",
+        "card-img19-2.png",
+        "card-img19-3.png",
+        "card-img19-4.png",
+        "card-img19-5.png",
+        "card-img19-6.png",
+        "card-img19-7.png"
+      ]
+    },
+    "figma": "https://www.figma.com/design/FFIfRbCZfeuMc0ryiahxo9/Design-System-Process?node-id=20-181&t=hvYQ17jAhoGc1z5Q-1",
+    "projectType": "개인 프로젝트",
+    "duration": "2026.06.01 ~ 2026.06.08",
+    "summary": "재사용성과 일관성을 고려하여 Typography, Color, Radius를 토큰화하고 Button, Input, Card, Navigation 컴포넌트를 설계한 디자인 시스템 구축 프로젝트입니다.",
+    "deploy": "",
+    "github": "",
+    "techStack": {
+      "Design": ["Figma"],
+      "System": ["Variables", "Components", "Variants", "Auto Layout"],
+      "Documentation": ["Design Tokens"]
+    },
+    "mainFeatures": [
+      "Typography 시스템 구축",
+      "Material Design 기반 Color Variables 설계",
+      "Radius Token 설계",
+      "Button Component Variant 구축",
+      "Input State 및 Variant 설계",
+      "Card Component 설계",
+      "Navigation Component 설계"
+    ],
+    "responsibilities": [
+      "디자인 토큰 설계",
+      "Color Variable 구축",
+      "Typography System 구축",
+      "Component Variant 설계",
+      "Auto Layout 기반 UI 설계",
+      "디자인 시스템 문서화"
+    ],
+    "troubleShooting": [
+      {
+        "problem": "컴포넌트별 스타일 값이 중복되어 유지보수가 어려움",
+        "solution": "Color, Radius, Typography를 Variables로 관리하여 일관성과 재사용성을 확보"
+      },
+      {
+        "problem": "버튼 및 입력창 상태 관리 방식이 통일되지 않음",
+        "solution": "Variant와 Component Property를 활용해 State(Default, Hover, Pressed, Disabled)를 체계화"
+      },
+      {
+        "problem": "프로젝트마다 UI 스타일이 달라 일관성이 부족함",
+        "solution": "공통 디자인 토큰과 컴포넌트 시스템을 구축하여 동일한 UI 규칙을 적용"
+      }
+    ]
   }
 ]

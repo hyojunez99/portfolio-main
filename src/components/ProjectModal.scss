@@ -11,17 +11,17 @@
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(6px);
   z-index: 1000;
-  touch-action: none; 
+  touch-action: none;
   overscroll-behavior: contain;
   overflow: hidden;
   @include flex(center, center);
   padding: 20px;
 
   @include respond-to("mobile") {
-body {
-    position: fixed;
-    width: 100%;
-  }
+    body {
+      position: fixed;
+      width: 100%;
+    }
   }
 }
 
@@ -45,7 +45,7 @@ body {
 
   @include respond-to("mobile") {
     max-height: 92vh;
-    border-radius: 20px 20px 0 0; // 하단 시트 스타일
+    border-radius: 20px 20px 0 0;
     border-bottom: none;
   }
 
@@ -88,7 +88,6 @@ body {
     @include respond-to("mobile") {
       padding: 14px 48px 14px 20px;
 
-      // 모바일 상단 드래그 핸들
       &::before {
         content: "";
         display: block;
@@ -216,6 +215,10 @@ body {
         }
         &.pdf {
           background-color: #1e3a8a;
+          color: #fff;
+        }
+        &.figma {
+          background-color: #a259ff;
           color: #fff;
         }
 
