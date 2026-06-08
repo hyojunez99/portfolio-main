@@ -3,6 +3,12 @@ import React from "react";
 import projectsDetailData from "../assets/data/ProjectsDetail.json";
 import "./ProjectModal.scss";
 
+const images = require.context(
+  "../assets/images",
+  false,
+  /\.(png|jpe?g|gif|svg)$/,
+);
+
 const ProjectModal = ({ projectId, onClose }) => {
   useEffect(() => {
     document.documentElement.style.overflow = "hidden";
@@ -20,7 +26,12 @@ const ProjectModal = ({ projectId, onClose }) => {
   );
 
   const getImagePath = (imgName) => {
-    return require(`../assets/images/${imgName}`);
+    try {
+      return images(`./${imgName}`);
+    } catch (err) {
+      console.warn(`Image not found: ${imgName}`);
+      return null;
+    }
   };
 
   if (!detail) {

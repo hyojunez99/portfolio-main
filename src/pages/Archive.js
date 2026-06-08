@@ -8,6 +8,12 @@ import "./Archive.scss";
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
+const images = require.context(
+  "../assets/images",
+  false,
+  /\.(png|jpe?g|gif|svg)$/,
+);
+
 const Archive = () => {
   const [activeFilter, setActiveFilter] = useState("ALL");
   const [selectedProjectId, setSelectedProjectId] = useState(null);
@@ -23,11 +29,11 @@ const Archive = () => {
           .sort((a, b) => a.priority - b.priority);
 
   const getImagePath = (imageName) => {
-    try {
-      return require(`../assets/images/${imageName}`);
-    } catch (err) {
-      return "https://placehold.co/600x400/1e2227/ffffff?text=No+Image";
+    const key = `./${imageName}`;
+    if (images.keys().includes(key)) {
+      return images(key);
     }
+    return "https://placehold.co/600x400/1e2227/ffffff?text=No+Image";
   };
 
   useLayoutEffect(() => {
