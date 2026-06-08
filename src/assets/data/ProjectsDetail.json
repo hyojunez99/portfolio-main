@@ -304,5 +304,56 @@
         "solution": "공통 디자인 토큰과 컴포넌트 시스템을 구축하여 동일한 UI 규칙을 적용"
       }
     ]
+  },
+  {
+    "id": "16",
+    "proname": "KOBUS Redesign",
+    "images": {
+      "main": "card-img20.png",
+      "detail": ["card-img20-1.gif"]
+    },
+    "projectType": "개인 프로젝트",
+    "duration": "2026.06",
+    "summary": "고속버스 예매 서비스를 모바일 중심 UX 관점에서 재해석한 리디자인 프로젝트입니다. 터미널 검색, 노선 조회, 좌석 선택, 예매 확인 기능을 구현하고 반응형 환경에 최적화된 예약 경험을 설계했습니다.",
+    "deploy": "https://hyojunez99.github.io/bus_redesign/",
+    "github": "https://github.com/hyojunez99/bus_redesign",
+    "figma": "https://www.figma.com/design/pE3ypFnyvTJBe1JJpmwl7t/bus_redesign?node-id=68-24&t=WyXNo5CxICCJFVTf-1",
+    "techStack": {
+      "Frontend": ["React", "React Router", "SCSS"],
+      "UI": ["Responsive Design", "Modal", "Component Design"],
+      "Data": ["JSON"]
+    },
+    "mainFeatures": [
+      "출발지 및 도착지 터미널 검색 기능",
+      "지역별 터미널 필터 및 검색 기능",
+      "편도 · 왕복 예매 기능",
+      "버스 노선 조회 및 등급 필터 기능",
+      "좌석 선택 모달 구현",
+      "휴대폰 및 카드번호 기반 예매 조회 UI",
+      "모바일 · 태블릿 · 데스크톱 반응형 지원"
+    ],
+    "responsibilities": [
+      "서비스 기획 및 UX 설계",
+      "UI 디자인 및 레이아웃 구성",
+      "React 컴포넌트 설계",
+      "React Router 기반 페이지 구성",
+      "SCSS 반응형 스타일링",
+      "터미널 및 버스 데이터 구조 설계",
+      "좌석 선택 및 예약 플로우 구현"
+    ],
+    "troubleShooting": [
+      {
+        "problem": "터미널명과 버스 데이터의 출발지·도착지 값이 일치하지 않아 조회 결과가 출력되지 않음",
+        "solution": "터미널 데이터와 버스 데이터의 명칭을 통일하고 검색 로직을 수정하여 정상적으로 노선이 조회되도록 개선"
+      },
+      {
+        "problem": "GitHub Pages 배포 시 새로고침 또는 직접 URL 접근 시 페이지를 찾을 수 없는 문제가 발생",
+        "solution": "BrowserRouter의 basename 설정과 배포 경로를 맞춰 GitHub Pages 환경에서도 정상적으로 라우팅되도록 수정"
+      },
+      {
+        "problem": "모달 오픈 시 배경 스크롤이 함께 움직여 사용자 경험이 저하됨",
+        "solution": "Modal 컴포넌트에서 body overflow를 제어하여 모달 활성화 시 배경 스크롤을 차단"
+      }
+    ]
   }
 ]

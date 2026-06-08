@@ -193,7 +193,28 @@
     "proname": "UI Design System",
     "prosub": "Variables와 Components를 활용한 디자인 시스템 구축",
     "keywords": ["Typography", "Color", "Button", "Input", "Navigation"],
-    "day": "2025.06",
+    "day": "2026.06.01 ~ 2026.06.08",
     "skills": ["figma", "Variables", "Auto Layout"]
+  },
+  {
+    "id": "16",
+    "order": 16,
+    "priority": 3,
+    "images": {
+      "main": "card-img20.png"
+    },
+    "type": "UX/UI Design",
+    "type2": "Responsive Web",
+    "proname": "KOBUS Redesign",
+    "prosub": "고속버스 예매 과정을 직관적으로 개선한 사용자 중심 리디자인 프로젝트",
+    "keywords": [
+      "UX/UI 디자인",
+      "버스 예매",
+      "예약 플로우",
+      "좌석 선택",
+      "반응형 웹"
+    ],
+    "day": "2026.05.25 ~ 2026.06.08",
+    "skills": ["React", "js", "SCSS", "Figma"]
   }
 ]
