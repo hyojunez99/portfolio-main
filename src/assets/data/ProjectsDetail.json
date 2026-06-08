@@ -39,6 +39,7 @@
     "summary": "입주민, 상가 사용자, 관리자 등 각 역할에 따라 주차 현황을 관리할 수 있는 웹 애플리케이션입니다.",
     "deploy": "https://hyojunez99.github.io/stay-finish/",
     "github": "https://github.com/hyojunez99/stay-finish.git",
+    "figma": "https://www.figma.com/design/6nT4wZNV1oT2pGZqoae53v/stay?node-id=0-1&t=5fkvPeIQktskHIK0-1",
     "techStack": {
       "Frontend": ["JavaScript", "React", "SCSS"],
       "Data": ["Supabase"],
@@ -63,6 +64,7 @@
     "summary": "데이터 연동과 UI 흐름에 집중한 러닝 액티브웨어 쇼핑몰 SPA입니다.",
     "deploy": "https://hyojunez99.github.io/stance-finish/",
     "github": "https://github.com/hyojunez99/stance-finish.git",
+    "figma": "https://www.figma.com/design/XNKU0FnL09qC6eVeRh1Q4a/pacey?node-id=384-1986&t=NXoa35esj95ZPMvv-1",
     "techStack": {
       "Frontend": ["JavaScript", "React", "SCSS"],
       "Data": ["JSON"],
@@ -93,6 +95,7 @@
     "id": "5",
     "proname": "My Widget",
     "images": { "main": "card-img5.png", "detail": ["card-img5-1.png"] },
+    "figma": "https://www.figma.com/design/XhM74YFTC63QO2FwbDiA1E/Momentum?node-id=36-53&t=D9HQbD9vVyBNyhMr-1",
     "projectType": "개인 프로젝트",
     "duration": "2025.12.01 ~ 2025.12.04",
     "summary": "OpenAPI 기반 날씨 정보 및 개인 대시보드 기능을 갖춘 웹 앱입니다.",
@@ -107,6 +110,7 @@
     "id": "6",
     "proname": "FlexK",
     "images": { "main": "card-img6.png", "detail": ["card-img6-1.png"] },
+    "figma": "https://www.figma.com/design/ENu5Ay4lQkHcFeOJ3HAC0k/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%81%B4%EB%A1%A0?node-id=1-2&t=NHaSP9jEIO0fYIup-1",
     "projectType": "개인 프로젝트",
     "duration": "2025.11.12 ~ 2025.11.14",
     "summary": "PC·모바일 반응형 웹 기술을 집중적으로 학습한 기업 사이트 클론입니다.",
@@ -129,6 +133,7 @@
     "id": "8",
     "proname": "HealthPick",
     "images": { "main": "card-img8.png", "detail": ["card-img8-1.png"] },
+    "figma": "https://www.figma.com/design/i4YZQoNI2MFyYnT5wJ0I0j/%ED%80%B4%EC%A6%88APP?node-id=0-1&t=GWWZNXxsgebHRIMI-1",
     "projectType": "개인 프로젝트",
     "duration": "2025.11.24 ~ 2025.11.27",
     "summary": "JSON 기반의 카테고리 필터링 퀴즈 게임 웹 애플리케이션입니다.",
@@ -154,6 +159,7 @@
     "summary": "타이포그래피와 가독성을 강조한 기업형 웹사이트 클론 프로젝트입니다.",
     "deploy": "https://hyojunez99.github.io/volvo_clone/",
     "github": "https://github.com/hyojunez99/volvo_clone.git",
+    "figma": "https://www.figma.com/design/yqYHEjZvGuNvIS62Z850pN/VOLVO-%ED%81%B4%EB%A1%A0-%ED%8E%98%EC%9D%B4%EC%A7%80?node-id=0-1&t=mMUdOL5ykT3T4qKK-1",
     "techStack": { "Frontend": ["HTML", "SCSS"] }
   },
   {
@@ -165,6 +171,7 @@
     "summary": "SaaS 랜딩페이지로, 컴포넌트 단위 설계와 유지보수성에 중점을 둔 프로젝트입니다.",
     "deploy": "https://hyojunez99.github.io/lumen/",
     "github": "https://github.com/hyojunez99/lumen.git",
+    "figma": "https://www.figma.com/design/NEGG7b2zORwcUa7OuN23MG/LUMEN?node-id=5-106&t=1qkm4Wb2kzaDAv58-1",
     "techStack": {
       "Frontend": ["JavaScript", "React", "SCSS"],
       "Data": ["JSON"],
@@ -213,6 +220,7 @@
     "summary": "음악 스트리밍 앱으로, 상태 관리와 사용자 라이브러리 기능 중심 프로젝트입니다.",
     "deploy": "https://hyojunez99.github.io/aura/",
     "github": "https://github.com/hyojunez99/aura.git",
+    "figma": "https://www.figma.com/design/bvGSe6eD6Jj2zVQWKKdFBf/Untitled?node-id=6-454&t=aS3VmDaxC1VEyVOa-1",
     "techStack": {
       "Frontend": ["JavaScript", "React", "SCSS"],
       "Data": ["JSON"]

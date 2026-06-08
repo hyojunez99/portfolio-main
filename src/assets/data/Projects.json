@@ -23,7 +23,7 @@
     "prosub": "역할별 실시간 주차 관리 기능을 구현한 웹 시스템",
     "keywords": ["관리자 페이지", "팀 프로젝트", "실제 기능 구현"],
     "day": "2025.01.02 ~ 2025.01.13",
-    "skills": ["react", "js", "scss", "supabase", "github"]
+    "skills": ["react", "js", "scss", "supabase", "github", "figma"]
   },
   {
     "id": "3",
@@ -36,7 +36,7 @@
     "prosub": "상품 탐색과 UI 흐름에 집중한 쇼핑몰 SPA",
     "keywords": ["상품 리스트", "데이터 연동", "장바구니 기획"],
     "day": "2025.12.19 ~ 2025.12.29",
-    "skills": ["react", "js", "scss", "gsap", "github"]
+    "skills": ["react", "js", "scss", "gsap", "github", "figma"]
   },
   {
     "id": "14",
@@ -62,7 +62,7 @@
     "prosub": "서비스 가치 전달 구조와 CTA 설계에 집중한 SaaS 랜딩페이지",
     "keywords": ["서비스 소개", "컴포넌트 재사용", "유지보수 강조"],
     "day": "2026.03.03 ~ 2026.03.06",
-    "skills": ["react", "js", "scss", "gsap", "github"]
+    "skills": ["react", "js", "scss", "gsap", "github", "figma"]
   },
   {
     "id": "11",
@@ -101,7 +101,7 @@
     "prosub": "MiniPlayer/FullPlayer 기반 음악 스트리밍 앱으로, 재생·검색·라이브러리 기능과 상태 관리 중심 UX를 구현한 프로젝트",
     "keywords": ["음악 재생기", "데이터 저장", "사용자 편의성"],
     "day": "2026.03.31 ~ 2026.04.03",
-    "skills": ["react", "js", "scss", "github"]
+    "skills": ["react", "js", "scss", "github", "figma"]
   },
   {
     "id": "4",
@@ -127,7 +127,7 @@
     "prosub": "날씨 정보와 개인화 위젯을 제공하는 대시보드 웹 앱",
     "keywords": ["날씨 API", "메모 기능", "개인 대시보드"],
     "day": "2025.12.01 ~ 2025.12.04",
-    "skills": ["react", "js", "css"]
+    "skills": ["react", "js", "css", "figma"]
   },
   {
     "id": "6",
@@ -140,7 +140,7 @@
     "prosub": "PC·모바일 반응형 UI를 재현한 기업 웹사이트 클론",
     "keywords": ["깔끔한 코딩", "모바일 최적화", "기본기 탄탄"],
     "day": "2025.11.12 ~ 2025.11.14",
-    "skills": ["html", "css", "js"]
+    "skills": ["html", "css", "js", "figma"]
   },
   {
     "id": "7",
@@ -166,7 +166,7 @@
     "prosub": "선택 흐름을 설계한 JSON 기반 퀴즈 웹 앱",
     "keywords": ["퀴즈 게임", "결과 보기", "선택지 필터링"],
     "day": "2025.11.24 ~ 2025.11.27",
-    "skills": ["react", "js", "css"]
+    "skills": ["react", "js", "css", "figma"]
   },
   {
     "id": "9",
@@ -179,7 +179,7 @@
     "prosub": "정보 구조와 가독성을 고려한 기업형 웹사이트 클론",
     "keywords": ["가독성 좋은", "깔끔한 정렬", "브랜드 페이지"],
     "day": "2025.10.24 ~ 2025.10.26",
-    "skills": ["html", "css"]
+    "skills": ["html", "css", "figma"]
   },
   {
     "id": "15",
