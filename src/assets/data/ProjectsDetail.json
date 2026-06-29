@@ -405,5 +405,54 @@
         "solution": "Modal 컴포넌트에서 body overflow를 제어하여 모달 활성화 시 배경 스크롤을 차단"
       }
     ]
+  },
+  {
+    "id": "17",
+    "proname": "Archive Project",
+    "images": {
+      "main": "card-img21.png",
+      "detail": ["card-img21-1.gif"]
+    },
+    "pdf": "",
+    "projectType": "개인 프로젝트",
+    "duration": "2026.06",
+    "summary": "사용자 경험 개선과 인터랙션 설계를 중심으로 기획부터 UI 디자인, 프론트엔드 개발까지 전 과정을 수행한 웹 기반 UX/UI 프로젝트입니다. 정보 구조 설계와 반응형 레이아웃을 기반으로 다양한 디바이스 환경에서 일관된 사용자 경험을 제공하는 데 초점을 맞췄습니다.",
+    "deploy": "https://hyojunez99.github.io/archive/",
+    "github": "https://github.com/hyojunez99/archive.git",
+    "figma": "https://www.figma.com/design/TenqB23Q4jP8WNfHlHAwP6/ARCHIVE?node-id=37-524&t=LwevJsf865DSJI3K-1",
+    "techStack": {
+      "Frontend": ["React", "React Router", "SCSS"],
+      "UI": ["Responsive Design", "Component-Based UI", "Modal"],
+      "Data": ["JSON"]
+    },
+    "mainFeatures": [
+      "핵심 사용자 흐름 기반 정보 구조 설계",
+      "컴포넌트 기반 UI 구조 설계 및 구현",
+      "반응형 웹 레이아웃 적용",
+      "인터랙션 중심의 사용자 경험 설계",
+      "데이터 구조 기반 화면 렌더링"
+    ],
+    "responsibilities": [
+      "UX 리서치 및 서비스 구조 기획",
+      "UI 디자인 및 와이어프레임 설계",
+      "React 기반 프론트엔드 개발",
+      "컴포넌트 아키텍처 설계",
+      "반응형 스타일링 구현",
+      "데이터 구조 설계 및 화면 연동"
+    ],
+    "troubleShooting": [
+      {
+        "problem": "컴포넌트 구조가 복잡해지며 재사용성이 떨어지는 문제 발생",
+        "solution": "UI를 기능 단위로 분리하여 재사용 가능한 컴포넌트 구조로 리팩토링"
+      },
+      {
+        "problem": "반응형 환경에서 레이아웃이 깨지는 문제 발생",
+        "solution": "브레이크포인트 기준을 재정의하고 SCSS 구조를 모바일 퍼스트 방식으로 개선"
+      },
+      {
+        "problem": "상태 관리가 비효율적으로 분산되어 유지보수성이 저하됨",
+        "solution": "상태 흐름을 상위 컴포넌트로 통합하여 데이터 흐름 구조를 단순화"
+      }
+    ]
   }
 ]

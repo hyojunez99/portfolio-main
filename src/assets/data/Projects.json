@@ -114,7 +114,7 @@
     "prosub": "스크롤 인터랙션으로 콘텐츠 전환을 구현한 웹사이트 클론",
     "keywords": ["스크롤 애니메이션", "화면 전환", "눈에 띄는"],
     "day": "2025.12.08 ~ 2025.12.11",
-    "skills": ["react", "css", "gsap"]
+    "skills": ["react", "css", "gsap", "github"]
   },
   {
     "id": "5",
@@ -127,7 +127,7 @@
     "prosub": "날씨 정보와 개인화 위젯을 제공하는 대시보드 웹 앱",
     "keywords": ["날씨 API", "메모 기능", "개인 대시보드"],
     "day": "2025.12.01 ~ 2025.12.04",
-    "skills": ["react", "js", "css", "figma"]
+    "skills": ["react", "js", "css", "github", "figma"]
   },
   {
     "id": "6",
@@ -140,7 +140,7 @@
     "prosub": "PC·모바일 반응형 UI를 재현한 기업 웹사이트 클론",
     "keywords": ["깔끔한 코딩", "모바일 최적화", "기본기 탄탄"],
     "day": "2025.11.12 ~ 2025.11.14",
-    "skills": ["html", "css", "js", "figma"]
+    "skills": ["html", "css", "javascript", "github", "figma"]
   },
   {
     "id": "7",
@@ -166,7 +166,7 @@
     "prosub": "선택 흐름을 설계한 JSON 기반 퀴즈 웹 앱",
     "keywords": ["퀴즈 게임", "결과 보기", "선택지 필터링"],
     "day": "2025.11.24 ~ 2025.11.27",
-    "skills": ["react", "js", "css", "figma"]
+    "skills": ["react", "js", "css", "github", "figma"]
   },
   {
     "id": "9",
@@ -179,30 +179,26 @@
     "prosub": "정보 구조와 가독성을 고려한 기업형 웹사이트 클론",
     "keywords": ["가독성 좋은", "깔끔한 정렬", "브랜드 페이지"],
     "day": "2025.10.24 ~ 2025.10.26",
-    "skills": ["html", "css", "figma"]
+    "skills": ["html", "css", "github", "figma"]
   },
   {
     "id": "15",
     "order": 15,
     "priority": 0,
-    "images": {
-      "main": "card-img19.png"
-    },
+    "images": { "main": "card-img19.png" },
     "type": "Design System",
     "type2": "피그마 컴포넌트",
     "proname": "UI Design System",
     "prosub": "Variables와 Components를 활용한 디자인 시스템 구축",
     "keywords": ["Typography", "Color", "Button", "Input", "Navigation"],
     "day": "2026.06.01 ~ 2026.06.08",
-    "skills": ["figma", "Variables", "Auto Layout"]
+    "skills": ["figma"]
   },
   {
     "id": "16",
     "order": 16,
     "priority": 3,
-    "images": {
-      "main": "card-img20.png"
-    },
+    "images": { "main": "card-img20.png" },
     "type": "UX/UI Design",
     "type2": "Responsive Web",
     "proname": "KOBUS Redesign",
@@ -215,6 +211,26 @@
       "반응형 웹"
     ],
     "day": "2026.05.25 ~ 2026.06.08",
-    "skills": ["react", "js", "scss", "figma"]
+    "skills": ["react", "js", "scss", "github", "figma"]
+  },
+  {
+    "id": "17",
+    "order": 17,
+    "priority": 4,
+    "images": { "main": "card-img21.png" },
+    "type": "UX/UI Design",
+    "type2": "Responsive Web",
+    "proname": "Archive Project",
+    "prosub": "사용자 경험과 정보 구조를 중심으로 기획부터 디자인, 개발까지 전 과정을 수행한 웹 기반 UI/UX 프로젝트입니다.",
+    "keywords": [
+      "UX/UI 디자인",
+      "웹 서비스",
+      "인터랙션 디자인",
+      "정보 구조",
+      "반응형 웹",
+      "프로젝트 아카이빙"
+    ],
+    "day": "2026.05.25 ~ 2026.06.08",
+    "skills": ["react", "js", "scss", "gsap", "github", "figma"]
   }
 ]
