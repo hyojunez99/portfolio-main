@@ -100,7 +100,9 @@
     width: 100%;
     box-sizing: border-box;
 
+    will-change: transform;
     transition:
+      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
       border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
       box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -137,7 +139,10 @@
         display: block;
         object-fit: cover;
         object-position: center center;
-        transition: transform 0.5s ease;
+        will-change: transform;
+        transition:
+          transform 0.5s ease,
+          opacity 0.5s ease;
         opacity: 0.85;
       }
 
