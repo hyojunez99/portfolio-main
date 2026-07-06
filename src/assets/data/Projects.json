@@ -232,5 +232,27 @@
     ],
     "day": "2026.05.25 ~ 2026.06.08",
     "skills": ["react", "js", "scss", "gsap", "github", "figma"]
+  },
+  {
+    "id": "18",
+    "order": 18,
+    "priority": 4,
+    "images": {
+      "main": "card-img22.png"
+    },
+    "type": "UX/UI Design",
+    "type2": "Detail Page",
+    "proname": "Product Detail Design",
+    "prosub": "뷰티, 패션, 라이프스타일 등 다양한 카테고리의 제품 상세페이지를 기획하고 디자인한 프로젝트입니다. 사용자 경험을 고려한 정보 구조와 시각적 계층을 설계하여 구매 의사결정을 돕는 UI를 제작했습니다.",
+    "keywords": [
+      "UX/UI",
+      "상세페이지",
+      "정보 구조",
+      "Visual Design",
+      "Figma",
+      "Responsive"
+    ],
+    "day": "2026.06",
+    "skills": ["figma"]
   }
 ]

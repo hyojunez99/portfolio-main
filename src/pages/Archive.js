@@ -19,7 +19,7 @@ const Archive = () => {
   const [selectedProjectId, setSelectedProjectId] = useState(null);
   const sectionRef = useRef(null);
 
-  const categories = ["ALL", "Team", "Personal", "Portfolio"];
+  const categories = ["ALL", "Team", "Personal", "Portfolio", "UX/UI Design"];
 
   const filteredProjects =
     activeFilter === "ALL"

@@ -454,5 +454,53 @@
         "solution": "상태 흐름을 상위 컴포넌트로 통합하여 데이터 흐름 구조를 단순화"
       }
     ]
+  },
+  {
+    "id": "18",
+    "proname": "Product Detail Design",
+    "images": {
+      "main": "card-img22.png",
+      "detail": ["card-img22-1.png"]
+    },
+    "pdf": "",
+    "projectType": "개인 프로젝트",
+    "duration": "2026.06",
+    "summary": "뷰티, 패션, 라이프스타일 등 다양한 제품군을 대상으로 사용자 경험을 고려한 상세페이지를 기획하고 디자인한 프로젝트입니다. 구매 과정에서 필요한 정보를 효과적으로 전달할 수 있도록 정보 구조를 재설계하고, 시각적 계층과 콘텐츠 흐름을 중심으로 UI를 구성하여 사용자의 구매 의사결정을 돕는 상세페이지를 제작했습니다.",
+    "deploy": "",
+    "github": "",
+    "figma": "https://www.figma.com/design/1XedFGtsnJQfDp018Do4A3/%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%94%94%EC%9E%90%EC%9D%B8-%EB%AA%A8%EC%9D%8C?node-id=0-1&t=aF5wDondAZoSWxb5-1",
+    "techStack": {
+      "Design": ["Figma"],
+      "UI": ["Visual Design", "Information Architecture", "Responsive Layout"],
+      "Design Process": ["Wireframe", "UI Design", "Prototype"]
+    },
+    "mainFeatures": [
+      "사용자 경험을 고려한 상세페이지 UX 설계",
+      "정보 우선순위 기반 콘텐츠 구성",
+      "브랜드 아이덴티티를 반영한 비주얼 디자인",
+      "제품 특성에 맞는 UI 컴포넌트 설계",
+      "구매 전환을 고려한 CTA 및 정보 흐름 구성"
+    ],
+    "responsibilities": [
+      "시장 조사 및 레퍼런스 분석",
+      "사용자 중심 정보 구조(IA) 설계",
+      "와이어프레임 및 UI 디자인 제작",
+      "브랜드 콘셉트에 맞는 비주얼 스타일 기획",
+      "프로토타입 제작 및 디자인 검토"
+    ],
+    "troubleShooting": [
+      {
+        "problem": "제품 정보가 많아질수록 사용자가 핵심 내용을 빠르게 파악하기 어려운 문제가 발생",
+        "solution": "콘텐츠 우선순위를 재정의하고 카드형 레이아웃과 시각적 계층 구조를 적용하여 정보 전달력을 높였습니다."
+      },
+      {
+        "problem": "텍스트 중심의 구성으로 인해 스크롤 피로도가 증가하고 콘텐츠 집중도가 낮아지는 문제가 발생",
+        "solution": "제품 이미지와 핵심 메시지를 번갈아 배치하고 충분한 여백을 활용하여 읽기 흐름을 개선했습니다."
+      },
+      {
+        "problem": "구매 결정에 필요한 리뷰, 사이즈 정보, FAQ 등이 분산되어 사용자 탐색 효율이 떨어지는 문제가 발생",
+        "solution": "사용자의 구매 여정을 분석하여 리뷰, 사이즈 가이드, FAQ를 하나의 흐름으로 재구성해 구매 의사결정을 지원했습니다."
+      }
+    ]
   }
 ]
